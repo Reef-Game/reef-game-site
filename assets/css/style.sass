@@ -1,0 +1,1470 @@
+@import "_font"
+@import "_general"
+@import "_header"
+
+.main__wrapper
+    overflow: hidden
+    position: relative
+    &.open
+        filter: blur(6px)
+.home__wrapper
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: url(../images/godray_group.svg) no-repeat left top / contain
+/* Hero Block CSS Start */
+.rf__hero--block
+    position: relative
+    overflow: hidden
+    padding: 12% 0 22%
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    &:after
+        content: ""
+        position: absolute
+        bottom: -80px
+        left: 0
+        width: 100%
+        height: 100%
+        background: url(../images/wave_bg.svg) no-repeat center bottom / 100%
+.rf__hero__content
+    width: 1000px
+    margin: 0 auto
+    position: relative
+    z-index: 9
+    p
+        font-size: 23px
+        margin-bottom: 40px
+.rf__hero--banner
+    .rf__hero__img
+        position: absolute
+        bottom: 20%
+        left: 0
+        width: 100%
+        height: auto
+        transform: translateY(300px)
+        &:last-child
+            bottom: 0
+            transform: none !important
+.rf__hero--elementOne
+    position: absolute
+    top: 0
+    left: 0
+    right: auto
+    bottom: auto
+    transform: translate(-70px, 400px)
+.rf__hero--elementTwo
+    position: absolute
+    top: 0
+    right: 0
+    left: auto
+    bottom: auto
+    transform: translate(-850px, 600px)
+    img
+        width: 300px
+/* Hero Block CSS End */
+
+/* Revolutionary Features Block CSS Start */
+.rf__revolutionary_features--block
+    margin-top: 100px
+    position: relative
+.rf__butterfly__group
+    position: absolute
+    top: 140px
+    right: -120px
+    left: auto
+    bottom: auto
+    z-index: -1
+.rf__ParrotFish__group
+    position: absolute
+    top: 60px
+    left: -70px
+    right: auto
+    bottom: auto
+    z-index: -1
+    img
+        &:nth-child(2)
+            transform: translate(-114px, 50px)
+        &:nth-child(3)
+            transform: translate(-70px, 70px) rotate(20deg)
+.SeaSurface__bg
+    position: absolute
+    top: -150px
+    left: 0
+    right: auto
+    bottom: auto
+    img
+        width: 100%
+.rf__feature__main
+    padding: 40px
+    .row
+        &:not(:last-child)
+            margin-bottom: 20px
+    .main__title
+        h2
+            margin-bottom: 40px
+.rf__feature--item
+    margin-bottom: 50px
+    .rf__feature--icon
+        max-width: 36%
+        flex: 0 0 36%
+        img
+            border-radius: 29px
+    .rf__feature--des
+        padding-top: 30px
+        padding-left: 30px
+        max-width: 64%
+        flex: 0 0 64%
+        h3
+            margin-bottom: 0
+        p
+            font-weight: 600
+            line-height: 1.6
+            width: 95%
+            font-size: 16px
+/* Revolutionary Features Block CSS End */
+
+/* Rebuilding Coral Reefs Block CSS Start */
+.ParrotFish_left
+    position: absolute
+    top: 100px
+    left: 0
+    right: auto
+    bottom: auto
+    transform: translateX(-20px)
+.game__hammerhead_blue-one
+    position: absolute
+    top: auto
+    left: auto
+    right: 0
+    bottom: 320px
+    transform: translateX(-80px)
+    mix-blend-mode: multiply
+    img
+        opacity: 0.9
+.game__hammerhead_blue-two
+    position: absolute
+    top: auto
+    bottom: -80px
+    left: 0
+    right: auto
+    transform: translateX(-150px)
+    mix-blend-mode: multiply
+    img
+        opacity: 0.9
+.rf__coral_reefs--block
+    margin-top: 60px
+    position: relative
+.blue__hammerhead
+    position: absolute
+    top: auto
+    right: 0
+    transform: translateX(200px)
+    left: auto
+    bottom: 280px
+    opacity: 0.9
+    mix-blend-mode: multiply
+.aqua__hammerhead
+    position: absolute
+    top: auto
+    left: 0
+    right: auto
+    bottom: 250px
+    transform: translateX(-230px)
+.reefs__Two_LionFish
+    position: absolute
+    top: auto
+    left: 40px
+    right: auto
+    bottom: -100px
+.coral_reefs--item
+    width: 62%
+    margin: 0 auto
+    position: relative
+    .coral__bubbles
+        position: absolute
+        &.coral__bubble_one
+            top: -50px
+            left: 100px
+        &.coral__bubble_two
+            bottom: 230px
+            right: 0
+    .coral_reefs__img
+        img
+            margin: 0 auto
+    .coral_reefs__des
+        margin-top: -25px
+        padding: 50px 35px 40px
+        position: relative
+        z-index: -1
+        p
+            font-size: 23px
+/* Rebuilding Coral Reefs Block CSS End */
+
+/* Game Elements Block CSS Start */
+.rf__game__elements--block
+    margin-top: 50px
+    position: relative
+    .group_of_fish_2
+        position: absolute
+        top: 170px
+        right: 50px
+        left: auto
+        bottom: auto
+.game__slider
+    padding: 70px 0 40px
+    margin-left: 20vw
+.swiper-button__wrapper
+    .swiper-button
+        top: auto
+        bottom: 0
+        min-width: 108px
+        width: 108px
+        height: 108px
+        border-radius: 50%
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)
+        border: 2px solid #FFFFFF
+        box-shadow: inset 0px 0px 10px 3px #ffffff
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25))
+        &:after
+            color: #ffffff
+            font-weight: 600
+.swiper-button__wrapper
+    width: 300px
+    height: 110px
+    position: relative
+    margin: 40px auto 0
+    text-align: center
+    .swiper-button-next
+        right: 0
+    .swiper-button-prev
+        left: 0
+.game__element--item
+    transition: all 0.6s ease-in-out
+    .game__element--img
+        transform: scale(1.2)
+        img
+            margin: 0 auto
+            height: 230px
+            width: auto
+            object-fit: contain
+    .game__element--des
+        padding: 40px 25px 25px
+        h3
+            margin: 0
+        p
+            font-weight: 600
+            display: none
+.swiper-slide-active
+    .game__element--item
+        transform: scale(1.1)
+        transition: all 0.6s ease-in-out
+        .game__element--des
+            p
+                display: block
+/* Game Elements Block CSS End */
+
+/* Roadmap Block CSS Start */
+.rf__roadmap--block
+    margin-top: 60px
+    position: relative
+    &:after
+        content: ""
+        position: absolute
+        bottom: -60%
+        left: 30%
+        width: 400px
+        height: 220%
+        background: radial-gradient(19.29% 45.28% at 67.04% 46.46%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)
+        transform: rotate(27.28deg)
+        z-index: -1
+    .main__title
+        h6
+            width: 85%
+            margin: 0 auto 30px
+            line-height: 1.5
+    .group_of_fish
+        position: absolute
+        top: -140px
+        right: 0
+        left: auto
+        bottom: auto
+        transform: translateX(-45px)
+    .Three_LionFish
+        position: absolute
+        top: -170px
+        right: 0
+        left: auto
+        bottom: auto
+        transform: translateX(-550px)
+    .group_of_fish_2
+        position: absolute
+        top: -150px
+        left: 0
+        right: auto
+        bottom: auto
+        transform: translateX(-170px)
+        z-index: -1
+    .shark_with_fish_under
+        position: absolute
+        top: 250px
+        bottom: auto
+        left: 0
+        transform: translateX(-205px)
+        right: auto
+.milestone__main
+    margin-top: 45px
+    padding: 35px 65px
+    position: relative
+    z-index: 2
+.roadmap__milestone--item
+    margin-bottom: 40px
+    &:nth-child(even)
+        margin-top: 150px
+    &:last-child
+        margin-top: 200px
+        margin-left: -100px
+    .roadmap__milestone--img
+        max-width: 28%
+        flex: 0 0 28%
+        img
+            margin: 0 auto
+    .roadmap__milestone--des
+        padding-left: 20px
+        max-width: 72%
+        flex: 0 0 72%
+        span
+            font-size: 16px
+            font-weight: 700
+            display: inline-block
+        h3
+            margin: 5px 0 10px
+        ul
+            margin: 0
+            li
+                font-weight: 600
+                font-size: 16px
+    .roadmap__line__mobile
+        display: none
+    .roadmap__line
+        max-width: 100%
+        flex: 0 0 100%
+        position: relative
+        z-index: -1
+    &:nth-child(1)
+        .roadmap__line
+            top: -90px
+            right: -55px
+    &:nth-child(2)
+        .roadmap__line
+            bottom: -40px
+            right: 100px
+            img
+                margin-left: auto
+    &:nth-child(3)
+        .roadmap__line
+            top: -45px
+            left: 150px
+    &:nth-child(4)
+        .roadmap__line
+            top: 70px
+            right: 100px
+            img
+                margin-left: auto
+    &:nth-child(5)
+        .roadmap__line
+            bottom: 30px
+            right: 150px
+            img
+                margin-left: auto
+/* Roadmap Block CSS End */
+
+/* Partners Block CSS Start */
+.bubble__group
+    .bubble__item
+        position: absolute
+        z-index: -1
+        &:nth-child(1)
+            top: -80px
+            left: 26%
+            width: 30px
+        &:nth-child(2)
+            top: 0
+            right: 0
+        &:nth-child(3)
+            top: 23%
+            left: 40px
+        &:nth-child(4)
+            top: 30%
+            left: 24%
+            width: 30px
+        &:nth-child(5)
+            top: 38%
+            right: 25%
+        &:nth-child(6)
+            top: 39%
+            right: 70px
+            width: 30px
+        &:nth-child(7)
+            top: 38%
+            right: 0
+        &:nth-child(8)
+            top: 53%
+            left: 30px
+            width: 30px
+        &:nth-child(9)
+            top: 41%
+            left: 47%
+            width: 30px
+        &:nth-child(10)
+            bottom: 50px
+            right: -40px
+.rf__partners--block
+    margin-top: 60px
+    .main__title
+        h2
+            margin-bottom: 40px
+    .story__trutle
+        position: absolute
+        top: auto
+        right: -210px
+        left: auto
+        bottom: 50px
+        z-index: -1
+.rf__partners
+    padding: 45px 50px
+    position: relative
+    .hammerhead_blue_fish
+        position: absolute
+        top: 0
+        left: 0
+        right: auto
+        transform: translateX(150px)
+        z-index: -1
+.rf__partner--item
+    .rf__partner--logo
+        background-color: #ffffff
+        position: relative
+        padding-top: 20%
+        border-radius: 28px
+        max-width: 20%
+        flex: 0 0 20%
+        img
+            width: 100%
+            height: 100%
+            position: absolute
+            inset: 0
+            object-fit: contain
+            padding: 10px
+    .rf__partner--details
+        padding-left: 40px        
+        max-width: 80%
+        flex: 0 0 80%
+        p
+            width: 85%
+            font-size: 16px
+            font-weight: 600
+            line-height: 1.6
+    &:not(:last-child)
+        margin-bottom: 40px
+/* Partners Block CSS End */
+
+/* Story Block CSS Start */
+.rf__story--block
+    position: relative
+    margin-top: 200px
+    .main__title
+        padding: 40px
+        margin-top: -100px
+        h6
+            width: 84%
+            margin: 0 auto
+    .story__trutle
+        position: absolute
+        top: 60px
+        right: 0
+        left: auto
+        bottom: auto
+        transform: translateX(200px)
+/* Story Block CSS End */
+
+/* Team Block CSS Start */
+.bubble__group
+    .bubble__item
+        position: absolute
+.rf__team--block
+    margin-top: 50px
+    position: relative
+    z-index: 9
+    .main__title
+        margin-bottom: 40px
+    .row
+        margin: 0 -33px
+        .col--25
+            padding: 0 33px
+.rf__team--item
+    margin-bottom: 50px
+    background: #4591d5
+    .rf__team--img
+        box-shadow: inset 0px 0px 9px 6px #FFFFFF
+        border-radius: 29px
+        overflow: hidden
+        padding-top: 90%
+        position: relative
+        mix-blend-mode: multiply
+        img
+            border-radius: 29px
+            width: 100%
+            height: 100%
+            position: absolute
+            inset: 0
+            object-fit: cover
+    .rf__team--des
+        padding: 20px 30px 30px
+        h3
+            margin-bottom: 0
+        p
+            font-weight: 600
+/* Team Block CSS End */
+
+/* Join The Reef Club Block CSS Start */
+.rf__contact
+    padding: 45px 100px
+    .row
+        margin: 0 -30px
+        .form-group
+            padding: 0 30px
+    .btn
+        padding: 19px 73px
+        font-weight: 600
+.rf__join_club--block
+    position: relative
+    margin-top: 80px
+    .CaribbeanReefShark
+        position: absolute
+        top: 30%
+        left: 0
+        right: auto
+        bottom: auto
+        transform: translateX(-150px)
+        img
+            transform: rotate(6.76deg)
+    .rf__join_club--banner
+        position: relative
+        z-index: -1
+        margin-top: -45%
+        img
+            width: 100%
+    .Two_MaoriWrasse__fish
+        position: absolute
+        top: auto
+        bottom: 37%
+        left: 20%
+        right: auto
+    .Four_butterfly__fish
+        position: absolute
+        top: auto
+        right: 22%
+        left: auto
+        bottom: 22%
+    .rf__join_club
+        .main__title
+            h2
+                margin-bottom: 0
+            h6
+                line-height: normal
+                margin-bottom: 20px
+    .rf__join_club
+        position: absolute
+        top: auto
+        bottom: 23%
+        left: 50%
+        transform: translateX(-50%)
+    .social__sharing
+        li
+            a
+                width: 145px
+                height: 145px
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%)
+                border: 2px solid #FFFFFF
+                box-shadow: inset 0px 0px 10px 3px #FFFFFF
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25))
+                border-radius: 50%
+                position: relative
+                overflow: hidden
+                &:before
+                    content: ""
+                    position: absolute
+                    top: 100%
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, #56D0DA 0%, #4080D4 100%)
+                    transition: .5s
+                    z-index: 2
+                &:hover
+                    &:before
+                        top: 0
+                    img
+                        transform: rotateY(360deg)
+                        transition: .5s
+                img
+                    width: 82px
+                    height: 82px
+                    position: relative
+                    z-index: 9
+                    transform: rotateY(0deg)
+                    transition: .5s
+            &:not(:last-child)
+                margin-right: 35px
+/* Join The Reef Club Block CSS End */
+
+/* Footer CSS Start */
+.rf__footer
+    background-color: #435763
+    padding: 25px 0
+.footer__widget
+    h6
+        font-size: 19px
+        font-weight: 700
+        margin-bottom: 25px
+.footer__nav
+    margin: 0 -20px
+    ul
+        padding: 0 20px
+        li
+            a
+                color: #ffffff
+                font-size: 17px
+                font-weight: 600
+            &:not(:last-child)
+                margin-bottom: 20px
+.footer__copyright--text
+    p
+        font-size: 17px
+        font-weight: 600
+.partnership__logo
+    margin: -25px 0 0 20px
+    span
+        font-size: 13px
+        display: inline-block
+        margin-bottom: 15px
+/* Footer CSS End */
+
+/* Investors Block CSS Start */
+.rf__join_club--block.rf__investors__join--block
+    .rf__join_club--banner
+        margin-top: -50%
+.rf__investors--block
+    position: relative
+    z-index: 9
+    .Caribbean__ReefShark
+        position: absolute
+        top: -30px
+        left: -130px
+        right: auto
+        bottom: auto
+        img
+            transform: rotate(15deg)
+    .SeaSurface
+        img
+            width: 100%
+    .bubble__group--list
+        .bubble__item
+            position: absolute
+            &:first-child
+                top: -20px
+                left: -20px
+            &:last-child
+                bottom: 150px
+                right: -10px
+.rf__investors
+    padding: 40px
+    width: 95%
+    margin: 0 auto
+    .rf__investors--des
+        width: 75%
+        margin: 0 auto
+        p
+            font-size: 23px
+        img
+            margin: 20px auto 0
+/* Investors Block CSS End */
+
+/* FAQ Block CSS Start */
+.angel_fish_orange_grp
+    position: absolute
+    top: 0
+    left: -155px
+    right: auto
+    bottom: auto
+    .small__fish
+        width: 70%
+        margin: 30px -40px 0 auto
+.rf__faq--block
+    position: relative
+    z-index: 9
+    .SeaSurface
+        img
+            width: 100%
+    .rf__butterfly__group
+        position: absolute
+        top: 60px
+        right: -220px
+    .aqua__hammerhead
+        left: auto
+        right: -300px
+    .CaribbeanReefShark
+        position: absolute
+        top: auto
+        bottom: 400px
+        left: -150px
+        right: auto
+        img
+            transform: rotate(15deg)
+    .reefs__Two_LionFish
+        left: -40%
+        bottom: 0
+    .faq__bubble__group
+        .bubble__item
+            position: absolute
+            &:nth-child(1)
+                top: 35%
+                left: -15%
+                img
+                    width: 40px
+            &:nth-child(2)
+                top: 55%
+                right: -15%
+                img
+                    width: 40px
+            &:nth-child(3)
+                bottom: -60px
+                left: -25px
+                img
+                    width: 40px
+.rf__faq--list
+    padding: 40px 70px
+    .main__title
+        h2
+            margin-bottom: 30px
+.rf__accordion--item
+    padding-left: 60px
+    cursor: pointer
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5)
+    padding-bottom: 20px
+    margin-bottom: 20px
+    .rf__accordion--title
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: -55px
+            width: 30px
+            height: 30px
+            background: url(../images/down-arrow.svg) no-repeat center / contain
+            transform: rotate(0deg)
+            transition: all 0.6s ease-in-out
+        &.active
+            &:before
+                transform: rotate(180deg)
+                transition: all 0.6s ease-in-out
+    .rf__accordion--panel
+        padding: 15px 0
+        display: none
+        p
+            font-size: 16px
+            font-weight: 600
+
+.rf__faq--contact
+    padding-top: 50px
+    .main__title
+        h2
+            margin-bottom: 20px
+    .form-group
+        label
+            margin-left: 30px
+/* FAQ Block CSS End */
+
+@media(max-width: 1600px)
+    /* Hero Block CSS Start */
+    .rf__hero--block
+        padding: 16% 0 22%
+        &:after
+            background-size: cover
+            height: 180px
+    /* Hero Block CSS End */
+
+    /* Join The Reef Club Block CSS Start */
+    .rf__join_club--block
+        .rf__join_club--banner
+            margin-top: -35%
+        .Two_MaoriWrasse__fish
+            left: 70px
+        .Four_butterfly__fish
+            right: 70px
+    /* Join The Reef Club Block CSS End */
+
+    /* Footer CSS Start */
+    .rf__footer
+        .col--60
+            max-width: 50%
+            flex: 0 0 50%
+        .col--20
+            max-width: 25%
+            flex: 0 0 25%
+    /* Footer CSS End */
+
+@media(max-width: 1400px)
+    /* Hero Block CSS Start */
+    .rf__hero__content
+        width: 60%
+    .rf__hero--elementOne
+        top: auto
+        bottom: 40%
+        left: 15%
+        img
+            width: 200px
+    .rf__hero--elementTwo
+        img
+            width: 250px
+    /* Hero Block CSS End */
+
+    /* Revolutionary Features Block CSS Start */
+    .rf__ParrotFish__group
+        left: -50px
+        img
+            width: 65%
+            &:nth-child(2)
+                transform: translate(-25px, 50px)
+            &:nth-child(3)
+                transform: translate(0, 130px) rotate(20deg)
+    .rf__butterfly__group
+        top: 190px
+        img
+            width: 70%
+    
+    .aqua__hammerhead
+        transform: translateX(-90px)
+        img
+            width: 60%
+    .blue__hammerhead
+        img
+            width: 70%
+    /* Revolutionary Features Block CSS End */
+
+    /* Rebuilding Coral Reefs Block CSS Start */
+    .game__hammerhead_blue-one, .game__hammerhead_blue-two
+        img
+            width: 80%
+    .game__hammerhead_blue-two
+        transform: translateX(0)
+    /* Rebuilding Coral Reefs Block CSS End */
+
+    /* Game Elements Block CSS Start */
+    .rf__roadmap--block
+        .group_of_fish_2
+            transform: translateX(10px)
+            img
+                width: 80%
+    
+    .rf__roadmap--block
+        .shark_with_fish_under
+            transform: translateX(-105px)
+            img
+                width: 60%
+    /* Game Elements Block CSS End */
+
+    /* Partners Block CSS Start */
+    .rf__partners--block
+        .story__trutle
+            top: 30px
+            bottom: auto
+            right: 0
+            img
+                width: 80%
+    /* Partners Block CSS End */
+
+    /* Join The Reef Club Block CSS Start */
+    .rf__join_club--block
+        .CaribbeanReefShark
+            transform: translateX(0)
+        .Two_MaoriWrasse__fish, .Four_butterfly__fish
+            img
+                width: 70%
+    /* Join The Reef Club Block CSS End */
+
+    /* FAQ Block CSS Start */
+    .angel_fish_orange_grp
+        left: -50px
+    .rf__faq--block
+        margin-top: 60px
+        .rf__butterfly__group
+            right: -150px
+        .reefs__Two_LionFish
+            left: -25%
+        .faq__bubble__group 
+            .bubble__item
+                &:nth-child(1)
+                    left: -50px
+                &:nth-child(2)
+                    right: -50px
+    /* FAQ Block CSS End */
+@media(max-width: 1280px)
+    /* Game Elements Block CSS Start */
+    .game__slider
+        margin-left: 10vw
+    /* Game Elements Block CSS End */
+
+@media(max-width: 1199px)
+    /* Hero Block CSS Start */
+    .rf__hero__content
+        width: 80%
+    .rf__hero--elementTwo
+        right: -200px
+    /* Hero Block CSS Start */
+
+    /* Join The Reef Club Block CSS Start */
+    .rf__join_club--block.rf__investors__join--block
+        .rf__join_club--banner
+            margin-top: -45%
+    .rf__join_club--block
+        .rf__join_club--banner
+            margin-top: -5%
+        .Two_MaoriWrasse__fish
+            left: -100px
+        .Four_butterfly__fish
+            right: -100px
+    /* Join The Reef Club Block CSS End */
+
+    /* Investors Block CSS Start */
+    .rf__investors--block
+        margin-top: 100px
+        .Caribbean__ReefShark
+            left: 10px
+            top: 60px
+        .bubble__group--list
+            .bubble__item
+                z-index: 9
+                &:first-child
+                    left: 40px
+                &:last-child
+                    right: 20px
+    .rf__investors
+        .rf__investors--des
+            width: 95%
+    
+    .rf__investors__join--block
+        .rf__join_club--banner
+            margin-top: -45%
+    /* Investors Block CSS End */
+
+    /* FAQ Block CSS Start */
+    .angel_fish_orange_grp
+        left: 0
+    .rf__faq--block
+        .rf__butterfly__group
+            right: 0
+        .reefs__Two_LionFish
+            left: 0
+        .faq__bubble__group 
+            .bubble__item
+                z-index: 9
+                &:nth-child(1)
+                    left: 15px
+                &:nth-child(2)
+                    right: 15px
+                &:nth-child(3)
+                    bottom: 0
+                    left: 20px
+    /* FAQ Block CSS End */
+
+@media(max-width: 991px)
+    /* Hero Block CSS Start */
+    .rf__hero--elementOne
+        top: auto
+        bottom: 150px
+        transform: translateX(-100px)
+    .rf__hero--elementOne
+        img
+            width: 60%
+    .rf__hero--elementTwo
+        display: none
+    
+    .rf__hero--block
+        padding: 30% 20px 40%
+    .rf__hero__content
+        width: 100%
+        p
+            width: 70%
+            margin: 0 auto 40px
+    .rf__hero--banner
+        .rf__hero__img
+            img
+                height: 100%
+                object-fit: cover
+    /* Hero Block CSS End */
+
+    /* Story Block CSS Start */
+    .rf__ParrotFish__group
+        left: 50px
+    .rf__butterfly__group
+        right: -150px
+    /* Story Block CSS End */
+
+    /* Rebuilding Coral Reefs Block CSS Start */
+    .coral_reefs--item
+        width: 90%
+    /* Rebuilding Coral Reefs Block CSS End */
+    
+    /* Revolutionary Features Block CSS Start */
+    .rf__feature--item
+        margin-bottom: 30px
+        .rf__feature--icon, .rf__feature--des
+            max-width: 100%
+            flex: 0 0 100%
+        .rf__feature--icon
+            img
+                width: 100%
+        .rf__feature--des
+            padding: 20px 0 0
+            p
+                width: 100%
+    /* Revolutionary Features Block CSS End */
+
+    /* Game Elements Block CSS Start */
+    .swiper-button__wrapper
+        width: 170px
+        height: 60px
+        margin: 20px auto 0
+        .swiper-button
+            min-width: 60px
+            width: 60px
+            height: 60px
+            &:after
+                font-size: 20px
+    /* Game Elements Block CSS End */
+
+    /* Roadmap Block CSS Start */
+    .milestone__main
+        padding: 25px 45px
+    .rf__roadmap--block
+        .main__title
+            h6
+                width: 100%
+    .roadmap__milestone--item
+        .roadmap__line
+            img
+                width: 70%
+        &:nth-child(1)
+            .roadmap__line
+                top: -50px
+                right: -100px
+        &:nth-child(2)
+            .roadmap__line
+                right: 0
+        &:nth-child(3)
+            .roadmap__line
+                left: 100px
+        &:nth-child(4)
+            .roadmap__line
+                top: 30px
+                left: 0
+        &:nth-child(5)
+            .roadmap__line
+                bottom: -20px
+                right: 0
+        &:last-child
+            margin-top: 100px
+            margin-left: 0
+    /* Roadmap Block CSS End */
+
+    /* Game Elements Block CSS Start */
+    .game__slider
+        padding: 40px
+    /* Game Elements Block CSS End */
+
+    /* Partners Block CSS Start */
+    .rf__partners--block
+        margin-top: 60px
+        .main__title
+            width: 100%
+    .rf__partner--item
+        align-items: center
+    /* Partners Block CSS End */
+
+    /* Team Block CSS Start */
+    .bubble__group
+        .bubble__item
+            &:nth-child(10)
+                right: 0
+    .rf__team--block
+        .row
+            margin: 0 -20px
+            .col--25
+                padding: 0 20px
+                max-width: 33.33%
+                flex: 0 0 33.33%
+    .rf__team--item
+        margin-bottom: 40px
+    /* Team Block CSS End */
+
+    /* Join The Reef Club Block CSS Start */
+    .rf__join_club--block
+        .Four_butterfly__fish
+            right: 0
+        .Two_MaoriWrasse__fish
+            left: 15px
+        .social__sharing
+            li
+                a
+                    width: 95px
+                    height: 95px
+                    img
+                        width: 50px
+                        height: 50px
+    .rf__contact
+        padding: 40px 50px
+    /* Join The Reef Club Block CSS End */
+
+    /* Footer CSS Start */
+    .rf__footer
+        .col--60
+            max-width: 40%
+            flex: 0 0 40%
+        .col--20
+            max-width: 30%
+            flex: 0 0 30%
+    .footer__widget
+        h6
+            font-size: 19px
+            margin-bottom: 15px
+    .footer__nav
+        margin: 0 -10px
+        ul
+            padding: 0 10px
+            li
+                &:not(:last-child)
+                    margin-bottom: 15px
+    .footer__copyright
+        margin-top: 30px
+    .partnership__logo
+        margin: 0 0 0 20px
+    /* Footer CSS End */
+
+    /* Investors Block CSS Start */
+    .rf__investors
+        padding: 30px
+        width: 100%
+        .rf__investors--des
+            width: 100%
+    /* Investors Block CSS End */
+
+    /* FAQ Block CSS Start */
+    .rf__faq--block
+        margin-top: 90px
+    .rf__faq--list
+        padding: 30px 40px
+    .rf__accordion--item
+        padding-left: 45px
+        .rf__accordion--title
+            h3
+                font-size: 26px
+            &:before
+                left: -40px
+                width: 20px
+                height: 20px
+    /* FAQ Block CSS End */    
+@media(max-width: 767px)
+    /* Hero Block CSS Start */
+    .rf__hero--block
+        padding: 40% 20px 55%
+    .rf__hero--banner
+        .rf__hero__img
+            bottom: 150px
+            width: auto
+            height: 100%
+            object-fit: cover
+            &:last-child
+                height: 30%
+    .rf__hero--elementOne
+        bottom: 100px
+        img
+            width: 40%
+    /* Hero Block CSS End */
+
+    /* Story Block CSS Start */
+    .aqua__hammerhead
+        bottom: 0
+    .SeaSurface__bg
+        top: -80px
+        img
+            width: auto
+            height: 150px
+            object-fit: cover
+    .rf__story--block
+        margin-top: 110px
+        .main__title
+            padding: 25px
+            h6
+                width: 100%
+                font-size: 18px
+    /* Story Block CSS End */
+
+    /* Roadmap Block CSS Start */
+    .rf__roadmap--block
+        .main__title
+            h6
+                font-size: 16px
+    /* Roadmap Block CSS End */
+
+    /* Game Elements Block CSS Start */
+    .swiper-button__wrapper
+        width: 80%
+    .game__hammerhead_blue-two
+        transform: translateX(300px)
+    .game__slider
+        margin-left: 0
+    /* Game Elements Block CSS End */
+
+    /* Rebuilding Coral Reefs Block CSS Start */
+    .rf__revolutionary_features--block
+        margin-top: 50px
+    .coral_reefs--item
+        width: 100%
+        .coral_reefs__des
+            padding: 40px 15px 30px
+        .coral__bubbles
+            &.coral__bubble_one
+                left: 20px
+            img
+                width: 60%
+    /* Rebuilding Coral Reefs Block CSS End */
+
+    /* Roadmap Block CSS Start */
+    .milestone__main
+        padding: 20px
+    .roadmap__milestone--item
+        margin-bottom: 20px
+        .roadmap__milestone--img, .roadmap__milestone--des
+            max-width: 100%
+            flex: 0 0 100%
+        .roadmap__milestone--des
+            padding: 20px 0 0
+            ul
+                li
+                    font-size: 15px
+        .roadmap__line
+            position: static
+            display: none
+        .roadmap__line__mobile
+            display: block
+            margin: 20px auto 0
+            img
+                margin: 0 auto
+        &:nth-child(even)
+            margin-top: 30px
+        &:last-child
+            margin-top: 0
+    /* Roadmap Block CSS End */
+
+    /* Partners Block CSS Start */
+    .rf__partners--block
+        .story__trutle
+            top: auto
+            bottom: -120px
+            right: -120px
+            img
+                width: 100px
+                transform: rotate(18deg)
+    .bubble__group
+        .bubble__item
+            img
+                width: 50%
+    .rf__partners
+        padding: 20px
+    .rf__partner--item            
+        .rf__partner--logo
+            padding-top: 75%
+            max-width: 75%
+            flex: 0 0 75%
+            margin: 0 auto
+        .rf__partner--details
+            max-width: 100%
+            flex: 0 0 100%
+            padding: 20px 0 0
+            h3
+                font-size: 35px
+                text-align: center
+                margin-bottom: 0
+            p
+                width: 100%
+        &:not(:last-child)
+            margin-bottom: 30px
+    /* Partners Block CSS End */
+
+    /* Team Block CSS Start */
+    .bubble__group
+        .bubble__item
+            &:nth-child(6)
+                top: 50%
+            &:nth-child(7)
+                top: 50%
+    .rf__team--block
+        .row
+            margin: 0 -15px
+            .col--25
+                padding: 0 15px
+                max-width: 50%
+                flex: 0 0 50%
+    .rf__team--item
+        margin-bottom: 20px
+        .rf__team--des
+            padding: 15px
+            h3
+                font-size: 35px
+                line-height: 1
+            p
+                font-size: 14px
+    /* Team Block CSS End */
+
+    /* Join The Reef Club Block CSS Start */
+    .rf__join_club--block.rf__investors__join--block
+        .rf__join_club--banner
+            margin-top: 0
+    .rf__contact
+        padding: 30px 25px
+        .row
+            .form-group
+                text-align: center
+    .rf__join_club--block
+        margin-top: 40px
+        .main__title
+            margin-bottom: 30px
+            h2
+                font-size: 36px
+        .Four_butterfly__fish
+            display: none
+        .Two_MaoriWrasse__fish
+            left: 40px
+            bottom: 5%
+            img
+                width: 50%
+        .social__sharing
+            li
+                a
+                    width: 60px
+                    height: 60px
+                    img
+                        width: 25px
+                        height: 25px
+                &:not(:last-child)
+                    margin-right: 20px
+        .rf__join_club
+            bottom: 0
+    /* Join The Reef Club Block CSS End */
+
+    /* Footer CSS Start */
+    .rf__footer
+        padding: 30px 0
+        .row 
+            & > div
+                max-width: 100%
+                flex: 0 0 100%
+                &:nth-child(1)
+                    order: 1
+    .footer__nav
+        margin-bottom: 20px
+        flex-direction: column
+        ul
+            display: flex
+            li
+                &:not(:last-child)
+                    margin: 0 40px 15px 0
+    .rf__footer__logo
+        img
+            width: 130px
+            margin: 10px auto 0
+    .partnership__logo
+        margin: 0
+        img
+            width: 170px
+    .footer__copyright--text
+        p
+            font-size: 16px
+    .footer__copyright
+        margin-top: 10px
+        flex-direction: column
+        text-align: center
+    .partnership__logo
+        span
+            display: none
+    .footer__copyright--text
+        order: 1
+        margin-top: 20px
+    /* Footer CSS End */
+
+    /* Investors Block CSS Start */
+    .rf__investors__join--block
+        .rf__join_club--banner
+            margin-top: 0
+        .rf__join_club
+            bottom: 50px
+    .rf__investors--block
+        margin-top: 80px
+        .bubble__group--list
+            .bubble__item
+                img
+                    width: 60%
+        .Caribbean__ReefShark
+            img
+                width: 65%
+    .rf__investors
+        .rf__investors--des
+            p
+                font-size: 16px
+        .rf__investors--des
+            img
+                width: 45%
+    /* Investors Block CSS End */
+
+    /* FAQ Block CSS Start */
+    .angel_fish_orange_grp
+        img
+            width: 50%
+        .small__fish
+            width: 40%
+            margin: 10px 0 0 25px
+    .rf__faq--block
+        .rf__butterfly__group
+            img
+                width: 50%
+                margin-left: auto
+        .aqua__hammerhead
+            img
+                width: 30%
+        .reefs__Two_LionFish
+            img
+                width: 70%
+    .rf__faq--block
+        margin-top: 90px
+    .rf__faq--list
+        padding: 25px
+    /* FAQ Block CSS Start */
+
+@media (max-width: 320px)
+    /* Team Block CSS Start */
+    .rf__team--item
+        .rf__team--des
+            h3
+                font-size: 25px
+                margin-bottom: 5px
+            p
+                font-size: 12px
+    /* Team Block CSS End */

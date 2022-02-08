@@ -1,0 +1,370 @@
+html
+    scroll-behavior: smooth
+body
+    margin: 0
+    padding: 0
+    counter-reset: section
+    box-sizing: border-box
+    font-size: 15px
+    font-family: 'Open Sans', sans-serif
+    font-weight: 400
+    color: #ffffff
+    background: linear-gradient(180deg, #56D0DA 0%, #4080D4 100%)
+    line-height: 1.5
+    overflow-x: hidden
+*,*:before,*:after
+    box-sizing: border-box !important
+
+h1,h2,h3,h4,h5,h6
+    margin-top: 0
+    margin-bottom: 10px
+    font-family: 'JSL Ancient'
+    font-weight: 400
+    line-height: 1.1
+h1
+    font-size: 100px
+h2
+    font-size: 45px
+h3
+    font-size: 35px  
+h4
+    font-size: 28px
+h5
+    font-size: 25px
+h6
+    font-size: 23px
+    font-family: 'Open Sans', sans-serif
+    font-weight: 400
+    line-height: 1.5
+img
+    max-width: 100%
+    height: auto
+    display: block
+svg
+    max-width: 100%
+input:focus,
+select:focus-visible,
+textarea:focus-visible 
+	outline: none !important
+    box-shadow: none !important
+\::selection
+    background-color: #4080D4
+    color: #ffffff
+\:focus-visible
+    outline: none !important
+path
+    transition: all 0.6s ease-in-out
+a
+    text-decoration: none
+    transition: all 0.6s ease-in-out
+    word-break: break-word
+    &:focus
+        outline: none
+    &:hover
+        color: #4080D4 !important
+        transition: all 0.6s ease-in-out
+p
+    margin-top: 0
+p:empty
+    display: none
+.btn
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)
+    border-radius: 100px
+    padding: 21px 50px
+    color: #ffffff
+    font-size: 17px
+    font-weight: 600
+    display: inline-block
+    position: relative
+    overflow: hidden
+    border: 1px solid #ffffff
+    cursor: pointer
+    z-index: 9
+    appearance: none
+    text-decoration: none
+    box-shadow: inset 0px 0px 8px 3px #FFFFFF
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2))
+    backdrop-filter: blur(4px)
+    white-space: break-spaces
+    transition: all 0.6s ease-in-out
+    &:hover
+        background-color: #4080D4
+        color: #ffffff !important
+        transition: all 0.6s ease-in-out
+    &:before
+        content: ""
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(180deg, #56D0DA 0%, #4080D4 100%)
+        transition: .5s
+        z-index: -1
+    &:hover
+        &:before
+            top: 0
+ul
+    padding: 0
+    list-style: none
+    margin-top: 0
+li
+    list-style: none
+.mb-0
+    margin-bottom: 0
+.text-white
+    color: #ffffff
+.text-center
+    text-align: center
+.text-right
+    text-align: right
+.container 
+    width: 100%
+    max-width: 1170px
+    padding-right: 15px
+    padding-left: 15px
+    margin-right: auto
+    margin-left: auto
+    position: relative
+.row
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+.col--20
+    flex: 0 0 20%
+    max-width: 20%
+    padding: 0 15px
+.col--25
+    flex: 0 0 25%
+    max-width: 25%
+    padding: 0 15px
+.col--30
+    flex: 0 0 30%
+    max-width: 30%
+    padding: 0 15px
+.col--33
+    flex: 0 0 33%
+    max-width: 33%
+    padding: 0 15px
+.col--40
+    flex: 0 0 40%
+    max-width: 40%
+    padding: 0 15px
+.col--45
+    flex: 0 0 45%
+    max-width: 45%
+    padding: 0 15px
+.col--50
+    flex: 0 0 50%
+    max-width: 50%
+    padding: 0 15px
+.col--55
+    flex: 0 0 55%
+    max-width: 55%
+    padding: 0 15px
+.col--60
+    flex: 0 0 60%
+    max-width: 60%
+    padding: 0 15px
+.col--70
+    flex: 0 0 70%
+    max-width: 70%
+    padding: 0 15px
+.col--75
+    flex: 0 0 75%
+    max-width: 75%
+    padding: 0 15px
+.col--80
+    flex: 0 0 80%
+    max-width: 80%
+    padding: 0 15px
+.col--100
+    flex: 0 0 100%
+    max-width: 100%
+    padding: 0 15px
+.d-flex
+    display: flex
+.flex-wrap
+    flex-wrap: wrap
+.align-items-center
+    align-items: center
+.justify-content-center
+    justify-content: center
+.justify-content-between
+    justify-content: space-between
+.justify-content-end
+    justify-content: flex-end
+@media(max-width: 1400px)
+    .container 
+        max-width: 1170px
+        margin-right: auto
+        margin-left: auto
+@media(max-width: 1280px)
+    .container 
+        max-width: 1080px
+        margin-right: auto
+        margin-left: auto
+@media(max-width: 991px)
+    .container 
+        max-width: 870px
+        margin-right: auto
+        margin-left: auto
+@media(max-width: 767px)
+    .container 
+        max-width: 640px
+        margin-right: auto
+        margin-left: auto
+.container-fluid
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+    padding: 0 160px
+
+.main__title
+    h2
+        margin-bottom: 10px
+.glassmorphism__card
+    background: rgba(255, 255, 255, 0.2)
+    border: 2px solid #FFFFFF
+    box-shadow: inset 0px 0px 10px 7px rgba(255, 255, 255, 0.8)
+    backdrop-filter: blur(4px)
+    border-radius: 30px
+.game__elements
+    background: linear-gradient(182.57deg, rgba(255, 255, 255, 0.5) 2.14%, rgba(255, 255, 255, 0) 109.98%)
+    border: 2px solid rgba(255, 255, 255, 0.5)
+    box-sizing: border-box
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1), inset 0px 0px 10px 8px #ffffff
+    backdrop-filter: blur(4px)
+    border-radius: 20px
+    border-radius: 30px
+
+.header__menu
+    li
+        a
+            &:hover
+                .char
+                    animation: jumb 0.5s
+                    animation-iteration-count: 1
+            .char
+                animation-direction: reverse
+                &:nth-of-type(1)
+                    animation-delay: .1s
+                &:nth-of-type(2)
+                    animation-delay: .15s
+                &:nth-of-type(3)
+                    animation-delay: .20s
+                &:nth-of-type(4)
+                    animation-delay: .25s
+                &:nth-of-type(5)
+                    animation-delay: .30s
+                &:nth-of-type(6)
+                    animation-delay: .35s
+                &:nth-of-type(7)
+                    animation-delay: .4s
+@keyframes jumb
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-15px)
+    100%
+    transform: translateY(0px)
+@keyframes slide-in 
+    from
+        transform: translateY(1.5em)
+        opacity: 0
+
+.move__top-down
+    animation: simple-move 2s 2s linear infinite alternate;
+@keyframes simple-move
+    100%
+        transform: translate(5px, 30px)
+
+.form-group
+    margin-bottom: 40px
+    position: relative
+    label
+        color: #ffffff
+        margin-bottom: 0
+        font-size: 35px
+        font-weight: 400
+        font-family: 'JSL Ancient'
+        display: inline-block
+        span
+            color: #ffffff !important
+    textarea.form-control
+        height: 260px
+        resize: none
+        border-radius: 30px
+    .form-control
+        width: 100%
+        display: block
+        background: rgba(255, 255, 255, 0.2)
+        border: 3px solid rgba(255, 255, 255, 0.8)
+        box-sizing: border-box
+        box-shadow: inset 0px 0px 10px 2px #ffffff
+        border-radius: 71px
+        font-size: 16px
+        padding: 23px 30px
+        font-family: 'Open Sans', sans-serif
+        line-height: normal
+        font-weight: 600
+        color: #ffffff
+        white-space: break-spaces
+        word-break: break-word
+        box-shadow: none
+        height: auto
+        &::placeholder
+            color: #ffffff
+
+@media (max-width: 1600px)
+    .container-fluid
+        padding: 0 60px
+    body
+        font-size: 16px
+    h1
+        font-size: 80px
+    h2
+        font-size: 38px
+    .main__title
+        h2
+            font-size: 45px
+        p
+            font-size: 20px
+    .form-group
+        .form-control
+            padding: 14px
+
+@media (max-width: 1199px)
+    .container-fluid, .container
+        padding: 0 20px       
+@media (max-width: 767px)
+    .col--20,.col--25,.col--30,.col--33,.col--40,.col--45,.col--50,.col--55,.col--60,.col--70,.col--75,.col--80
+        flex: 0 0 100%
+        max-width: 100%
+    h1
+        font-size: 45px
+    h2
+        font-size: 45px
+    h3
+        font-size: 28px
+    h4
+        font-size: 22px
+    h5
+        font-size: 20px   
+    .main__title
+        h2
+            font-size: 36px
+            letter-spacing: 1px
+            margin-bottom: 10px
+        p
+            font-size: 18px
+    .form-group
+        margin-bottom: 20px
+        label
+            font-size: 28px
+        .form-control
+            padding: 24px 20px
+            font-size: 16px
+            border-radius: 71px
+        textarea.form-control
+            height: 260px

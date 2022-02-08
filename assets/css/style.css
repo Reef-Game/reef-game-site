@@ -1,0 +1,2909 @@
+@font-face {
+  font-family: 'JSL Ancient';
+  src: url("../fonts/JSL-Ancient.eot");
+  src: url("../fonts/JSL-Ancient.eot?#iefix") format("embedded-opentype"), url("../fonts/JSL-Ancient.woff2") format("woff2"), url("../fonts/JSL-Ancient.woff") format("woff"), url("../fonts/JSL-Ancient.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  counter-reset: section;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#56D0DA), to(#4080D4));
+  background: linear-gradient(180deg, #56D0DA 0%, #4080D4 100%);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'JSL Ancient';
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 25px;
+}
+
+h6 {
+  font-size: 23px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+}
+
+input:focus,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none !important;
+  outline-box-shadow: none !important;
+}
+
+::-moz-selection {
+  background-color: #4080D4;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #4080D4;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: none !important;
+}
+
+path {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  word-break: break-word;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:hover {
+  color: #4080D4 !important;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+p {
+  margin-top: 0;
+}
+
+p:empty {
+  display: none;
+}
+
+.btn {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 100px;
+  padding: 21px 50px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  z-index: 9;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  text-decoration: none;
+  -webkit-box-shadow: inset 0px 0px 8px 3px #FFFFFF;
+          box-shadow: inset 0px 0px 8px 3px #FFFFFF;
+  -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  white-space: break-spaces;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #4080D4;
+  color: #ffffff !important;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#56D0DA), to(#4080D4));
+  background: linear-gradient(180deg, #56D0DA 0%, #4080D4 100%);
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: -1;
+}
+
+.btn:hover:before {
+  top: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col--20 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  max-width: 20%;
+  padding: 0 15px;
+}
+
+.col--25 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 15px;
+}
+
+.col--30 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  max-width: 30%;
+  padding: 0 15px;
+}
+
+.col--33 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+  max-width: 33%;
+  padding: 0 15px;
+}
+
+.col--40 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  max-width: 40%;
+  padding: 0 15px;
+}
+
+.col--45 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+  max-width: 45%;
+  padding: 0 15px;
+}
+
+.col--50 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+.col--55 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 55%;
+          flex: 0 0 55%;
+  max-width: 55%;
+  padding: 0 15px;
+}
+
+.col--60 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  max-width: 60%;
+  padding: 0 15px;
+}
+
+.col--70 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+  max-width: 70%;
+  padding: 0 15px;
+}
+
+.col--75 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+  max-width: 75%;
+  padding: 0 15px;
+}
+
+.col--80 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+  max-width: 80%;
+  padding: 0 15px;
+}
+
+.col--100 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-content-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 870px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 640px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 160px;
+}
+
+.main__title h2 {
+  margin-bottom: 10px;
+}
+
+.glassmorphism__card {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: inset 0px 0px 10px 7px rgba(255, 255, 255, 0.8);
+          box-shadow: inset 0px 0px 10px 7px rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 30px;
+}
+
+.game__elements {
+  background: linear-gradient(182.57deg, rgba(255, 255, 255, 0.5) 2.14%, rgba(255, 255, 255, 0) 109.98%);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1), inset 0px 0px 10px 8px #ffffff;
+          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1), inset 0px 0px 10px 8px #ffffff;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 20px;
+  border-radius: 30px;
+}
+
+.header__menu li a:hover .char {
+  -webkit-animation: jumb 0.5s;
+          animation: jumb 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.header__menu li a .char {
+  animation-direction: reverse;
+}
+
+.header__menu li a .char:nth-of-type(1) {
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+.header__menu li a .char:nth-of-type(2) {
+  -webkit-animation-delay: .15s;
+          animation-delay: .15s;
+}
+
+.header__menu li a .char:nth-of-type(3) {
+  -webkit-animation-delay: .20s;
+          animation-delay: .20s;
+}
+
+.header__menu li a .char:nth-of-type(4) {
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+
+.header__menu li a .char:nth-of-type(5) {
+  -webkit-animation-delay: .30s;
+          animation-delay: .30s;
+}
+
+.header__menu li a .char:nth-of-type(6) {
+  -webkit-animation-delay: .35s;
+          animation-delay: .35s;
+}
+
+.header__menu li a .char:nth-of-type(7) {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+@-webkit-keyframes jumb {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+  }
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+@keyframes jumb {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+  }
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    -webkit-transform: translateY(1.5em);
+            transform: translateY(1.5em);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    -webkit-transform: translateY(1.5em);
+            transform: translateY(1.5em);
+    opacity: 0;
+  }
+}
+
+.move__top-down {
+  -webkit-animation: simple-move 2s 2s linear infinite alternate;
+          animation: simple-move 2s 2s linear infinite alternate;
+}
+
+@-webkit-keyframes simple-move {
+  100% {
+    -webkit-transform: translate(5px, 30px);
+            transform: translate(5px, 30px);
+  }
+}
+
+@keyframes simple-move {
+  100% {
+    -webkit-transform: translate(5px, 30px);
+            transform: translate(5px, 30px);
+  }
+}
+
+.form-group {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.form-group label {
+  color: #ffffff;
+  margin-bottom: 0;
+  font-size: 35px;
+  font-weight: 400;
+  font-family: 'JSL Ancient';
+  display: inline-block;
+}
+
+.form-group label span {
+  color: #ffffff !important;
+}
+
+.form-group textarea.form-control {
+  height: 260px;
+  resize: none;
+  border-radius: 30px;
+}
+
+.form-group .form-control {
+  width: 100%;
+  display: block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: inset 0px 0px 10px 2px #ffffff;
+          box-shadow: inset 0px 0px 10px 2px #ffffff;
+  border-radius: 71px;
+  font-size: 16px;
+  padding: 23px 30px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: normal;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: break-spaces;
+  word-break: break-word;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: auto;
+}
+
+.form-group .form-control::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.form-group .form-control:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.form-group .form-control::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.form-group .form-control::placeholder {
+  color: #ffffff;
+}
+
+@media (max-width: 1600px) {
+  .container-fluid {
+    padding: 0 60px;
+  }
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  h2 {
+    font-size: 38px;
+  }
+  .main__title h2 {
+    font-size: 45px;
+  }
+  .main__title p {
+    font-size: 20px;
+  }
+  .form-group .form-control {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container-fluid, .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .col--20, .col--25, .col--30, .col--33, .col--40, .col--45, .col--50, .col--55, .col--60, .col--70, .col--75, .col--80 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 45px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  .main__title h2 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .main__title p {
+    font-size: 18px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    font-size: 28px;
+  }
+  .form-group .form-control {
+    padding: 24px 20px;
+    font-size: 16px;
+    border-radius: 71px;
+  }
+  .form-group textarea.form-control {
+    height: 260px;
+  }
+}
+
+.toggle__menu {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 30px;
+  width: 35px;
+  height: auto;
+  line-height: 0.7;
+  cursor: pointer;
+  display: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 11;
+  padding: 15px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(252, 252, 252, 0.5)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(252, 252, 252, 0.5) 100%);
+  border: 2px solid #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: inset 0px 0px 10px 2px #ffffff;
+          box-shadow: inset 0px 0px 10px 2px #ffffff;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 0px 0px 50px 50px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.header .header__logo img {
+  width: 145px;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.header.fixed {
+  padding: 10px 0;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.header.fixed .header__logo img {
+  width: 120px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.header ul li {
+  position: relative;
+}
+
+.header ul li a {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header ul li:not(:last-child) {
+  padding-right: 60px;
+}
+
+.header .social__sharing {
+  margin-left: 50px;
+}
+
+.header .social__sharing li {
+  display: inherit;
+}
+
+.header .social__sharing li svg {
+  height: 100%;
+}
+
+.header .social__sharing li a:hover svg path {
+  fill: #4080D4;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.header .social__sharing li:not(:last-child) {
+  padding-right: 25px;
+}
+
+@media (max-width: 1800px) {
+  .header ul li:not(:last-child) {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .header ul li a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    padding: 15px 0;
+    z-index: 99;
+  }
+  .header ul li a {
+    color: #ffffff;
+  }
+  .header.fixed {
+    padding: 20px 0;
+  }
+  .header .social__sharing li {
+    margin: 0 !important;
+  }
+  .header .social__sharing li:not(:last-child) {
+    padding-right: 25px;
+  }
+  .header.open {
+    background: transparent;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .header.open .col--20 .header__logo {
+    display: none;
+  }
+  .toggle__menu {
+    display: block;
+    z-index: 9;
+  }
+  .toggle__menu .hamburger__close {
+    display: none;
+  }
+  .toggle__menu.open .hamburger {
+    display: none;
+  }
+  .toggle__menu.open .hamburger__close {
+    display: block;
+  }
+  .header__menu {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 30px 15px 15px;
+    border-radius: 50px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(252, 252, 252, 0.5)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(252, 252, 252, 0.5) 100%);
+    border: 2px solid #FFFFFF;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: inset 0px 0px 10px 2px #FFFFFF;
+            box-shadow: inset 0px 0px 10px 2px #FFFFFF;
+  }
+  .header__menu .social__sharing {
+    margin: 30px 0 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header__menu ul {
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header__menu ul li a {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  }
+  .header__menu ul li:not(:last-child) {
+    padding: 0;
+    margin: 0 0 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .header__logo img {
+    width: 110px;
+  }
+  .header.fixed {
+    padding: 10px 0;
+  }
+  .header.fixed .header__logo img {
+    width: 70px;
+  }
+  .header .col--20 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+    max-width: 60%;
+  }
+  .header .col--80 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+.main__wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.main__wrapper.open {
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
+}
+
+.home__wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/godray_group.svg) no-repeat left top/contain;
+}
+
+/* Hero Block CSS Start */
+.rf__hero--block {
+  position: relative;
+  overflow: hidden;
+  padding: 12% 0 22%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rf__hero--block:after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/wave_bg.svg) no-repeat center bottom/100%;
+}
+
+.rf__hero__content {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 9;
+}
+
+.rf__hero__content p {
+  font-size: 23px;
+  margin-bottom: 40px;
+}
+
+.rf__hero--banner .rf__hero__img {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translateY(300px);
+          transform: translateY(300px);
+}
+
+.rf__hero--banner .rf__hero__img:last-child {
+  bottom: 0;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+
+.rf__hero--elementOne {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translate(-70px, 400px);
+          transform: translate(-70px, 400px);
+}
+
+.rf__hero--elementTwo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  -webkit-transform: translate(-850px, 600px);
+          transform: translate(-850px, 600px);
+}
+
+.rf__hero--elementTwo img {
+  width: 300px;
+}
+
+/* Hero Block CSS End */
+/* Revolutionary Features Block CSS Start */
+.rf__revolutionary_features--block {
+  margin-top: 100px;
+  position: relative;
+}
+
+.rf__butterfly__group {
+  position: absolute;
+  top: 140px;
+  right: -120px;
+  left: auto;
+  bottom: auto;
+  z-index: -1;
+}
+
+.rf__ParrotFish__group {
+  position: absolute;
+  top: 60px;
+  left: -70px;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+}
+
+.rf__ParrotFish__group img:nth-child(2) {
+  -webkit-transform: translate(-114px, 50px);
+          transform: translate(-114px, 50px);
+}
+
+.rf__ParrotFish__group img:nth-child(3) {
+  -webkit-transform: translate(-70px, 70px) rotate(20deg);
+          transform: translate(-70px, 70px) rotate(20deg);
+}
+
+.SeaSurface__bg {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+
+.SeaSurface__bg img {
+  width: 100%;
+}
+
+.rf__feature__main {
+  padding: 40px;
+}
+
+.rf__feature__main .row:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.rf__feature__main .main__title h2 {
+  margin-bottom: 40px;
+}
+
+.rf__feature--item {
+  margin-bottom: 50px;
+}
+
+.rf__feature--item .rf__feature--icon {
+  max-width: 36%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 36%;
+          flex: 0 0 36%;
+}
+
+.rf__feature--item .rf__feature--icon img {
+  border-radius: 29px;
+}
+
+.rf__feature--item .rf__feature--des {
+  padding-top: 30px;
+  padding-left: 30px;
+  max-width: 64%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 64%;
+          flex: 0 0 64%;
+}
+
+.rf__feature--item .rf__feature--des h3 {
+  margin-bottom: 0;
+}
+
+.rf__feature--item .rf__feature--des p {
+  font-weight: 600;
+  line-height: 1.6;
+  width: 95%;
+  font-size: 16px;
+}
+
+/* Revolutionary Features Block CSS End */
+/* Rebuilding Coral Reefs Block CSS Start */
+.ParrotFish_left {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+}
+
+.game__hammerhead_blue-one {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 320px;
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+  mix-blend-mode: multiply;
+}
+
+.game__hammerhead_blue-one img {
+  opacity: 0.9;
+}
+
+.game__hammerhead_blue-two {
+  position: absolute;
+  top: auto;
+  bottom: -80px;
+  left: 0;
+  right: auto;
+  -webkit-transform: translateX(-150px);
+          transform: translateX(-150px);
+  mix-blend-mode: multiply;
+}
+
+.game__hammerhead_blue-two img {
+  opacity: 0.9;
+}
+
+.rf__coral_reefs--block {
+  margin-top: 60px;
+  position: relative;
+}
+
+.blue__hammerhead {
+  position: absolute;
+  top: auto;
+  right: 0;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  left: auto;
+  bottom: 280px;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+
+.aqua__hammerhead {
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 250px;
+  -webkit-transform: translateX(-230px);
+          transform: translateX(-230px);
+}
+
+.reefs__Two_LionFish {
+  position: absolute;
+  top: auto;
+  left: 40px;
+  right: auto;
+  bottom: -100px;
+}
+
+.coral_reefs--item {
+  width: 62%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.coral_reefs--item .coral__bubbles {
+  position: absolute;
+}
+
+.coral_reefs--item .coral__bubbles.coral__bubble_one {
+  top: -50px;
+  left: 100px;
+}
+
+.coral_reefs--item .coral__bubbles.coral__bubble_two {
+  bottom: 230px;
+  right: 0;
+}
+
+.coral_reefs--item .coral_reefs__img img {
+  margin: 0 auto;
+}
+
+.coral_reefs--item .coral_reefs__des {
+  margin-top: -25px;
+  padding: 50px 35px 40px;
+  position: relative;
+  z-index: -1;
+}
+
+.coral_reefs--item .coral_reefs__des p {
+  font-size: 23px;
+}
+
+/* Rebuilding Coral Reefs Block CSS End */
+/* Game Elements Block CSS Start */
+.rf__game__elements--block {
+  margin-top: 50px;
+  position: relative;
+}
+
+.rf__game__elements--block .group_of_fish_2 {
+  position: absolute;
+  top: 170px;
+  right: 50px;
+  left: auto;
+  bottom: auto;
+}
+
+.game__slider {
+  padding: 70px 0 40px;
+  margin-left: 20vw;
+}
+
+.swiper-button__wrapper .swiper-button {
+  top: auto;
+  bottom: 0;
+  min-width: 108px;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: inset 0px 0px 10px 3px #ffffff;
+          box-shadow: inset 0px 0px 10px 3px #ffffff;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+}
+
+.swiper-button__wrapper .swiper-button:after {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.swiper-button__wrapper {
+  width: 300px;
+  height: 110px;
+  position: relative;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.swiper-button__wrapper .swiper-button-next {
+  right: 0;
+}
+
+.swiper-button__wrapper .swiper-button-prev {
+  left: 0;
+}
+
+.game__element--item {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.game__element--item .game__element--img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.game__element--item .game__element--img img {
+  margin: 0 auto;
+  height: 230px;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.game__element--item .game__element--des {
+  padding: 40px 25px 25px;
+}
+
+.game__element--item .game__element--des h3 {
+  margin: 0;
+}
+
+.game__element--item .game__element--des p {
+  font-weight: 600;
+  display: none;
+}
+
+.swiper-slide-active .game__element--item {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.swiper-slide-active .game__element--item .game__element--des p {
+  display: block;
+}
+
+/* Game Elements Block CSS End */
+/* Roadmap Block CSS Start */
+.rf__roadmap--block {
+  margin-top: 60px;
+  position: relative;
+}
+
+.rf__roadmap--block:after {
+  content: "";
+  position: absolute;
+  bottom: -60%;
+  left: 30%;
+  width: 400px;
+  height: 220%;
+  background: radial-gradient(19.29% 45.28% at 67.04% 46.46%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  -webkit-transform: rotate(27.28deg);
+          transform: rotate(27.28deg);
+  z-index: -1;
+}
+
+.rf__roadmap--block .main__title h6 {
+  width: 85%;
+  margin: 0 auto 30px;
+  line-height: 1.5;
+}
+
+.rf__roadmap--block .group_of_fish {
+  position: absolute;
+  top: -140px;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  -webkit-transform: translateX(-45px);
+          transform: translateX(-45px);
+}
+
+.rf__roadmap--block .Three_LionFish {
+  position: absolute;
+  top: -170px;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  -webkit-transform: translateX(-550px);
+          transform: translateX(-550px);
+}
+
+.rf__roadmap--block .group_of_fish_2 {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translateX(-170px);
+          transform: translateX(-170px);
+  z-index: -1;
+}
+
+.rf__roadmap--block .shark_with_fish_under {
+  position: absolute;
+  top: 250px;
+  bottom: auto;
+  left: 0;
+  -webkit-transform: translateX(-205px);
+          transform: translateX(-205px);
+  right: auto;
+}
+
+.milestone__main {
+  margin-top: 45px;
+  padding: 35px 65px;
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap__milestone--item {
+  margin-bottom: 40px;
+}
+
+.roadmap__milestone--item:nth-child(even) {
+  margin-top: 150px;
+}
+
+.roadmap__milestone--item:last-child {
+  margin-top: 200px;
+  margin-left: -100px;
+}
+
+.roadmap__milestone--item .roadmap__milestone--img {
+  max-width: 28%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 28%;
+          flex: 0 0 28%;
+}
+
+.roadmap__milestone--item .roadmap__milestone--img img {
+  margin: 0 auto;
+}
+
+.roadmap__milestone--item .roadmap__milestone--des {
+  padding-left: 20px;
+  max-width: 72%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 72%;
+          flex: 0 0 72%;
+}
+
+.roadmap__milestone--item .roadmap__milestone--des span {
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.roadmap__milestone--item .roadmap__milestone--des h3 {
+  margin: 5px 0 10px;
+}
+
+.roadmap__milestone--item .roadmap__milestone--des ul {
+  margin: 0;
+}
+
+.roadmap__milestone--item .roadmap__milestone--des ul li {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.roadmap__milestone--item .roadmap__line__mobile {
+  display: none;
+}
+
+.roadmap__milestone--item .roadmap__line {
+  max-width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.roadmap__milestone--item:nth-child(1) .roadmap__line {
+  top: -90px;
+  right: -55px;
+}
+
+.roadmap__milestone--item:nth-child(2) .roadmap__line {
+  bottom: -40px;
+  right: 100px;
+}
+
+.roadmap__milestone--item:nth-child(2) .roadmap__line img {
+  margin-left: auto;
+}
+
+.roadmap__milestone--item:nth-child(3) .roadmap__line {
+  top: -45px;
+  left: 150px;
+}
+
+.roadmap__milestone--item:nth-child(4) .roadmap__line {
+  top: 70px;
+  right: 100px;
+}
+
+.roadmap__milestone--item:nth-child(4) .roadmap__line img {
+  margin-left: auto;
+}
+
+.roadmap__milestone--item:nth-child(5) .roadmap__line {
+  bottom: 30px;
+  right: 150px;
+}
+
+.roadmap__milestone--item:nth-child(5) .roadmap__line img {
+  margin-left: auto;
+}
+
+/* Roadmap Block CSS End */
+/* Partners Block CSS Start */
+.bubble__group .bubble__item {
+  position: absolute;
+  z-index: -1;
+}
+
+.bubble__group .bubble__item:nth-child(1) {
+  top: -80px;
+  left: 26%;
+  width: 30px;
+}
+
+.bubble__group .bubble__item:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.bubble__group .bubble__item:nth-child(3) {
+  top: 23%;
+  left: 40px;
+}
+
+.bubble__group .bubble__item:nth-child(4) {
+  top: 30%;
+  left: 24%;
+  width: 30px;
+}
+
+.bubble__group .bubble__item:nth-child(5) {
+  top: 38%;
+  right: 25%;
+}
+
+.bubble__group .bubble__item:nth-child(6) {
+  top: 39%;
+  right: 70px;
+  width: 30px;
+}
+
+.bubble__group .bubble__item:nth-child(7) {
+  top: 38%;
+  right: 0;
+}
+
+.bubble__group .bubble__item:nth-child(8) {
+  top: 53%;
+  left: 30px;
+  width: 30px;
+}
+
+.bubble__group .bubble__item:nth-child(9) {
+  top: 41%;
+  left: 47%;
+  width: 30px;
+}
+
+.bubble__group .bubble__item:nth-child(10) {
+  bottom: 50px;
+  right: -40px;
+}
+
+.rf__partners--block {
+  margin-top: 60px;
+}
+
+.rf__partners--block .main__title h2 {
+  margin-bottom: 40px;
+}
+
+.rf__partners--block .story__trutle {
+  position: absolute;
+  top: auto;
+  right: -210px;
+  left: auto;
+  bottom: 50px;
+  z-index: -1;
+}
+
+.rf__partners {
+  padding: 45px 50px;
+  position: relative;
+}
+
+.rf__partners .hammerhead_blue_fish {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  -webkit-transform: translateX(150px);
+          transform: translateX(150px);
+  z-index: -1;
+}
+
+.rf__partner--item .rf__partner--logo {
+  background-color: #ffffff;
+  position: relative;
+  padding-top: 20%;
+  border-radius: 28px;
+  max-width: 20%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+
+.rf__partner--item .rf__partner--logo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}
+
+.rf__partner--item .rf__partner--details {
+  padding-left: 40px;
+  max-width: 80%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+}
+
+.rf__partner--item .rf__partner--details p {
+  width: 85%;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.rf__partner--item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+/* Partners Block CSS End */
+/* Story Block CSS Start */
+.rf__story--block {
+  position: relative;
+  margin-top: 200px;
+}
+
+.rf__story--block .main__title {
+  padding: 40px;
+  margin-top: -100px;
+}
+
+.rf__story--block .main__title h6 {
+  width: 84%;
+  margin: 0 auto;
+}
+
+.rf__story--block .story__trutle {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+}
+
+/* Story Block CSS End */
+/* Team Block CSS Start */
+.bubble__group .bubble__item {
+  position: absolute;
+}
+
+.rf__team--block {
+  margin-top: 50px;
+  position: relative;
+  z-index: 9;
+}
+
+.rf__team--block .main__title {
+  margin-bottom: 40px;
+}
+
+.rf__team--block .row {
+  margin: 0 -33px;
+}
+
+.rf__team--block .row .col--25 {
+  padding: 0 33px;
+}
+
+.rf__team--item {
+  margin-bottom: 50px;
+  background: #4591d5;
+}
+
+.rf__team--item .rf__team--img {
+  -webkit-box-shadow: inset 0px 0px 9px 6px #FFFFFF;
+          box-shadow: inset 0px 0px 9px 6px #FFFFFF;
+  border-radius: 29px;
+  overflow: hidden;
+  padding-top: 90%;
+  position: relative;
+  mix-blend-mode: multiply;
+}
+
+.rf__team--item .rf__team--img img {
+  border-radius: 29px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.rf__team--item .rf__team--des {
+  padding: 20px 30px 30px;
+}
+
+.rf__team--item .rf__team--des h3 {
+  margin-bottom: 0;
+}
+
+.rf__team--item .rf__team--des p {
+  font-weight: 600;
+}
+
+/* Team Block CSS End */
+/* Join The Reef Club Block CSS Start */
+.rf__contact {
+  padding: 45px 100px;
+}
+
+.rf__contact .row {
+  margin: 0 -30px;
+}
+
+.rf__contact .row .form-group {
+  padding: 0 30px;
+}
+
+.rf__contact .btn {
+  padding: 19px 73px;
+  font-weight: 600;
+}
+
+.rf__join_club--block {
+  position: relative;
+  margin-top: 80px;
+}
+
+.rf__join_club--block .CaribbeanReefShark {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  -webkit-transform: translateX(-150px);
+          transform: translateX(-150px);
+}
+
+.rf__join_club--block .CaribbeanReefShark img {
+  -webkit-transform: rotate(6.76deg);
+          transform: rotate(6.76deg);
+}
+
+.rf__join_club--block .rf__join_club--banner {
+  position: relative;
+  z-index: -1;
+  margin-top: -45%;
+}
+
+.rf__join_club--block .rf__join_club--banner img {
+  width: 100%;
+}
+
+.rf__join_club--block .Two_MaoriWrasse__fish {
+  position: absolute;
+  top: auto;
+  bottom: 37%;
+  left: 20%;
+  right: auto;
+}
+
+.rf__join_club--block .Four_butterfly__fish {
+  position: absolute;
+  top: auto;
+  right: 22%;
+  left: auto;
+  bottom: 22%;
+}
+
+.rf__join_club--block .rf__join_club .main__title h2 {
+  margin-bottom: 0;
+}
+
+.rf__join_club--block .rf__join_club .main__title h6 {
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.rf__join_club--block .rf__join_club {
+  position: absolute;
+  top: auto;
+  bottom: 23%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.rf__join_club--block .social__sharing li a {
+  width: 145px;
+  height: 145px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: inset 0px 0px 10px 3px #FFFFFF;
+          box-shadow: inset 0px 0px 10px 3px #FFFFFF;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.rf__join_club--block .social__sharing li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#56D0DA), to(#4080D4));
+  background: linear-gradient(180deg, #56D0DA 0%, #4080D4 100%);
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 2;
+}
+
+.rf__join_club--block .social__sharing li a:hover:before {
+  top: 0;
+}
+
+.rf__join_club--block .social__sharing li a:hover img {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.rf__join_club--block .social__sharing li a img {
+  width: 82px;
+  height: 82px;
+  position: relative;
+  z-index: 9;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.rf__join_club--block .social__sharing li:not(:last-child) {
+  margin-right: 35px;
+}
+
+/* Join The Reef Club Block CSS End */
+/* Footer CSS Start */
+.rf__footer {
+  background-color: #435763;
+  padding: 25px 0;
+}
+
+.footer__widget h6 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.footer__nav {
+  margin: 0 -20px;
+}
+
+.footer__nav ul {
+  padding: 0 20px;
+}
+
+.footer__nav ul li a {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.footer__nav ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.footer__copyright--text p {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.partnership__logo {
+  margin: -25px 0 0 20px;
+}
+
+.partnership__logo span {
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* Footer CSS End */
+/* Investors Block CSS Start */
+.rf__join_club--block.rf__investors__join--block .rf__join_club--banner {
+  margin-top: -50%;
+}
+
+.rf__investors--block {
+  position: relative;
+  z-index: 9;
+}
+
+.rf__investors--block .Caribbean__ReefShark {
+  position: absolute;
+  top: -30px;
+  left: -130px;
+  right: auto;
+  bottom: auto;
+}
+
+.rf__investors--block .Caribbean__ReefShark img {
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+.rf__investors--block .SeaSurface img {
+  width: 100%;
+}
+
+.rf__investors--block .bubble__group--list .bubble__item {
+  position: absolute;
+}
+
+.rf__investors--block .bubble__group--list .bubble__item:first-child {
+  top: -20px;
+  left: -20px;
+}
+
+.rf__investors--block .bubble__group--list .bubble__item:last-child {
+  bottom: 150px;
+  right: -10px;
+}
+
+.rf__investors {
+  padding: 40px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.rf__investors .rf__investors--des {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.rf__investors .rf__investors--des p {
+  font-size: 23px;
+}
+
+.rf__investors .rf__investors--des img {
+  margin: 20px auto 0;
+}
+
+/* Investors Block CSS End */
+/* FAQ Block CSS Start */
+.angel_fish_orange_grp {
+  position: absolute;
+  top: 0;
+  left: -155px;
+  right: auto;
+  bottom: auto;
+}
+
+.angel_fish_orange_grp .small__fish {
+  width: 70%;
+  margin: 30px -40px 0 auto;
+}
+
+.rf__faq--block {
+  position: relative;
+  z-index: 9;
+}
+
+.rf__faq--block .SeaSurface img {
+  width: 100%;
+}
+
+.rf__faq--block .rf__butterfly__group {
+  position: absolute;
+  top: 60px;
+  right: -220px;
+}
+
+.rf__faq--block .aqua__hammerhead {
+  left: auto;
+  right: -300px;
+}
+
+.rf__faq--block .CaribbeanReefShark {
+  position: absolute;
+  top: auto;
+  bottom: 400px;
+  left: -150px;
+  right: auto;
+}
+
+.rf__faq--block .CaribbeanReefShark img {
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+.rf__faq--block .reefs__Two_LionFish {
+  left: -40%;
+  bottom: 0;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item {
+  position: absolute;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item:nth-child(1) {
+  top: 35%;
+  left: -15%;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item:nth-child(1) img {
+  width: 40px;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item:nth-child(2) {
+  top: 55%;
+  right: -15%;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item:nth-child(2) img {
+  width: 40px;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item:nth-child(3) {
+  bottom: -60px;
+  left: -25px;
+}
+
+.rf__faq--block .faq__bubble__group .bubble__item:nth-child(3) img {
+  width: 40px;
+}
+
+.rf__faq--list {
+  padding: 40px 70px;
+}
+
+.rf__faq--list .main__title h2 {
+  margin-bottom: 30px;
+}
+
+.rf__accordion--item {
+  padding-left: 60px;
+  cursor: pointer;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.rf__accordion--item .rf__accordion--title {
+  position: relative;
+}
+
+.rf__accordion--item .rf__accordion--title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -55px;
+  width: 30px;
+  height: 30px;
+  background: url(../images/down-arrow.svg) no-repeat center/contain;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.rf__accordion--item .rf__accordion--title.active:before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.rf__accordion--item .rf__accordion--panel {
+  padding: 15px 0;
+  display: none;
+}
+
+.rf__accordion--item .rf__accordion--panel p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rf__faq--contact {
+  padding-top: 50px;
+}
+
+.rf__faq--contact .main__title h2 {
+  margin-bottom: 20px;
+}
+
+.rf__faq--contact .form-group label {
+  margin-left: 30px;
+}
+
+/* FAQ Block CSS End */
+@media (max-width: 1600px) {
+  /* Hero Block CSS Start */
+  .rf__hero--block {
+    padding: 16% 0 22%;
+  }
+  .rf__hero--block:after {
+    background-size: cover;
+    height: 180px;
+  }
+  /* Hero Block CSS End */
+  /* Join The Reef Club Block CSS Start */
+  .rf__join_club--block .rf__join_club--banner {
+    margin-top: -35%;
+  }
+  .rf__join_club--block .Two_MaoriWrasse__fish {
+    left: 70px;
+  }
+  .rf__join_club--block .Four_butterfly__fish {
+    right: 70px;
+  }
+  /* Join The Reef Club Block CSS End */
+  /* Footer CSS Start */
+  .rf__footer .col--60 {
+    max-width: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .rf__footer .col--20 {
+    max-width: 25%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+  /* Footer CSS End */
+}
+
+@media (max-width: 1400px) {
+  /* Hero Block CSS Start */
+  .rf__hero__content {
+    width: 60%;
+  }
+  .rf__hero--elementOne {
+    top: auto;
+    bottom: 40%;
+    left: 15%;
+  }
+  .rf__hero--elementOne img {
+    width: 200px;
+  }
+  .rf__hero--elementTwo img {
+    width: 250px;
+  }
+  /* Hero Block CSS End */
+  /* Revolutionary Features Block CSS Start */
+  .rf__ParrotFish__group {
+    left: -50px;
+  }
+  .rf__ParrotFish__group img {
+    width: 65%;
+  }
+  .rf__ParrotFish__group img:nth-child(2) {
+    -webkit-transform: translate(-25px, 50px);
+            transform: translate(-25px, 50px);
+  }
+  .rf__ParrotFish__group img:nth-child(3) {
+    -webkit-transform: translate(0, 130px) rotate(20deg);
+            transform: translate(0, 130px) rotate(20deg);
+  }
+  .rf__butterfly__group {
+    top: 190px;
+  }
+  .rf__butterfly__group img {
+    width: 70%;
+  }
+  .aqua__hammerhead {
+    -webkit-transform: translateX(-90px);
+            transform: translateX(-90px);
+  }
+  .aqua__hammerhead img {
+    width: 60%;
+  }
+  .blue__hammerhead img {
+    width: 70%;
+  }
+  /* Revolutionary Features Block CSS End */
+  /* Rebuilding Coral Reefs Block CSS Start */
+  .game__hammerhead_blue-one img, .game__hammerhead_blue-two img {
+    width: 80%;
+  }
+  .game__hammerhead_blue-two {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  /* Rebuilding Coral Reefs Block CSS End */
+  /* Game Elements Block CSS Start */
+  .rf__roadmap--block .group_of_fish_2 {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  .rf__roadmap--block .group_of_fish_2 img {
+    width: 80%;
+  }
+  .rf__roadmap--block .shark_with_fish_under {
+    -webkit-transform: translateX(-105px);
+            transform: translateX(-105px);
+  }
+  .rf__roadmap--block .shark_with_fish_under img {
+    width: 60%;
+  }
+  /* Game Elements Block CSS End */
+  /* Partners Block CSS Start */
+  .rf__partners--block .story__trutle {
+    top: 30px;
+    bottom: auto;
+    right: 0;
+  }
+  .rf__partners--block .story__trutle img {
+    width: 80%;
+  }
+  /* Partners Block CSS End */
+  /* Join The Reef Club Block CSS Start */
+  .rf__join_club--block .CaribbeanReefShark {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .rf__join_club--block .Two_MaoriWrasse__fish img, .rf__join_club--block .Four_butterfly__fish img {
+    width: 70%;
+  }
+  /* Join The Reef Club Block CSS End */
+  /* FAQ Block CSS Start */
+  .angel_fish_orange_grp {
+    left: -50px;
+  }
+  .rf__faq--block {
+    margin-top: 60px;
+  }
+  .rf__faq--block .rf__butterfly__group {
+    right: -150px;
+  }
+  .rf__faq--block .reefs__Two_LionFish {
+    left: -25%;
+  }
+  .rf__faq--block .faq__bubble__group .bubble__item:nth-child(1) {
+    left: -50px;
+  }
+  .rf__faq--block .faq__bubble__group .bubble__item:nth-child(2) {
+    right: -50px;
+  }
+  /* FAQ Block CSS End */
+}
+
+@media (max-width: 1280px) {
+  /* Game Elements Block CSS Start */
+  .game__slider {
+    margin-left: 10vw;
+  }
+  /* Game Elements Block CSS End */
+}
+
+@media (max-width: 1199px) {
+  /* Hero Block CSS Start */
+  .rf__hero__content {
+    width: 80%;
+  }
+  .rf__hero--elementTwo {
+    right: -200px;
+  }
+  /* Hero Block CSS Start */
+  /* Join The Reef Club Block CSS Start */
+  .rf__join_club--block.rf__investors__join--block .rf__join_club--banner {
+    margin-top: -45%;
+  }
+  .rf__join_club--block .rf__join_club--banner {
+    margin-top: -5%;
+  }
+  .rf__join_club--block .Two_MaoriWrasse__fish {
+    left: -100px;
+  }
+  .rf__join_club--block .Four_butterfly__fish {
+    right: -100px;
+  }
+  /* Join The Reef Club Block CSS End */
+  /* Investors Block CSS Start */
+  .rf__investors--block {
+    margin-top: 100px;
+  }
+  .rf__investors--block .Caribbean__ReefShark {
+    left: 10px;
+    top: 60px;
+  }
+  .rf__investors--block .bubble__group--list .bubble__item {
+    z-index: 9;
+  }
+  .rf__investors--block .bubble__group--list .bubble__item:first-child {
+    left: 40px;
+  }
+  .rf__investors--block .bubble__group--list .bubble__item:last-child {
+    right: 20px;
+  }
+  .rf__investors .rf__investors--des {
+    width: 95%;
+  }
+  .rf__investors__join--block .rf__join_club--banner {
+    margin-top: -45%;
+  }
+  /* Investors Block CSS End */
+  /* FAQ Block CSS Start */
+  .angel_fish_orange_grp {
+    left: 0;
+  }
+  .rf__faq--block .rf__butterfly__group {
+    right: 0;
+  }
+  .rf__faq--block .reefs__Two_LionFish {
+    left: 0;
+  }
+  .rf__faq--block .faq__bubble__group .bubble__item {
+    z-index: 9;
+  }
+  .rf__faq--block .faq__bubble__group .bubble__item:nth-child(1) {
+    left: 15px;
+  }
+  .rf__faq--block .faq__bubble__group .bubble__item:nth-child(2) {
+    right: 15px;
+  }
+  .rf__faq--block .faq__bubble__group .bubble__item:nth-child(3) {
+    bottom: 0;
+    left: 20px;
+  }
+  /* FAQ Block CSS End */
+}
+
+@media (max-width: 991px) {
+  /* Hero Block CSS Start */
+  .rf__hero--elementOne {
+    top: auto;
+    bottom: 150px;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  .rf__hero--elementOne img {
+    width: 60%;
+  }
+  .rf__hero--elementTwo {
+    display: none;
+  }
+  .rf__hero--block {
+    padding: 30% 20px 40%;
+  }
+  .rf__hero__content {
+    width: 100%;
+  }
+  .rf__hero__content p {
+    width: 70%;
+    margin: 0 auto 40px;
+  }
+  .rf__hero--banner .rf__hero__img img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  /* Hero Block CSS End */
+  /* Story Block CSS Start */
+  .rf__ParrotFish__group {
+    left: 50px;
+  }
+  .rf__butterfly__group {
+    right: -150px;
+  }
+  /* Story Block CSS End */
+  /* Rebuilding Coral Reefs Block CSS Start */
+  .coral_reefs--item {
+    width: 90%;
+  }
+  /* Rebuilding Coral Reefs Block CSS End */
+  /* Revolutionary Features Block CSS Start */
+  .rf__feature--item {
+    margin-bottom: 30px;
+  }
+  .rf__feature--item .rf__feature--icon, .rf__feature--item .rf__feature--des {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .rf__feature--item .rf__feature--icon img {
+    width: 100%;
+  }
+  .rf__feature--item .rf__feature--des {
+    padding: 20px 0 0;
+  }
+  .rf__feature--item .rf__feature--des p {
+    width: 100%;
+  }
+  /* Revolutionary Features Block CSS End */
+  /* Game Elements Block CSS Start */
+  .swiper-button__wrapper {
+    width: 170px;
+    height: 60px;
+    margin: 20px auto 0;
+  }
+  .swiper-button__wrapper .swiper-button {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+  }
+  .swiper-button__wrapper .swiper-button:after {
+    font-size: 20px;
+  }
+  /* Game Elements Block CSS End */
+  /* Roadmap Block CSS Start */
+  .milestone__main {
+    padding: 25px 45px;
+  }
+  .rf__roadmap--block .main__title h6 {
+    width: 100%;
+  }
+  .roadmap__milestone--item .roadmap__line img {
+    width: 70%;
+  }
+  .roadmap__milestone--item:nth-child(1) .roadmap__line {
+    top: -50px;
+    right: -100px;
+  }
+  .roadmap__milestone--item:nth-child(2) .roadmap__line {
+    right: 0;
+  }
+  .roadmap__milestone--item:nth-child(3) .roadmap__line {
+    left: 100px;
+  }
+  .roadmap__milestone--item:nth-child(4) .roadmap__line {
+    top: 30px;
+    left: 0;
+  }
+  .roadmap__milestone--item:nth-child(5) .roadmap__line {
+    bottom: -20px;
+    right: 0;
+  }
+  .roadmap__milestone--item:last-child {
+    margin-top: 100px;
+    margin-left: 0;
+  }
+  /* Roadmap Block CSS End */
+  /* Game Elements Block CSS Start */
+  .game__slider {
+    padding: 40px;
+  }
+  /* Game Elements Block CSS End */
+  /* Partners Block CSS Start */
+  .rf__partners--block {
+    margin-top: 60px;
+  }
+  .rf__partners--block .main__title {
+    width: 100%;
+  }
+  .rf__partner--item {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  /* Partners Block CSS End */
+  /* Team Block CSS Start */
+  .bubble__group .bubble__item:nth-child(10) {
+    right: 0;
+  }
+  .rf__team--block .row {
+    margin: 0 -20px;
+  }
+  .rf__team--block .row .col--25 {
+    padding: 0 20px;
+    max-width: 33.33%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33%;
+            flex: 0 0 33.33%;
+  }
+  .rf__team--item {
+    margin-bottom: 40px;
+  }
+  /* Team Block CSS End */
+  /* Join The Reef Club Block CSS Start */
+  .rf__join_club--block .Four_butterfly__fish {
+    right: 0;
+  }
+  .rf__join_club--block .Two_MaoriWrasse__fish {
+    left: 15px;
+  }
+  .rf__join_club--block .social__sharing li a {
+    width: 95px;
+    height: 95px;
+  }
+  .rf__join_club--block .social__sharing li a img {
+    width: 50px;
+    height: 50px;
+  }
+  .rf__contact {
+    padding: 40px 50px;
+  }
+  /* Join The Reef Club Block CSS End */
+  /* Footer CSS Start */
+  .rf__footer .col--60 {
+    max-width: 40%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+  }
+  .rf__footer .col--20 {
+    max-width: 30%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
+  }
+  .footer__widget h6 {
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+  .footer__nav {
+    margin: 0 -10px;
+  }
+  .footer__nav ul {
+    padding: 0 10px;
+  }
+  .footer__nav ul li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .footer__copyright {
+    margin-top: 30px;
+  }
+  .partnership__logo {
+    margin: 0 0 0 20px;
+  }
+  /* Footer CSS End */
+  /* Investors Block CSS Start */
+  .rf__investors {
+    padding: 30px;
+    width: 100%;
+  }
+  .rf__investors .rf__investors--des {
+    width: 100%;
+  }
+  /* Investors Block CSS End */
+  /* FAQ Block CSS Start */
+  .rf__faq--block {
+    margin-top: 90px;
+  }
+  .rf__faq--list {
+    padding: 30px 40px;
+  }
+  .rf__accordion--item {
+    padding-left: 45px;
+  }
+  .rf__accordion--item .rf__accordion--title h3 {
+    font-size: 26px;
+  }
+  .rf__accordion--item .rf__accordion--title:before {
+    left: -40px;
+    width: 20px;
+    height: 20px;
+  }
+  /* FAQ Block CSS End */
+}
+
+@media (max-width: 767px) {
+  /* Hero Block CSS Start */
+  .rf__hero--block {
+    padding: 40% 20px 55%;
+  }
+  .rf__hero--banner .rf__hero__img {
+    bottom: 150px;
+    width: auto;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .rf__hero--banner .rf__hero__img:last-child {
+    height: 30%;
+  }
+  .rf__hero--elementOne {
+    bottom: 100px;
+  }
+  .rf__hero--elementOne img {
+    width: 40%;
+  }
+  /* Hero Block CSS End */
+  /* Story Block CSS Start */
+  .aqua__hammerhead {
+    bottom: 0;
+  }
+  .SeaSurface__bg {
+    top: -80px;
+  }
+  .SeaSurface__bg img {
+    width: auto;
+    height: 150px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .rf__story--block {
+    margin-top: 110px;
+  }
+  .rf__story--block .main__title {
+    padding: 25px;
+  }
+  .rf__story--block .main__title h6 {
+    width: 100%;
+    font-size: 18px;
+  }
+  /* Story Block CSS End */
+  /* Roadmap Block CSS Start */
+  .rf__roadmap--block .main__title h6 {
+    font-size: 16px;
+  }
+  /* Roadmap Block CSS End */
+  /* Game Elements Block CSS Start */
+  .swiper-button__wrapper {
+    width: 80%;
+  }
+  .game__hammerhead_blue-two {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  .game__slider {
+    margin-left: 0;
+  }
+  /* Game Elements Block CSS End */
+  /* Rebuilding Coral Reefs Block CSS Start */
+  .rf__revolutionary_features--block {
+    margin-top: 50px;
+  }
+  .coral_reefs--item {
+    width: 100%;
+  }
+  .coral_reefs--item .coral_reefs__des {
+    padding: 40px 15px 30px;
+  }
+  .coral_reefs--item .coral__bubbles.coral__bubble_one {
+    left: 20px;
+  }
+  .coral_reefs--item .coral__bubbles img {
+    width: 60%;
+  }
+  /* Rebuilding Coral Reefs Block CSS End */
+  /* Roadmap Block CSS Start */
+  .milestone__main {
+    padding: 20px;
+  }
+  .roadmap__milestone--item {
+    margin-bottom: 20px;
+  }
+  .roadmap__milestone--item .roadmap__milestone--img, .roadmap__milestone--item .roadmap__milestone--des {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .roadmap__milestone--item .roadmap__milestone--des {
+    padding: 20px 0 0;
+  }
+  .roadmap__milestone--item .roadmap__milestone--des ul li {
+    font-size: 15px;
+  }
+  .roadmap__milestone--item .roadmap__line {
+    position: static;
+    display: none;
+  }
+  .roadmap__milestone--item .roadmap__line__mobile {
+    display: block;
+    margin: 20px auto 0;
+  }
+  .roadmap__milestone--item .roadmap__line__mobile img {
+    margin: 0 auto;
+  }
+  .roadmap__milestone--item:nth-child(even) {
+    margin-top: 30px;
+  }
+  .roadmap__milestone--item:last-child {
+    margin-top: 0;
+  }
+  /* Roadmap Block CSS End */
+  /* Partners Block CSS Start */
+  .rf__partners--block .story__trutle {
+    top: auto;
+    bottom: -120px;
+    right: -120px;
+  }
+  .rf__partners--block .story__trutle img {
+    width: 100px;
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  .bubble__group .bubble__item img {
+    width: 50%;
+  }
+  .rf__partners {
+    padding: 20px;
+  }
+  .rf__partner--item .rf__partner--logo {
+    padding-top: 75%;
+    max-width: 75%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+    margin: 0 auto;
+  }
+  .rf__partner--item .rf__partner--details {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    padding: 20px 0 0;
+  }
+  .rf__partner--item .rf__partner--details h3 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .rf__partner--item .rf__partner--details p {
+    width: 100%;
+  }
+  .rf__partner--item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  /* Partners Block CSS End */
+  /* Team Block CSS Start */
+  .bubble__group .bubble__item:nth-child(6) {
+    top: 50%;
+  }
+  .bubble__group .bubble__item:nth-child(7) {
+    top: 50%;
+  }
+  .rf__team--block .row {
+    margin: 0 -15px;
+  }
+  .rf__team--block .row .col--25 {
+    padding: 0 15px;
+    max-width: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .rf__team--item {
+    margin-bottom: 20px;
+  }
+  .rf__team--item .rf__team--des {
+    padding: 15px;
+  }
+  .rf__team--item .rf__team--des h3 {
+    font-size: 35px;
+    line-height: 1;
+  }
+  .rf__team--item .rf__team--des p {
+    font-size: 14px;
+  }
+  /* Team Block CSS End */
+  /* Join The Reef Club Block CSS Start */
+  .rf__join_club--block.rf__investors__join--block .rf__join_club--banner {
+    margin-top: 0;
+  }
+  .rf__contact {
+    padding: 30px 25px;
+  }
+  .rf__contact .row .form-group {
+    text-align: center;
+  }
+  .rf__join_club--block {
+    margin-top: 40px;
+  }
+  .rf__join_club--block .main__title {
+    margin-bottom: 30px;
+  }
+  .rf__join_club--block .main__title h2 {
+    font-size: 36px;
+  }
+  .rf__join_club--block .Four_butterfly__fish {
+    display: none;
+  }
+  .rf__join_club--block .Two_MaoriWrasse__fish {
+    left: 40px;
+    bottom: 5%;
+  }
+  .rf__join_club--block .Two_MaoriWrasse__fish img {
+    width: 50%;
+  }
+  .rf__join_club--block .social__sharing li a {
+    width: 60px;
+    height: 60px;
+  }
+  .rf__join_club--block .social__sharing li a img {
+    width: 25px;
+    height: 25px;
+  }
+  .rf__join_club--block .social__sharing li:not(:last-child) {
+    margin-right: 20px;
+  }
+  .rf__join_club--block .rf__join_club {
+    bottom: 0;
+  }
+  /* Join The Reef Club Block CSS End */
+  /* Footer CSS Start */
+  .rf__footer {
+    padding: 30px 0;
+  }
+  .rf__footer .row > div {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .rf__footer .row > div:nth-child(1) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .footer__nav {
+    margin-bottom: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .footer__nav ul li:not(:last-child) {
+    margin: 0 40px 15px 0;
+  }
+  .rf__footer__logo img {
+    width: 130px;
+    margin: 10px auto 0;
+  }
+  .partnership__logo {
+    margin: 0;
+  }
+  .partnership__logo img {
+    width: 170px;
+  }
+  .footer__copyright--text p {
+    font-size: 16px;
+  }
+  .footer__copyright {
+    margin-top: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .partnership__logo span {
+    display: none;
+  }
+  .footer__copyright--text {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-top: 20px;
+  }
+  /* Footer CSS End */
+  /* Investors Block CSS Start */
+  .rf__investors__join--block .rf__join_club--banner {
+    margin-top: 0;
+  }
+  .rf__investors__join--block .rf__join_club {
+    bottom: 50px;
+  }
+  .rf__investors--block {
+    margin-top: 80px;
+  }
+  .rf__investors--block .bubble__group--list .bubble__item img {
+    width: 60%;
+  }
+  .rf__investors--block .Caribbean__ReefShark img {
+    width: 65%;
+  }
+  .rf__investors .rf__investors--des p {
+    font-size: 16px;
+  }
+  .rf__investors .rf__investors--des img {
+    width: 45%;
+  }
+  /* Investors Block CSS End */
+  /* FAQ Block CSS Start */
+  .angel_fish_orange_grp img {
+    width: 50%;
+  }
+  .angel_fish_orange_grp .small__fish {
+    width: 40%;
+    margin: 10px 0 0 25px;
+  }
+  .rf__faq--block .rf__butterfly__group img {
+    width: 50%;
+    margin-left: auto;
+  }
+  .rf__faq--block .aqua__hammerhead img {
+    width: 30%;
+  }
+  .rf__faq--block .reefs__Two_LionFish img {
+    width: 70%;
+  }
+  .rf__faq--block {
+    margin-top: 90px;
+  }
+  .rf__faq--list {
+    padding: 25px;
+  }
+  /* FAQ Block CSS Start */
+}
+
+@media (max-width: 320px) {
+  /* Team Block CSS Start */
+  .rf__team--item .rf__team--des h3 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  .rf__team--item .rf__team--des p {
+    font-size: 12px;
+  }
+  /* Team Block CSS End */
+}
+/*# sourceMappingURL=style.css.map */
