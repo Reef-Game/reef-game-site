@@ -426,8 +426,8 @@ var swiper = new Swiper(".game__slider", {
   //centeredSlides: true,
   loop: true,
   autoplay: {
-    delay: 1500,
-    disableOnInteraction: false
+    delay: 3000,
+    disableOnInteraction: true
   },
   navigation: {
     nextEl: ".swiper-button-next",
