@@ -38,26 +38,30 @@ img2svg()
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".rf__hero--block",
-    start: "top bottom",
+    start: "top top",
     end: "bottom top",
     scrub: 1,
     scrub: true
   }
 })
 
-const scrollTurtle = gsap.timeline({
+const turtleTl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".container",
-    start: "top bottom",
-    end: "bottom bottom"
+    trigger: ".rf__hero--block",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+    scrub: true
   }
 })
 
-const scrollShark = gsap.timeline({
+const sharkTl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".container",
-    start: "top bottom",
-    end: "bottom bottom"
+    trigger: ".rf__hero--block",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+    scrub: true
   }
 })
 
@@ -85,7 +89,6 @@ gsap.to(
 // Banner Parallax JS End
 
 // Banner Elements JS Start
-
 gsap.to(
   ".rf__hero--elementOne",
   {
@@ -95,15 +98,9 @@ gsap.to(
   },
   0
 )
-
-scrollTurtle.to(".rf__hero--elementOne", {
+turtleTl.to(".rf__hero--elementOne", {
   y: 50,
   x: 150,
-  duration: 2
-})
-scrollTurtle.to(".rf__hero--elementOne", {
-  y: 250,
-  x: 50,
   duration: 2
 })
 
@@ -129,17 +126,9 @@ gsap.to(
   0
 )
 
-scrollShark.to(".rf__hero--elementTwo", {
+sharkTl.to(".rf__hero--elementTwo", {
   y: 50,
   x: -100,
-
-  duration: 2
-})
-
-scrollShark.to(".rf__hero--elementTwo", {
-  y: 490,
-  x: -330,
-
   duration: 2
 })
 // Banner Elements JS End
@@ -483,7 +472,7 @@ $(window).scroll(function () {
 // Heder Fixed JS End
 
 /* Accordion jQuery
-================================================== */
+  ================================================== */
 $(function () {
   $(".rf__accordion--title").click(function (j) {
     var dropDown = $(this)
@@ -509,4 +498,4 @@ $(function () {
   })
 })
 /* Accordion jQuery
-================================================== */
+  ================================================== */
