@@ -1742,12 +1742,12 @@ li {
 
 .rf__team--item {
   margin-bottom: 50px;
-  background: #4591d5;
+  background-color: #68a5da;
 }
 
 .rf__team--item .rf__team--img {
-  -webkit-box-shadow: inset 0px 0px 9px 6px #ffffff;
-  box-shadow: inset 0px 0px 9px 6px #ffffff;
+  -webkit-box-shadow: inset 0px 0px 9px 4px #ffffff;
+  box-shadow: inset 0px 0px 9px 4px #ffffff;
   border-radius: 29px;
   overflow: hidden;
   padding-top: 90%;
