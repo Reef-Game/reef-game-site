@@ -1253,7 +1253,8 @@ li {
 }
 
 .coral_reefs--item .coral_reefs__img img {
-  margin: 0 auto;
+  margin: auto;
+  margin-bottom: 10%;
 }
 
 .coral_reefs--item .coral_reefs__des {
