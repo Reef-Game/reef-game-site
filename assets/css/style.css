@@ -127,7 +127,7 @@ a {
   text-decoration: none;
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
-  word-break: break-word;
+  /* word-break: break-word; */
 }
 
 a:focus {
