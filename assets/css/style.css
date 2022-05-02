@@ -15,10 +15,13 @@
     margin-left: 30px !important;
   }
 }
-
+.rf__roadmap--block {
+  box-shadow: none !important;
+}
 #roadmap {
   border-radius: 15px;
-  border: 2px solid white;
+  /* border: white 2px solid; */
+  box-shadow: white 0px 0px 15px;
 }
 
 html {
