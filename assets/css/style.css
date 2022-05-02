@@ -16,6 +16,10 @@
   }
 }
 
+#roadmap {
+  border-radius: 15px;
+  border: 2px solid white;
+}
 
 html {
   scroll-behavior: smooth;
