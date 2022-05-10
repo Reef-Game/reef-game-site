@@ -418,6 +418,180 @@ gsap.to(
 )
 // Inverstor Elements End
 
+// Coming Soon Elements Start
+gsap.to(
+  ".ParrotFishGroup",
+  {
+    x: 150,
+    scrollTrigger: {
+      trigger: ".rf__coming_soon--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+gsap.to(
+  ".three_butterfly",
+  {
+    x: 150,
+    scrollTrigger: {
+      trigger: ".rf__coming_soon--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+if ($(window).width() < 767) {
+  gsap.to(
+    ".three_butterfly",
+    {
+      x: -50,
+      scrollTrigger: {
+        trigger: ".rf__coming_soon--block",
+        duration: 2,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    },
+    0
+  )
+}
+// Coming Soon Elements End
+
+// Average Otter Elements Start
+gsap.to(
+  ".angel__fish__orange_grp",
+  {
+    x: -50,
+    scrollTrigger: {
+      trigger: ".rf__coming_soon--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+gsap.to(
+  ".angel__fish__orange",
+  {
+    x: -50,
+    scrollTrigger: {
+      trigger: ".rf__coming_soon--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+// Average Otter Elements End
+
+// Rewards Elements Start
+gsap.to(
+  ".hammerhead_new",
+  {
+    x: 200,
+    scrollTrigger: {
+      trigger: ".rf__average__otter--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+if ($(window).width() < 767) {
+  gsap.to(
+    ".hammerhead_new",
+    {
+      x: 50,
+      scrollTrigger: {
+        trigger: ".rf__average__otter--block",
+        duration: 2,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    },
+    0
+  )
+}
+// Rewards Elements End
+
+// Otter FAQ Elements Start
+gsap.to(
+  ".RareSeaTurtle",
+  {
+    x: 150,
+    scrollTrigger: {
+      trigger: ".rf__mint_details--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+if ($(window).width() < 767) {
+  gsap.to(
+    ".RareSeaTurtle",
+    {
+      x: 50,
+      scrollTrigger: {
+        trigger: ".rf__mint_details--block",
+        duration: 2,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    },
+    0
+  )
+}
+gsap.to(
+  ".CaribbeanReefShark_new",
+  {
+    x: 150,
+    scrollTrigger: {
+      trigger: ".rf__mint_details--block",
+      duration: 2,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  },
+  0
+)
+if ($(window).width() < 767) {
+  gsap.to(
+    ".CaribbeanReefShark_new",
+    {
+      x: 50,
+      scrollTrigger: {
+        trigger: ".rf__mint_details--block",
+        duration: 2,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+      }
+    },
+    0
+  )
+}
+// Otter FAQ Elements End
+
 // Game Elements Slider JS Start
 var swiper = new Swiper(".game__slider", {
   slidesPerView: 4,

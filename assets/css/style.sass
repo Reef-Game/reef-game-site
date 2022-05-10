@@ -470,6 +470,8 @@
             font-size: 16px
             font-weight: 600
             line-height: 1.6
+            a
+                color: #2E67E6
     &:not(:last-child)
         margin-bottom: 40px
 /* Partners Block CSS End */
@@ -530,6 +532,11 @@
             margin-bottom: 0
         p
             font-weight: 600
+        .team__social
+            margin-top: 20px
+            li
+                &:not(:last-child)
+                    margin-right: 15px
 /* Team Block CSS End */
 
 /* Join The Reef Club Block CSS Start */
@@ -628,6 +635,15 @@
 .rf__footer
     background-color: #435763
     padding: 25px 0
+    .col--60
+        display: flex
+        flex-direction: column
+        align-items: start
+        justify-content: flex-end
+    .rf__footer__logo
+        margin-bottom: 25px
+.defiant_games_logo
+    margin-left: 25px
 .footer__widget
     h6
         font-size: 19px
@@ -694,6 +710,7 @@
             font-size: 23px
         img
             margin: 20px auto 0
+            width: 215px
 /* Investors Block CSS End */
 
 /* FAQ Block CSS Start */
@@ -756,9 +773,10 @@
 .rf__accordion--item
     padding-left: 60px
     cursor: pointer
-    border-bottom: 3px solid rgba(255, 255, 255, 0.5)
     padding-bottom: 20px
     margin-bottom: 20px
+    &:not(:last-child)
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5)
     .rf__accordion--title
         position: relative
         &:before
@@ -792,6 +810,172 @@
             margin-left: 30px
 /* FAQ Block CSS End */
 
+/* Otter Page CSS Start */
+.rf__coming_soon--block
+    .SeaSurface
+        margin-top: 60px
+        img
+            height: 170px
+            width: 100%
+    h1
+        font-size: 60px
+        margin-bottom: 40px
+    .ParrotFishGroup
+        position: absolute
+        top: -80px
+        left: 0
+        right: auto
+        bottom: auto
+    .three_butterfly
+        position: absolute
+        top: 0
+        left: auto
+        right: 0
+        bottom: auto
+        transform: translateX(260px)
+.rf__coming_soon
+    width: 600px
+    margin: 0 auto
+    padding: 50px
+    z-index: 9
+    position: relative
+    .rf__coming_soon--icon
+        img
+            margin: 0 auto
+    .rf__coming_soon--details
+        margin-top: 20px
+        h3
+            font-size: 45px
+        .btn
+            border: 2px solid #FFFFFF
+            backdrop-filter: none
+.rf__coming_soon--counter
+    margin: 20px 0 30px
+    li
+        font-size: 16px
+        font-weight: 600
+        span
+            font-weight: 700
+            font-size: 40px
+            display: block
+        &:not(:last-child)
+            margin-right: 25px
+
+.rf__average__otter--block
+    margin-top: 60px
+    .bubbles__one
+        position: absolute
+        top: -130px
+        left: -220px
+        right: auto
+        bottom: 0
+    .bubbles__two
+        position: absolute
+        top: auto
+        left: auto
+        right: -150px
+        bottom: 200px
+    .angel__fish__orange
+        position: absolute
+        top: auto
+        left: auto
+        right: -130px
+        bottom: 100px
+        transform: translateX(100px)
+    .angel__fish__orange_grp
+        position: absolute
+        top: -150px
+        left: -170px
+        right: auto
+        bottom: auto
+        transform: translateX(100px)
+        img
+            &:first-child
+                margin-left: 70px
+.rf__average__otter
+    padding: 80px 60px
+.rf__average__otter--list
+    margin: 0 -10px
+.rf__average__otter--item
+    padding: 0 10px 20px
+    img
+        width: 100%
+        border-radius: 20px
+.rf__average__otter--content
+    padding-left: 20px
+    h3
+        font-size: 40px
+    p
+        font-size: 16px
+        font-weight: 600
+
+.rf__rewards--block
+    margin-top: 60px
+    position: relative
+    z-index: 9
+    .bubbles__one
+        position: absolute
+        top: auto
+        bottom: 10px
+        left: -70px
+        right: auto
+    .hammerhead_new
+        position: absolute
+        top: 0
+        left: -170px
+        right: auto
+        bottom: auto
+        transform: translateX(-50px)
+    .rf__rewards 
+        padding: 70px 80px
+        p
+            font-size: 16px
+            font-weight: 600
+    .rf__rewards--image
+        img
+            margin: 0 auto
+
+.rf__mint_details--block
+    margin-top: 60px
+    position: relative
+    z-index: 9
+    .bubbles__one
+        position: absolute
+        top: -50px
+        bottom: auto
+        left: auto
+        right: -15px
+    .rf__mint_details 
+        padding: 50px 80px
+        h3
+            font-size: 40px
+        p
+            margin-bottom: 40px
+        p, li
+            font-size: 16px
+            font-weight: 600
+    .rf__mint_details--content
+        padding-left: 60px
+
+.rf__faq__coming_soon
+    padding: 50px 0 80px
+    &.rf__faq--block
+        .CaribbeanReefShark_new
+            position: absolute
+            top: -90px
+            bottom: auto
+            left: -260px
+            right: auto
+            transform: rotate(-5deg)
+            opacity: 0.9
+    .RareSeaTurtle
+        position: absolute
+        top: -120px
+        right: 100px
+        left: auto
+        bottom: auto
+/* Otter Page CSS End */
+
 @media(max-width: 1600px)
     /* Hero Block CSS Start */
     .rf__hero--block
@@ -820,6 +1004,21 @@
             max-width: 25%
             flex: 0 0 25%
     /* Footer CSS End */
+
+    /* Otter Page CSS Start */
+    .rf__coming_soon--block
+        .SeaSurface
+            img
+                height: 120px
+        .ParrotFishGroup
+            top: -90px
+        .three_butterfly
+            transform: translateX(0)
+    
+    .rf__average__otter--block
+        .angel__fish__orange_grp
+            transform: translateX(200px)
+    /* Otter Page CSS End */
 
 @media(max-width: 1400px)
     /* Hero Block CSS Start */
@@ -984,6 +1183,76 @@
                     bottom: 0
                     left: 20px
     /* FAQ Block CSS End */
+
+    /* Otter Page CSS Start */
+    .rf__coming_soon--block
+        margin-top: 20px
+        .SeaSurface
+            margin-top: 20px
+            img
+                height: auto
+        h1
+            font-size: 45px
+            margin-bottom: 20px
+        .three_butterfly
+            img
+                width: 60%
+        .ParrotFishGroup
+            top: -20px
+            left: 20px
+            img
+                width: 70%
+    
+    .rf__coming_soon
+        width: 60%
+        padding: 30px
+        .rf__coming_soon--details
+            h3
+                font-size: 36px
+            h6
+                font-size: 18px
+    .rf__coming_soon--counter
+        margin: 10px 0 30px
+        li
+            font-size: 14px
+            span
+                font-size: 32px
+    
+    .rf__average__otter--block
+        .angel__fish__orange_grp
+            left: 0
+            img
+                width: 50%
+        .angel__fish__orange
+            right: 15px
+            img
+                width: 60%
+    .rf__average__otter
+        padding: 40px 50px
+    
+    .rf__rewards--block
+        .bubbles__one
+            left: 10px
+        .hammerhead_new
+            left: 15px
+            img
+                width: 70%
+    
+    .rf__mint_details--block
+        .bubbles__one
+            right: 15px
+    
+    .rf__faq__coming_soon.rf__faq--block
+        .CaribbeanReefShark_new
+            left: 15px
+            img
+                width: 60%
+        .RareSeaTurtle
+            top: -70px
+            right: 100px
+            img
+                width: 60%
+    /* Otter Page CSS End */
 
 @media(max-width: 991px)
     /* Hero Block CSS Start */
@@ -1153,7 +1422,9 @@
                 &:not(:last-child)
                     margin-bottom: 15px
     .footer__copyright
-        margin-top: 30px
+        flex-direction: column
+        .defiant_games_logo
+            margin: 15px 0 0
     .partnership__logo
         margin: 0 0 0 20px
     /* Footer CSS End */
@@ -1180,7 +1451,41 @@
                 left: -40px
                 width: 20px
                 height: 20px
-    /* FAQ Block CSS End */    
+    /* FAQ Block CSS End */
+
+    /* Otter Page CSS Start */
+    .rf__average__otter--content
+        p
+            font-size: 14px
+    .rf__rewards--block
+        .rf__rewards
+            padding: 50px 60px
+            h2
+                font-size: 32px
+            p
+                font-size: 14px
+        .hammerhead_new
+            img
+                width: 55%
+    
+    .rf__mint_details--block
+        .rf__mint_details
+            padding: 40px 50px
+        .rf__mint_details--content
+            padding-left: 0
+    
+    .rf__faq--block.rf__faq__coming_soon
+        margin-top: 60px
+        padding: 0
+    
+    .rf__mint_details--block
+        .rf__mint_details
+            h3
+                font-size: 34px
+            p, li
+                font-size: 14px
+    /* Otter Page CSS End */
+
 @media(max-width: 767px)
     /* Hero Block CSS Start */
     .rf__hero--block
@@ -1377,8 +1682,8 @@
             & > div
                 max-width: 100%
                 flex: 0 0 100%
-                &:nth-child(1)
-                    order: 1
+        .rf__footer__logo
+            margin-bottom: 10px
     .footer__nav
         margin-bottom: 20px
         flex-direction: column
@@ -1387,27 +1692,20 @@
             li
                 &:not(:last-child)
                     margin: 0 40px 15px 0
-    .rf__footer__logo
-        img
-            width: 130px
-            margin: 10px auto 0
     .partnership__logo
         margin: 0
         img
             width: 170px
     .footer__copyright--text
+        margin-top: 20px
+        order: 1
         p
             font-size: 16px
-    .footer__copyright
-        margin-top: 10px
-        flex-direction: column
-        text-align: center
     .partnership__logo
         span
             display: none
-    .footer__copyright--text
-        order: 1
-        margin-top: 20px
+    .footer__copyright
+        margin-bottom: 30px
     /* Footer CSS End */
 
     /* Investors Block CSS Start */
@@ -1416,6 +1714,7 @@
             margin-top: 0
         .rf__join_club
             bottom: 50px
+            width: 100%
     .rf__investors--block
         margin-top: 80px
         .bubble__group--list
@@ -1432,6 +1731,11 @@
         .rf__investors--des
             img
                 width: 45%
+    .rf__join_club--block
+        .rf__join_club
+            .main__title
+                h6
+                    font-size: 20px
     /* Investors Block CSS End */
 
     /* FAQ Block CSS Start */
@@ -1457,6 +1761,92 @@
     .rf__faq--list
         padding: 25px
     /* FAQ Block CSS Start */
+
+    /* Otter Page CSS Start */
+    .rf__coming_soon--block
+        margin-top: 70px
+        .container
+            padding-top: 100px
+        h1
+            font-size: 36px
+            margin-bottom: 10px
+        .ParrotFishGroup
+            top: -10px
+            img
+                width: 55%
+        .three_butterfly
+            top: 0
+            right: 50px
+            img
+                width: 35%
+                margin-left: auto
+    .rf__coming_soon
+        width: 100%
+        padding: 20px
+        .rf__coming_soon--icon
+            img
+                width: 100px
+        .rf__coming_soon--details
+            h3
+                font-size: 30px
+            h6
+                font-size: 14px
+            .btn
+                padding: 13px 40px 15px
+                font-size: 14px
+    .rf__coming_soon--counter
+        li
+            font-size: 12px
+            span
+                font-size: 24px
+    
+    .rf__average__otter--block
+        .angel__fish__orange_grp
+            transform: translateX(0)
+            img
+                width: 30%
+                margin-left: auto
+                &:first-child
+                    margin-left: auto
+                    position: relative
+                    left: 30px
+    .rf__average__otter--item
+        max-width: 50%
+        flex: 0 0 50%
+    .rf__average__otter
+        padding: 30px
+    
+    .rf__average__otter--content
+        padding: 20px 0 0
+        h3
+            font-size: 32px
+    
+    .rf__rewards--block
+        .rf__rewards
+            padding: 30px
+        .rf__rewards--image
+            img
+                width: 70%
+    
+    .rf__mint_details--block
+        .rf__mint_details
+            padding: 30px
+        .rf__mint_details--content
+            padding: 20px 0 0
+    
+    .rf__faq__coming_soon.rf__faq--block
+        .CaribbeanReefShark_new
+            top: 0
+            left: -50px
+            img
+                width: 40%
+        .RareSeaTurtle
+            top: -50px
+            right: 100px
+            img
+                width: 35%
+                margin-left: auto
+    /* Otter Page CSS End */
 
 @media (max-width: 320px)
     /* Team Block CSS Start */
