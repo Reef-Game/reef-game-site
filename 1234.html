@@ -3,12 +3,14 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX6Y7V67PL"></script>
+<script src="./assets/js/web3.min.js"></script> 
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-XX6Y7V67PL');
+    gtag('config', 'G-XX6Y7V67PL');
+
 </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +23,7 @@
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
     
@@ -48,8 +51,6 @@
                             <li>
                                 <a href="/index.html" data-splitting>Roadmap</a>
                             </li>
-                          
-                
                             <li>
                                 <a href="/index.html" data-splitting>People</a>
                             </li>
@@ -109,8 +110,12 @@
                                 
                             
                             <p class="mb-0 " data-aos="fade-up">
-                                <label for="modal-1" class="btn">Mint</label>
-                                
+                                <label id="mint" class="btn">Mint</label>
+                                <br/>
+                                <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+                                    Login with MetaMask
+                                </button>
+                                <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
                             </p>
                         </div>
                     </div>
@@ -433,6 +438,87 @@
             </div>
         </div>
     </footer>
+
+    
+    <script>
+        const otterABI = [
+            {
+            "inputs": [],
+            "name": "mintOtter",
+            "outputs": [
+                {
+                "internalType": "uint256",
+                "name": "_id",
+                "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+            }
+        ]
+        const otterAddress = "0x5aE04B4a6E39c7Ae703B7E6Eb493c63d2E8A88Ca"
+        let otterContract;
+
+        window.userWalletAddress = null
+        const loginButton = document.getElementById('loginButton')
+        const userWallet = document.getElementById('userWallet')
+        const mintButton = document.getElementById('mint')
+
+        function toggleButton() {
+            if (!window.ethereum) {
+                loginButton.innerText = 'MetaMask is not installed'
+                loginButton.classList.remove('bg-purple-500', 'text-white')
+                loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
+                return false
+            }
+            loginButton.addEventListener('click', loginWithMetaMask)
+        }
+
+        async function loginWithMetaMask() {
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+            .catch((e) => {
+                console.error(e.message)
+                return
+            })
+            if (!accounts) { return }
+
+            window.userWalletAddress = accounts[0]
+            userWallet.innerText = window.userWalletAddress
+            loginButton.innerText = 'Sign out of MetaMask'
+            
+            const web3 = new Web3(window.ethereum)
+            otterContract = new web3.eth.Contract(otterABI, otterAddress)
+            console.log("CONTRACT", otterContract)
+
+            mintButton.addEventListener('click', mintOtter)
+
+            loginButton.removeEventListener('click', loginWithMetaMask)
+            setTimeout(() => {
+            loginButton.addEventListener('click', signOutOfMetaMask)
+            }, 200)
+        }
+
+        function mintOtter() {
+            otterContract.methods.mintOtter().send({to: otterAddress, from: window.userWalletAddress, value: 3000000000000000}, () => { 
+                console.log("MINT CLICKED")
+            })
+        }
+
+        function signOutOfMetaMask() {
+            window.userWalletAddress = null
+            userWallet.innerText = ''
+            loginButton.innerText = 'Sign in with MetaMask'
+
+            loginButton.removeEventListener('click', signOutOfMetaMask)
+            setTimeout(() => {
+            loginButton.addEventListener('click', loginWithMetaMask)
+            }, 200)
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            toggleButton()
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
