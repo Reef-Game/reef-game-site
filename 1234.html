@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XX6Y7V67PL"></script>
+<script src="./assets/js/web3.min.js"></script> 
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XX6Y7V67PL');
+
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World's First Virtual Coral Reefs for NFTs | Mint a Fish. Save a Reef</title>
+    <link rel="icon" href="./assets/images/favicon.ico" sizes="64x64">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="400">
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col--20">
+                    <div class="header__logo">
+                        <a href="index.html"><img src="assets/images/The-Reef_logo_v2.png" alt="The Reef GAME"></a>
+                    </div>
+                </div>
+                <div class="col--80 d-flex align-items-center justify-content-end">
+                    <div class="header__menu d-flex align-items-center">
+                        <ul class="d-flex align-items-center mb-0">
+                            <li>
+                                <a href="./otters.html">Mint</a>
+                            </li>
+                            <li>
+                                <a class="active" href="/index.html" data-splitting>Our Story</a>
+                            </li>
+                            <li>
+                                <a href="/index.html" data-splitting>Game</a>
+                            </li>
+                            <li>
+                                <a href="/index.html" data-splitting>Roadmap</a>
+                            </li>
+                            <li>
+                                <a href="/index.html" data-splitting>People</a>
+                            </li>
+                        </ul>
+                        <ul class="social__sharing d-flex align-items-center justify-content-end mb-0">
+                            <li>
+                                <a  target="_blank" href="https://twitter.com/reef_game">
+                                    <img class="in-svg" src="./assets/images/twitter.svg" alt="Twitter">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank"  href="https://discord.com/invite/reefgame">
+                                    <img class="in-svg" src="./assets/images/discord.svg" alt="Discord">
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank"  href="https://www.instagram.com/reefgame/">
+                                    <img class="in-svg" src="./assets/images/instagram.svg" alt="Instagram">
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#">
+                                    <img class="in-svg" src="./assets/images/logomark.svg" alt="Logomark">
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="toggle__menu">
+                        <img class="hamburger" src="./assets/images/hamburger.svg" alt="">
+                        <img class="hamburger__close" src="./assets/images/hamburger_close.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main__wrapper">
+        
+        <section class="rf__coming_soon--block">
+            <div class="SeaSurface" data-aos="fade-down">
+                <img src="./assets/images/SeaSurface.png" alt="SeaSurface">
+            </div>
+            <div class="container">
+                <div class="ParrotFishGroup">
+                    <img src="./assets/images/ParrotFishGroup.png" alt="ParrotFishGroup">
+                </div>
+                <div class="three_butterfly">
+                    <img src="./assets/images/three_butterfly.png" alt="Butterfly">
+                </div>
+                <div class="rf__coming_soon--wrapper">
+                    <h1 class="text-center text-white" data-aos="fade-up">Reef Game Otters</h1>
+                    <div class="rf__coming_soon--details">
+                    <div class="rf__coming_soon text-center glassmorphism__card">
+                        <div class="rf__coming_soon--icon " data-aos="fade-up">
+                            <img src="./assets/images/coming_soon_icon.png" alt="Coming Soon">
+                            <div class="rf__coming_soon--counter" />
+                                
+                            
+                            <p class="mb-0 " data-aos="fade-up">
+                                <label id="mint" class="btn">Mint</label>
+                                <br/>
+                                <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+                                    Login with MetaMask
+                                </button>
+                                <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
+                            </p>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- <div class="rf__coming_soon--details">
+            <h3 class="mb-0 text-white" data-aos="fade-up">Coming Soon</h3>
+            <h6 class="text-white" data-aos="fade-up">Minting Here May 25, 2022</h6>
+            <div class="rf__coming_soon--counter">
+                <ul class="d-flex align-items-center justify-content-center">
+                    <li data-aos="fade-up"><span id="days"></span>Days</li>
+                    <li data-aos="fade-up"><span id="hours"></span>Hours</li>
+                    <li data-aos="fade-up"><span id="minutes"></span>Minutes</li>
+                    <li data-aos="fade-up"><span id="seconds"></span>Seconds</li>
+                </ul>
+            </div>
+            <p class="mb-0" data-aos="fade-up">
+                <a target="_blank" href="https://discord.com/invite/reefgame" class="btn">Mint</a>
+            </p>
+        </div> -->
+    </div>
+
+        <section class="rf__average__otter--block">
+            <div class="container">
+                <div class="bubbles__one move__top-down">
+                    <img src="./assets/images/bubbles.png" alt="Bubble">
+                </div>
+                <div class="bubbles__two move__top-down">
+                    <img src="./assets/images/bubbles.png" alt="Bubble">
+                </div>
+                <div class="angel__fish__orange_grp">
+                    <img src="./assets/images/angel_fish_orange_new.png" alt="angel fish orange">
+                    <img src="./assets/images/angel_fish_orange_new.png" alt="angel fish orange">
+                </div>
+                <div class="angel__fish__orange">
+                    <img src="./assets/images/angel_fish_orange_new.png" alt="angel fish orange">
+                </div>
+                <div class="rf__average__otter glassmorphism__card">
+                    <div class="row align-items-center">
+                        <div class="col--55">
+                            <div class="rf__average__otter--list row">
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_1.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_2.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_3.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_4.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_5.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_6.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_7.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_8.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_9.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_10.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_11.png" alt="Icon">
+                                </div>
+                                <div class="rf__average__otter--item col--25" data-aos="zoom-in">
+                                    <img src="./assets/images/average__otter_image_12.png" alt="Icon">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col--45">
+                            <div class="rf__average__otter--content">
+                                <h3 class="text-white" data-aos="fade-up">Not your average Otter</h3>
+                                <p data-aos="fade-up">Reef Game Otters are a collection of 2,500 utility-enabled PFPs that feature a vastly diverse and unique pool of rarity-based traits. What's more, each Otter unlocks exclusive benefits in the Reef Game project and additional benefits the longer you hold them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rf__rewards--block">
+            <div class="container">
+                <div class="bubbles__one move__top-down">
+                    <img src="./assets/images/bubbles.png" alt="Bubble">
+                </div>
+                <div class="hammerhead_new">
+                    <img src="./assets/images/hammerhead_new.png" alt="Hammerhead">
+                </div>
+                <div class="rf__rewards glassmorphism__card">
+                    <div class="row align-items-center">
+                        <div class="col--55">
+                            <div class="rf__rewards--content">
+                                <h2 class="text-white" data-aos="fade-up">A collection built to reward our community members and earliest advocates</h2>
+                                <p data-aos="fade-up">The Reef Game Otter Collection is our thanks to our early adopters of the Reef Game underwater metaverse. Earn exclusive early access, pre-mint capabilities, benefit from Otter Specific community giveaways and earn unique Reef Game items. </p>
+                            </div>
+                        </div>
+                        <div class="col--45" data-aos="zoom-in">
+                            <div class="rf__rewards--image move__top-down">
+                                <img src="./assets/images/bigEduardo.png" alt="bigEduardo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rf__mint_details--block">
+            <div class="container">
+                <div class="bubbles__one move__top-down">
+                    <img src="./assets/images/bubbles.png" alt="Bubble">
+                </div>
+                <div class="rf__mint_details glassmorphism__card">
+                    <div class="row">
+                        <div class="col--45">
+                            <div class="rf__mint_details--image">
+                                <div class="row">
+                                    <div class="rf__average__otter--item col--50" data-aos="zoom-in">
+                                        <img src="./assets/images/average__otter_image_1.png" alt="Icon">
+                                    </div>
+                                    <div class="rf__average__otter--item col--50" data-aos="zoom-in">
+                                        <img src="./assets/images/average__otter_image_2.png" alt="Icon">
+                                    </div>
+                                    <div class="rf__average__otter--item col--50" data-aos="zoom-in">
+                                        <img src="./assets/images/average__otter_image_7.png" alt="Icon">
+                                    </div>
+                                    <div class="rf__average__otter--item col--50" data-aos="zoom-in">
+                                        <img src="./assets/images/average__otter_image_5.png" alt="Icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col--55">
+                            <div class="rf__mint_details--content">
+                                <h3 class="text-white" data-aos="fade-up">Mint Details / Pricing</h3>
+                                <p data-aos="fade-up">All OG Divers and Reef Game Whitelists will be able to mint 1-2 Otter PFPs for free (excluding gas fees). The unminted portion will be made available to the public for a cost of .03 ETH. </p>
+                                <h3 class="text-white" data-aos="fade-up">Utility</h3>
+                                <ul class="mb-0 rf__bullets--list">
+                                    <li data-aos="fade-up">Must hold a Sea Otter to mint a Genesis Reef</li>
+                                    <li data-aos="fade-up">Must hold to maintain an OG role in Discord</li>
+                                    <li data-aos="fade-up">Future discounts on mints</li>
+                                    <li data-aos="fade-up">Extra raffle entries</li>
+                                    <li data-aos="fade-up">Increase Reef Health Score</li>
+                                    <li data-aos="fade-up">Increase on $CORAL Earnings for holders</li>
+                                    <li data-aos="fade-up">Exclusive Discord Chat</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rf__faq--block rf__faq__coming_soon">
+            <div class="container">
+                <div class="CaribbeanReefShark_new">
+                    <img src="./assets/images/CaribbeanReefShark_new.png" alt="Caribbean Reef Shark">
+                </div>
+                <div class="RareSeaTurtle">
+                    <img src="./assets/images/RareSeaTurtle.png" alt="RareSeaTurtle">
+                </div>
+
+                <div class="rf__faq--list glassmorphism__card">
+                    <div class="main__title text-center">
+                        <h2 data-aos="fade-up">FAQ</h2>                        
+                    </div>
+                    <div class="rf__accordion">
+                        <div class="rf__accordion--item" data-aos="fade-up">
+                            <div class="rf__accordion--title">
+                                <h3 class="mb-0">How many are we minting?</h3>
+                            </div>
+                            <div class="rf__accordion--panel">
+                                <p>2500 unique otters!</p>
+                            </div>
+                        </div>
+                    
+                        <div class="rf__accordion--item" data-aos="fade-up">
+                            <div class="rf__accordion--title">
+                                <h3 class="mb-0">When is the mint date?</h3>
+                            </div>
+                            <div class="rf__accordion--panel">
+                                <p>May 25th 2022 at 11am PST (2pm EST)</p>
+                            </div>
+                        </div>
+
+                        <div class="rf__accordion--item" data-aos="fade-up">
+                            <div class="rf__accordion--title">
+                                <h3 class="mb-0">What chain are these minted on?</h3>
+                            </div>
+                            <div class="rf__accordion--panel">
+                                <p>Ethereum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join The Reef Club Block Start -->
+        <section class="rf__join_club--block rf__investors__join--block">
+            <div class="rf__join_club--banner">
+                <img src="./assets/images/footer_bg.png" alt="">
+            </div>
+            <div class="Two_MaoriWrasse__fish">
+                <img src="./assets/images/Two_MaoriWrasse.png" alt="MaoriWrasse">
+            </div>
+            <div class="Four_butterfly__fish">
+                <img src="./assets/images/Four_butterfly.png" alt="Butterfly">
+            </div>
+            <div class="rf__join_club">
+                <div class="container">
+                    <div class="main__title text-center">
+                        <h2 data-aos="fade-up">Join The Reef Club</h2>
+                        <h6 data-aos="fade-up">Got questions? Reach out over social!</h6>
+                    </h6>
+                    <ul class="social__sharing d-flex align-items-center justify-content-center mb-0">
+                        <li data-aos="fade-up">
+                            <a target="_blank"  class="d-flex align-items-center justify-content-center" href="https://discord.com/invite/reefgame"><img src="./assets/images/discord.svg" alt="Discord"></a>
+                        </li>
+                        <li data-aos="fade-up">
+                            <a  target="_blank" class="d-flex align-items-center justify-content-center" href="https://twitter.com/reef_game"><img src="./assets/images/twitter.svg" alt="Twitter"></a>
+                        </li>
+                        <li data-aos="fade-up">
+                            <a  target="_blank" class="d-flex align-items-center justify-content-center" href="https://www.instagram.com/reefgame/"><img src="./assets/images/instagram.svg" alt="Instagram"></a>
+                        </li>
+                        <!-- <li data-aos="fade-up">
+                            <a class="d-flex align-items-center justify-content-center" href="javascript: void(0);"><img src="./assets/images/logomark.svg" alt="Logomark"></a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Join The Reef Club Block End -->
+    </main>
+    <footer class="rf__footer">
+        <div class="container">
+            <div class="row">
+                <div class="col--60">
+                    <div class="rf__footer__logo">
+                        <a href="https://www.defiantgames.io/">
+                            <img src="/assets/images/The-Reef_logo_v2.png" alt="The Reef GAME">
+                        </a>
+                    </div>
+                    <div class="footer__copyright d-flex align-items-center">
+                        <div class="footer__copyright--text">
+                            <p class="mb-0"><script>document.write(new Date().getFullYear())</script> Copyright Reef Game </p>
+                        </div>
+                        <div class="defiant_games_logo">
+                            <a href="#">
+                                <img src="./assets/images/defiant_games_logo.svg" alt="Defiant Games">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col--20">
+                    <div class="footer__widget">
+                        <h6>Info</h6>
+                        <div class="footer__nav">                        
+                            <ul class="mb-0">
+                                <li>
+                                    <a href="./index.html#our_story">Our Story</a>
+                                </li>
+                                <li>
+                                    <a href="./index.html#about_game">Game</a>
+                                </li>
+                                <li>
+                                    <a href="./index.html#roadmap">Roadmap</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col--20">
+                    <div class="footer__widget">
+                        <h6>Company</h6>
+                        <div class="footer__nav d-flex">
+                            <ul class="mb-0">
+                                <li>
+                                    <a href="./index.html#partners">Partners</a>
+                                </li>
+                                <li>
+                                    <a href="./index.html#people">People</a>
+                                </li>
+                                <li>
+                                    <a href="./index.html#investors">Investors</a>
+                                </li>                                
+                            </ul>
+                            <!-- <ul class="mb-0">
+                                <li>
+                                    <a href="./investors.html">Investors</a>
+                                </li>
+                                <li>
+                                    <a href="./terms.html">Terms and Conditions</a>
+                                </li>
+                            </ul> -->
+                            <ul class="mb-0">
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        const otterABI = [
+            {
+            "inputs": [],
+            "name": "mintOtter",
+            "outputs": [
+                {
+                "internalType": "uint256",
+                "name": "_id",
+                "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+            }
+        ]
+        const otterAddress = "0x5aE04B4a6E39c7Ae703B7E6Eb493c63d2E8A88Ca"
+        let otterContract;
+
+        window.userWalletAddress = null
+        const loginButton = document.getElementById('loginButton')
+        const userWallet = document.getElementById('userWallet')
+        const mintButton = document.getElementById('mint')
+
+        function toggleButton() {
+            if (!window.ethereum) {
+                loginButton.innerText = 'MetaMask is not installed'
+                loginButton.classList.remove('bg-purple-500', 'text-white')
+                loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
+                return false
+            }
+            loginButton.addEventListener('click', loginWithMetaMask)
+        }
+
+        async function loginWithMetaMask() {
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+            .catch((e) => {
+                console.error(e.message)
+                return
+            })
+            if (!accounts) { return }
+
+            window.userWalletAddress = accounts[0]
+            userWallet.innerText = window.userWalletAddress
+            loginButton.innerText = 'Sign out of MetaMask'
+            
+            const web3 = new Web3(window.ethereum)
+            otterContract = new web3.eth.Contract(otterABI, otterAddress)
+            console.log("CONTRACT", otterContract)
+
+            mintButton.addEventListener('click', mintOtter)
+
+            loginButton.removeEventListener('click', loginWithMetaMask)
+            setTimeout(() => {
+            loginButton.addEventListener('click', signOutOfMetaMask)
+            }, 200)
+        }
+
+        function mintOtter() {
+            otterContract.methods.mintOtter().send({to: otterAddress, from: window.userWalletAddress, value: 3000000000000000}, () => { 
+                console.log("MINT CLICKED")
+            })
+        }
+
+        function signOutOfMetaMask() {
+            window.userWalletAddress = null
+            userWallet.innerText = ''
+            loginButton.innerText = 'Sign in with MetaMask'
+
+            loginButton.removeEventListener('click', signOutOfMetaMask)
+            setTimeout(() => {
+            loginButton.addEventListener('click', loginWithMetaMask)
+            }, 200)
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            toggleButton()
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>Splitting();</script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".vanilla-box"), {
+            max: 10,
+            speed: 100
+        });
+        
+        //It also supports NodeList
+        VanillaTilt.init(document.querySelectorAll(".vanilla-box"));
+    </script>
+
+    <script>
+        // Timmer Countdown JS
+        var comingdate = new Date("May 25, 2022 11:00:00");
+        var d = document.getElementById('days');
+        var h = document.getElementById('hours');
+        var m = document.getElementById('minutes');
+        var s = document.getElementById('seconds');
+
+        var x = setInterval(function(){
+        var now = new Date();
+        var des = comingdate.getTime() - now.getTime();
+        var days = Math.floor(des/(1000 * 60 * 60 * 24));
+        var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
+        var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
+        var secs = Math.floor(des%(1000 * 60) / 1000);
+
+        d.innerHTML = getTrueNumber(days);
+        h.innerHTML = getTrueNumber(hours);
+        m.innerHTML = getTrueNumber(mins);
+        s.innerHTML = getTrueNumber(secs);
+
+        if(des <= 0) clearInterval(x);
+
+        },1000);
+
+        function getTrueNumber(x) {
+            if (x < 10) return '0' + x;
+            else return x;
+        }
+        // Timmer Countdown JS
+    </script>
+</body>
+<input class="rf__modal__state" id="modal-1" type="checkbox" />
+        <div class="rf__modal">
+            <label class="rf__modal__bg" for="modal-1"></label>
+            <div class="modal__inner text-center glassmorphism__card">
+              <label class="modal__close" for="modal-1"></label>
+              <h2>Mint your Otter!</h2>
+              <label for="modal-1" class="btn">Mint</label>
+            </div>
+        </div>
+</html>
