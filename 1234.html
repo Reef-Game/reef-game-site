@@ -667,6 +667,8 @@
             otterContract.methods.hasOtterVoucher(window.userWalletAddress).call({from: window.userWalletAddress}).then((voucher) => {
                 console.log("has voucher", voucher)
                 voucher ? redeemButton.removeAttribute("hidden") : redeemButton.setAttribute("hidden", "hidden")
+                voucher ? mintButton.setAttribute("hidden", "hidden") : mintButton.removeAttribute("hidden")
+                voucher ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden")
             })
 
             otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
@@ -726,6 +728,8 @@
                 txHash.innerText = `https://etherscan.io/tx/${hash}`
                 txHash.href = `https://etherscan.io/tx/${hash}`
                 redeem.setAttribute("hidden", "hidden")
+                mintButton.removeAttribute("hidden")
+                bulkButton.removeAttribute("hidden")
             }).on('confirmation', (confirmationNumber, receipt) => { 
                 // display Otter minted animation, display minted otters on screen, link to otters on opensea
                 console.log(receipt);
