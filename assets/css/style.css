@@ -1,12 +1,7 @@
 @font-face {
-
-  font-family: "JSL Ancient";
-  src: url("../fonts/JSL-Ancient.eot");
-  src: url("../fonts/JSL-Ancient.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/JSL-Ancient.woff2") format("woff2"),
-    url("../fonts/JSL-Ancient.woff") format("woff"),
-    url("../fonts/JSL-Ancient.ttf") format("truetype");
->>>>>>> 4b109e8bd4ceadb564d00996b291978fa2d8c03b
+  font-family: 'Baloo2-SemiBold';
+  src: url("../fonts/Baloo2-SemiBold.ttf");
+  src: url("../fonts/Baloo2-SemiBold.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,19 +21,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #ffffff;
-<<<<<<< HEAD
   background: -webkit-gradient(linear, left top, left bottom, from(#35B4BF), to(#4080D4));
   background: linear-gradient(180deg, #35B4BF 0%, #4080D4 100%);
-=======
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#56d0da),
-    to(#4080d4)
-  );
-  background: linear-gradient(180deg, #56d0da 0%, #4080d4 100%);
->>>>>>> 4b109e8bd4ceadb564d00996b291978fa2d8c03b
   line-height: 1.5;
   overflow-x: hidden;
 }
@@ -58,11 +42,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 10px;
-<<<<<<< HEAD
   font-family: 'Baloo2-SemiBold';
-=======
-  font-family: "JSL Ancient";
->>>>>>> 4b109e8bd4ceadb564d00996b291978fa2d8c03b
   font-weight: 400;
   line-height: 1.1;
 }
