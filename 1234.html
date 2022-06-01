@@ -5,6 +5,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX6Y7V67PL"></script>
 <script src="./assets/js/web3.min.js"></script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -29,7 +31,175 @@
 
 <body>
     <input class="rf__modal__state" id="modal-1" type="checkbox" />
-    <div class="rf__modal">
+    <div class="rf__modal otter_modal">
+        <label class="rf__modal__bg" for="modal-1"></label>
+        <div class="modal__inner text-center glassmorphism__card" id="bundle_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <div class="container" style="width:100%; height:80%">
+                <div class="row">
+                    <div class="col mint-half" >
+                        <div class="d-flex flex-column mb-3" style="flex: 1">
+                            <div class="p-2">
+                                <div class="otter_frame_half">
+                                    <img src="./assets/images/average__otter_image_2.png">
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                <p>Mint 1 Otter (0.03 ETH)</p>
+                            </div>
+                            <div class="p-2">
+                                <button name="mint-btn-half" class="btn btn-half" >Mint Single</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mint-half">
+                        <!-- Image Frame -->
+                        <div class="otter_frame_half">
+                            <div class="container">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col d-flex justify-content-center" style="width:46%">
+                                        <img style="border-radius: 20px; padding:0; margin-top:10px" src="./assets/images/average__otter_image_2.png">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" style="width:50%; border-radius: 2px;">
+                                        <img style="border-radius: 20px; padding:0;" src="./assets/images/average__otter_image_2.png">
+                                    </div>
+                                    <div class="col d-flex justify-content-center" style="width:50%; border-radius: 2px;">
+                                        <img style="border-radius: 20px; padding:0; " src="./assets/images/average__otter_image_2.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="bulk-info">Bundle Info</p>
+                        <button id="bulk" class="btn btn-half" >Bulk Mint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="public_bundle_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <div class="container" style="width:100%; height:80%">
+                <div class="row">
+                    <div class="col mint-half" >
+                        <div class="d-flex flex-column mb-3" style="flex: 1">
+                            <div class="p-2">
+                                <div class="otter_frame_half">
+                                    <img src="./assets/images/average__otter_image_2.png">
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                <p>Mint 1 Otter (0.03 ETH)</p>
+                            </div>
+                            <div class="p-2">
+                                <button name="mint-btn-half" class="btn btn-half" >Mint Single</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mint-half">
+                        <!-- Image Frame -->
+                        <div class="otter_frame_half">
+                            <div class="container">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col d-flex justify-content-center" style="width:46%">
+                                        <img style="border-radius: 20px; padding:0; margin-top:10px" src="./assets/images/average__otter_image_2.png">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center" style="width:50%; border-radius: 2px;">
+                                        <img style="border-radius: 20px; padding:0;" src="./assets/images/average__otter_image_2.png">
+                                    </div>
+                                    <div class="col d-flex justify-content-center" style="width:50%; border-radius: 2px;">
+                                        <img style="border-radius: 20px; padding:0; " src="./assets/images/average__otter_image_2.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="bulk-info-public">Mint multiple Otters at once.</p>
+                        <p id="bulk-info-public-price">1 of 10 (0.03 ETH)</p>
+                        
+                        <div class="">
+                            <div class="container">
+                                <div class="row d-flex justify-content-center" style="display: inline-block;">
+                                    <div class="" style="align-items: center;">
+                                        <button id="increment-down" class="btn btn-increment-down"></button>
+                                    </div>
+                                    <div class="" style="align-items: center;">
+                                        <button id="bulk-public" class="btn btn-half" >Mint</button>
+                                    </div>
+                                    <div class="" style="align-items: center;">
+                                        <button id="increment-up" class="btn btn-increment-up"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="display_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 style="font-size: 30px; font-family: 'Baloo'">Max Mint Limit Reached</h1>
+            <!-- Image Frame -->
+            <div class="viewport" style="padding-top:15px; height: 50%;">
+                <ul class="list" id="otterList" style="height:100%">
+                </ul>
+            </div>
+            <!-- <img id="loading" src="assets/images/loading.gif" hidden="hidden" style="width:50px; margin:auto" ></img> -->
+            <!-- <a id='txHash' class='text-lg text-white-600 my-2'></a> -->
+            <p style="font-size:20px; padding-top:20px">You have reached the max otter mint limit, thanks for supporting Reef Game!</p>
+            <br/>
+            <a target="_blank" href="https://testnets.opensea.io/account">View your Otters on OpenSea here!</a>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="mint_single_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame">
+                <img src="./assets/images/average__otter_image_2.png">
+            </div>
+            <!-- <img id="loading" src="assets/images/loading.gif" hidden="hidden" style="width:50px; margin:auto" ></img> -->
+            <!-- <a id='txHash' class='text-lg text-white-600 my-2'></a> -->
+            <p style="font-size:20px; padding-top:20px">Mint 1 Otter (0.03 ETH)</p>
+            <button id="mint" class="btn" >Mint Single</button>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="redeem_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame">
+                <img src="./assets/images/average__otter_image_2.png">
+            </div>
+            <!-- <img id="loading" src="assets/images/loading.gif" hidden="hidden" style="width:50px; margin:auto" ></img> -->
+            <!-- <a id='txHash' class='text-lg text-white-600 my-2'></a> -->
+            <p style="padding-top:20px; padding-top:20px">You've got a free otter!</p>
+            <button id="redeem" class="btn" >Redeem Free Otter</button>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="loading_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame">
+                <div id="loading" class="loading"></div>
+            </div>
+            <p style="padding-top:20px">Your Otter is being minted, please don't close this screen.</p>
+            <p style="padding-top:20px">Please note that minting takes 3 confirmations to be successful.</p>
+            <a id='txHash' class='text-lg text-white-200 my-2' style="padding-top:20px" target="_blank"></a>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="successful_mint_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame" id="mintedOtter">
+            </div>
+            <p style="padding-top:20px">Otter successfully minted!</p>
+            <button id="mint-more" class="btn" >Mint More</button>
+        </div>
+    </div>
+
+    <!-- <div class="rf__modal_old">
         <label class="rf__modal__bg" for="modal-1"></label>
         <div class="modal__inner text-center glassmorphism__card">
         <label class="modal__close" for="modal-1"></label>
@@ -59,7 +229,7 @@
         </div>
         
         </div>
-    </div>
+    </div> -->
     </html>
     <header class="header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="400">
         <div class="container-fluid">
@@ -142,13 +312,11 @@
                             <img src="./assets/images/coming_soon_icon.png" alt="Coming Soon">
                             <div class="rf__coming_soon--counter" />
                                 
-                            
                             <p class="mb-0 " data-aos="fade-up">
-                                <label for="modal-1" class="btn" id="mainMint" hidden>Mint Your Otter</label>
+                                <label for="modal-1" class="btn" id="mainMint" hidden>Open Minting DApp</label>
                                 <br/><br/>
-                                <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
-                                    Login with MetaMask
-                                </button>
+                                <button id='loginButton' onclick="" class="btn bg-purple-500">Login with MetaMask</button>
+                                <br/><br/>
                                 <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
                             </p>
                         </div>
@@ -378,8 +546,8 @@
                         <h2 data-aos="fade-up">Join The Reef Club</h2>
                         <h6 data-aos="fade-up">Got questions? Reach out over social!</h6>
                     </h6>
-                    <ul class="social__sharing d-flex align-items-center justify-content-center mb-0">
-                        <li data-aos="fade-up">
+                    <ul class="social__sharing d-flex align-items-center justify-content-center mb-0" >
+                        <li data-aos="fade-up" >
                             <a target="_blank"  class="d-flex align-items-center justify-content-center" href="https://discord.com/invite/reefgame"><img src="./assets/images/discord.svg" alt="Discord"></a>
                         </li>
                         <li data-aos="fade-up">
@@ -477,6 +645,25 @@
     <script>
         const otterABI = [
             {
+            "inputs": [
+                {
+                "internalType": "uint32",
+                "name": "_numOtters",
+                "type": "uint32"
+                }
+            ],
+            "name": "mintOtterBatch",
+            "outputs": [
+                {
+                "internalType": "uint256[]",
+                "name": "_ids",
+                "type": "uint256[]"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+            },
+            {
             "inputs": [],
             "name": "mintOtter",
             "outputs": [
@@ -573,6 +760,19 @@
             "type": "function"
             },
             {
+            "inputs": [],
+            "name": "ottersAreRevealed",
+            "outputs": [
+                {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+            },
+            {
             "inputs": [
                 {
                 "internalType": "uint256",
@@ -599,6 +799,25 @@
                 "type": "address"
                 }
             ],
+            "name": "getAvailableOtters",
+            "outputs": [
+                {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+            },
+            {
+            "inputs": [
+                {
+                "internalType": "address",
+                "name": "_addr",
+                "type": "address"
+                }
+            ],
             "name": "hasRedeemedBundle",
             "outputs": [
                 {
@@ -611,10 +830,17 @@
             "type": "function"
             }
         ]
-        // Send a Mint event
-        // On TX finish, display otters
-        const otterAddress = "0xd72618d1AF776eE3dddC4C29e751FCfcb204f41d"
-        let otterContract;
+        // Send a Mint event 
+        // On TX finish, display otters 
+        const otterAddress = "0x42c5E6d5Bca96463Bd58F53591d04C53f290875A"
+        let otterContract; 
+        let hasVoucher = false;
+        let hasRedeemedBundle = true;
+        let whitelistType = 0;
+        let hasMintedMax = false;
+        let bulkNumber = 1;
+        let numOttersAllowed = 10;
+        let otterPrice = 3000000000000000;
 
         window.userWalletAddress = null
         const loginButton = document.getElementById('loginButton')
@@ -623,9 +849,54 @@
         const mintButton = document.getElementById('mint')
         const redeemButton = document.getElementById('redeem')
         const bulkButton = document.getElementById('bulk')
+        const bulkPublicButton = document.getElementById('bulk-public')
         const loadingImg = document.getElementById('loading')
         const mainMintButton = document.getElementById('mainMint')
+        const mintMoreButton = document.getElementById('mint-more')
+        const mintHalfButton = document.getElementsByName('mint-btn-half')
+        const incrementUp = document.getElementById("increment-up")
+        const incrementDown = document.getElementById("increment-down")
+
         const otterList = document.getElementById('otterList')
+        const mintedOtterImg = document.getElementById('mintedOtter')
+        const headerCollection = document.getElementsByName("mintHeader");
+        const bulkInfoPublicPrice = document.getElementById("bulk-info-public-price")
+
+        const modalState = document.getElementById('modal-1')
+        const redeemModal = document.getElementById('redeem_modal')
+        const loadingModal = document.getElementById('loading_modal')
+        const successfulMintModal = document.getElementById('successful_mint_modal')
+        const bundleModal = document.getElementById('bundle_modal')
+        const publicBundleModal = document.getElementById('public_bundle_modal')
+        const mintSingleModal = document.getElementById('mint_single_modal')
+        const displayModal = document.getElementById('display_modal')
+
+        const modalList = [redeemModal, loadingModal, successfulMintModal, bundleModal, mintSingleModal, displayModal, publicBundleModal]
+
+        // const extraModalImage = document.getElementById('extra-img')
+
+        modalState.addEventListener('change', (value) => {
+            $('body').toggleClass('no-scroll');
+            if (!document.body.classList.contains('no-scroll')) {
+                hideAllModals()
+            }
+        })
+        
+        function hideAllModals() {
+            modalList.forEach((_modal) => {
+                _modal.setAttribute("hidden", "hidden")
+            })
+        }
+
+        function showLoadingModal() {
+            hideAllModals();
+            loadingModal.removeAttribute('hidden')
+        }
+
+        function showMintSuccessModal() {
+            hideAllModals();
+            successfulMintModal.removeAttribute('hidden')
+        }
 
         function toggleButton() {
             if (!window.ethereum) {
@@ -635,6 +906,17 @@
                 return false
             }
             loginButton.addEventListener('click', loginWithMetaMask)
+        }
+
+        function changeBulkIncrement(increment) {
+            console.log("INCREMENT", increment)
+            if (bulkNumber + increment <= numOttersAllowed  && bulkNumber + increment >= 0) bulkNumber = bulkNumber + increment 
+
+            bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
+        }
+
+        function onClickTest() {
+            console.log("CLICKED ME")
         }
 
         async function loginWithMetaMask() {
@@ -655,123 +937,335 @@
             console.log("CONTRACT", otterContract)
 
             mintButton.addEventListener('click', mintOtter)
+            mintHalfButton.forEach((_button) => _button.addEventListener('click', mintOtter))
             redeemButton.addEventListener('click', redeemOtter)
             bulkButton.addEventListener('click', bulkMintOtter)
+            bulkPublicButton.addEventListener('click', bulkMintOtterPublic)
 
             loginButton.removeEventListener('click', loginWithMetaMask)
             setTimeout(() => {
-            loginButton.addEventListener('click', signOutOfMetaMask)
+                loginButton.addEventListener('click', signOutOfMetaMask)
             }, 200)
 
+            mainMintButton.addEventListener('click', updateContractVarsAndUpdateModal)
+            mintMoreButton.addEventListener('click', mintMore)
+            incrementUp.addEventListener('click', () => changeBulkIncrement(1))
+            incrementDown.addEventListener('click', () => changeBulkIncrement(-1))
 
+
+            await updateContractVarsAndUpdateModal()
+        }
+
+        async function updateContractVarsAndUpdateModal() {
+            otterContract.methods.getAvailableOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((_numOtters) => {
+                console.log("Num OTTERS", _numOtters)
+                numOttersAllowed = parseInt(_numOtters);
+                console.log("Num OTTERS", numOttersAllowed)
+            })
             otterContract.methods.hasOtterVoucher(window.userWalletAddress).call({from: window.userWalletAddress}).then((voucher) => {
                 console.log("has voucher", voucher)
-                voucher ? redeemButton.removeAttribute("hidden") : redeemButton.setAttribute("hidden", "hidden")
-                voucher ? mintButton.setAttribute("hidden", "hidden") : mintButton.removeAttribute("hidden")
-                voucher ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden")
-            })
+                hasVoucher = voucher;
+                otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
+                    console.log("has redeemed bundle", redeemed)
+                    // redeemed ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden");
 
-            otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
-                console.log("has redeemed bundle", redeemed)
-                redeemed ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden");
-
-                otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
-                    console.log("whitelist type", num)
-                    bulkButton.innerText = `Bulk Mint ${parseInt(num) === 2 ? 3 : 2} Otters (0.03 ETH)`
-
-                    otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
-                        console.log(`OWNED OTTERS ${nums}`)
-                        let numsArr = nums.toString().split(',')
-                        console.log(`numsArr ${numsArr}`)
-                        let uris = []
-                        numsArr.forEach((_num) => {
-                            console.log(_num)
-                            console.log(parseInt(_num))
-                            otterContract.methods.uri(parseInt(_num)).call({from: window.userWalletAddress}).then((_uri) => {
-                                uris.push(_uri)
-                                console.log(`URI ${_uri}`)
-
-                                $.get(_uri, (data, status) => {
-                                    console.log("STATUS", status)
-                                    console.log("DATA", data)
-                                    console.log("Img URL", data.image)
-                                    
-                                    var li = document.createElement("li");
-                                    li.setAttribute('class','item');
-
-
-                                    var img = document.createElement('img');
-                                    img.src = data.image;
-                                    li.appendChild(img);
-
-                                    otterList.appendChild(li)
-                                    
-                                    // <li class="item"><img src="assets/images/average__otter_image_2.png"></li>
-                                    // $("img").attr('src','http://somedomain.com/image.jpg');
+                    otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
+                        if (num !== 0) {
+                            console.log("whitelist type", num)
+                            hasRedeemedBundle = redeemed;
+                            whitelistType = parseInt(num)
+                            
+                            if (parseInt(num) === 1) {
+                                // extraModalImage.setAttribute("hidden", "hidden")
+                                console.log("updated bulk-info text")
+                                document.getElementById('bulk-info').innerText = `Whitelist Package Deal:\n Bulk Mint 2 Otters (0.03 ETH)`
+                                headerCollection.forEach((_header) => {
+                                    _header.innerText = "Mint An Otter - Whitelisted"
                                 })
+                            }
+                            else if (parseInt(num) === 2) {
+                                // extraModalImage.removeAttribute("hidden")
+                                console.log("updated bulk-info text")
+                                document.getElementById('bulk-info').innerText = `OG Whitelist Package Deal:\n Bulk Mint 3 Otters (0.03 ETH)`
+                                headerCollection.forEach((_header) => {
+                                    _header.innerText = "Mint An Otter - OG Whitelisted"
+                                })
+                            }
+                            bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
+                        }
+
+                        otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
+                            console.log(`OWNED OTTERS ${nums}`)
+                            let numsArr = nums.toString().split(',')
+                            console.log(`numsArr ${numsArr}`)
+                            let uris = []
+                            if (numsArr.length >= 10) {
+                                console.log("MAX OTTERS MINTED")
+                                hasMintedMax = true
+                            }
+                            numsArr.forEach((_num) => {
+                                console.log(_num)
+                                console.log(parseInt(_num))
+                                if(_num) {
+                                    otterContract.methods.uri(parseInt(_num)).call({from: window.userWalletAddress}).then((_uri) => {
+                                        uris.push(_uri)
+                                        console.log(`URI ${_uri}`)
+                                        otterList.innerHTML = ""
+                                        $.get(_uri, (data, status) => {
+                                            console.log("STATUS", status)
+                                            console.log("DATA", data)
+                                            console.log("Img URL", data.image)
+                                            
+                                            var li = document.createElement("li");
+                                            li.setAttribute('class','item');
+
+                                            var img = document.createElement('img');
+                                            img.src = data.image;
+                                            li.appendChild(img);
+
+                                            
+                                            var img = document.createElement('img');
+                                            var a = document.createElement('a')
+                                            a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${_num}`
+                                            a.target = "_blank"
+                                            a.style="max-width: 100%;height: auto;display: block;vertical-align: middle;"
+
+                                            img.src = data.image;
+                                            a.appendChild(img)
+
+                                            otterList.appendChild(img)
+                                        })
+                                        
+                                    })
+                                }
                             })
+                        }).then(() => {
+                            updateModalState()
                         })
                     })
                 })
             })
+        }
 
-
+        function mintMore() {
+            // call contracts to see if another voucher exists
+            hideAllModals();
+            updateContractVarsAndUpdateModal()
         }
 
         function redeemOtter() {
             otterContract.methods.redeemFreeOtter().send({to: otterAddress, from: window.userWalletAddress}, () => { 
                 console.log("FREE REDEEM CLICKED")
-                loadingImg.removeAttribute('hidden')
-            }).on('transactionHash', (hash) => {
+            }).on('error', (error) =>{ 
+                console.log("TX Rejected.")
+            })
+            .on('transactionHash', (hash) => {
                 // display txHash
+                showLoadingModal()
                 console.log(hash);
-                txHash.innerText = `https://etherscan.io/tx/${hash}`
-                txHash.href = `https://etherscan.io/tx/${hash}`
-                redeem.setAttribute("hidden", "hidden")
-                mintButton.removeAttribute("hidden")
-                bulkButton.removeAttribute("hidden")
+                txHash.innerText = `View TX on Etherscan`
+                txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+                txHash.removeAttribute('hidden')
+                // mintButton.removeAttribute("hidden")
+                // bulkButton.removeAttribute("hidden")
             }).on('confirmation', (confirmationNumber, receipt) => { 
                 // display Otter minted animation, display minted otters on screen, link to otters on opensea
-                console.log(receipt);
-                loadingImg.setAttribute("hidden", "hidden")
+                if (confirmationNumber === 3) {
+                    showMintSuccessModal()
+                    let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
+                    console.log("otterId",otterId);
+                    console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+
+                    otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
+                        console.log(`URI ${_uri}`)
+                        $.get(_uri, (data, status) => {
+                            var img = document.createElement('img');
+                            var a = document.createElement('a')
+                            a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                            a.target = "_blank"
+                            img.src = data.image;
+                            a.appendChild(img)
+
+                            mintedOtterImg.innerHTML = '';                        
+                            mintedOtterImg.style = ""
+                            mintedOtterImg.appendChild(a);
+                        })
+                    })
+                            
+                }
+            })
+        }
+
+        function bulkMintOtterPublic() {
+            otterContract.methods.mintOtterBatch(bulkNumber).send({to: otterAddress, from: window.userWalletAddress, value: otterPrice * bulkNumber}, () => { 
+                console.log("BULK MINT CLICKED")
+            }).on('error', (error) =>{ 
+                console.log("TX Rejected.")
+            }).on('transactionHash', (hash) => {
+                // display txHash
+                showLoadingModal()
+                console.log(hash);
+                txHash.innerText = `View TX on Etherscan`
+                txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+                // bulkButton.setAttribute("hidden", "hidden")
+            }).on('confirmation', (confirmationNumber, receipt) => { 
+                // display Otter minted animation, display minted otters on screen, link to otters on opensea
+                console.log(receipt); 
+                if (confirmationNumber === 3) {
+                    showMintSuccessModal()
+                    // let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
+                    // let numMinted = parseInt(receipt['events'][0]['raw']['data'].substring(130,194), 16)
+                    
+                    let txData = receipt['events'][0]['raw']['data'].slice(2)
+                    let dataParams = []
+
+                    for(let i = 0; i < txData.length / 64; i++) {
+                        dataParams.push(txData.substring(i*64, (i+1)*64))
+                    }
+
+                    let numberOfOttersMinted = parseInt(dataParams[2], 16)
+
+                    
+                    dataParams.forEach((_param, _index) => {
+                        if (_index >= numberOfOttersMinted) return;
+                        
+                        // first 3 params are junk, shift index
+                        let washedIndex = _index + 3
+                        let otterId = parseInt(dataParams[washedIndex], 16)
+
+                        console.log("otterId",otterId);
+                        console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+
+                        mintedOtterImg.innerHTML = '';
+                        mintedOtterImg.style = "width:100%; margin:5% 0 0 -50%"
+                        otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
+                            console.log(`URI ${_uri}`)
+                            $.get(_uri, (data, status) => {
+                                var img = document.createElement('img');
+                                var a = document.createElement('a')
+                                a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                                a.target = "_blank"
+                                img.src = data.image;
+                                img.style="width:90%"
+                                a.appendChild(img)
+                                a.style= "width:120%"
+
+                                // mintedOtterImg.innerHTML = '';
+                                mintedOtterImg.appendChild(a);
+                            })
+                        })
+                    })
+                            
+                }
             })
         }
 
         function bulkMintOtter() {
-            otterContract.methods.redeemWhitelistBundle().send({to: otterAddress, from: window.userWalletAddress, value: 3000000000000000}, () => { 
+            otterContract.methods.redeemWhitelistBundle().send({to: otterAddress, from: window.userWalletAddress, value: otterPrice}, () => { 
                 console.log("BULK MINT CLICKED")
-                loadingImg.removeAttribute('hidden')
+            }).on('error', (error) =>{ 
+                console.log("TX Rejected.")
             }).on('transactionHash', (hash) => {
                 // display txHash
+                showLoadingModal()
                 console.log(hash);
-                txHash.innerText = `https://etherscan.io/tx/${hash}`
-                txHash.href = `https://etherscan.io/tx/${hash}`
-                bulkButton.setAttribute("hidden", "hidden")
+                txHash.innerText = `View TX on Etherscan`
+                txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+                // bulkButton.setAttribute("hidden", "hidden")
             }).on('confirmation', (confirmationNumber, receipt) => { 
                 // display Otter minted animation, display minted otters on screen, link to otters on opensea
-                console.log(receipt);
-                loadingImg.setAttribute("hidden", "hidden")
+                console.log(receipt); 
+                if (confirmationNumber === 3) {
+                    showMintSuccessModal()
+                    // let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
+                    // let numMinted = parseInt(receipt['events'][0]['raw']['data'].substring(130,194), 16)
+                    
+                    let txData = receipt['events'][0]['raw']['data'].slice(2)
+                    let dataParams = []
+
+                    for(let i = 0; i < txData.length / 64; i++) {
+                        dataParams.push(txData.substring(i*64, (i+1)*64))
+                    }
+
+                    let numberOfOttersMinted = parseInt(dataParams[2], 16)
+
+                    
+                    dataParams.forEach((_param, _index) => {
+                        if (_index >= numberOfOttersMinted) return;
+                        
+                        // first 3 params are junk, shift index
+                        let washedIndex = _index + 3
+                        let otterId = parseInt(dataParams[washedIndex], 16)
+
+                        console.log("otterId",otterId);
+                        console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+
+                        mintedOtterImg.innerHTML = '';
+                        mintedOtterImg.style = "width:100%; margin:5% 0 0 -50%"
+                        otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
+                            console.log(`URI ${_uri}`)
+                            $.get(_uri, (data, status) => {
+                                var img = document.createElement('img');
+                                var a = document.createElement('a')
+                                a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                                a.target = "_blank"
+                                img.src = data.image;
+                                img.style="width:90%"
+                                a.appendChild(img)
+                                a.style= "width:120%"
+
+                                // mintedOtterImg.innerHTML = '';
+                                mintedOtterImg.appendChild(a);
+                            })
+                        })
+                    })
+                            
+                }
             })
 
         }
 
         function mintOtter() {
-            otterContract.methods.mintOtter().send({to: otterAddress, from: window.userWalletAddress, value: 3000000000000000}, () => { 
+            otterContract.methods.mintOtter().send({to: otterAddress, from: window.userWalletAddress, value: otterPrice}, () => { 
                 console.log("MINT CLICKED")
-                loadingImg.removeAttribute('hidden')
+            }).on('error', (error) =>{ 
+                console.log("TX Rejected.")
             }).on('transactionHash', (hash) => {
                 // display txHash
+                showLoadingModal()
                 console.log(hash);
-                txHash.innerText = `https://etherscan.io/tx/${hash}`
-                txHash.href = `https://etherscan.io/tx/${hash}`
+                txHash.innerText = `View TX on Etherscan`
+                txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
             }).on('confirmation', (confirmationNumber, receipt) => { 
                 // display Otter minted animation, display minted otters on screen, link to otters on opensea
-                console.log(receipt);
-                loadingImg.setAttribute("hidden", "hidden")
+                if (confirmationNumber === 3) {
+                    showMintSuccessModal()
+                    let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
+                    console.log("otterId",otterId);
+                    console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+
+                    otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
+                        console.log(`URI ${_uri}`)
+                        $.get(_uri, (data, status) => {
+                            var img = document.createElement('img');
+                            var a = document.createElement('a')
+                            a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                            a.target = "_blank"
+                            img.src = data.image;
+                            a.appendChild(img)
+
+                            mintedOtterImg.innerHTML = '';                
+                            mintedOtterImg.style = ""
+                            mintedOtterImg.appendChild(a);
+                        })
+                    })
+                            
+                }
             })
         }
 
         function signOutOfMetaMask() {
+            hasMintedMax = false
             window.userWalletAddress = null
             userWallet.innerText = ''
             loginButton.innerText = 'Sign in with MetaMask'
@@ -780,6 +1274,28 @@
             setTimeout(() => {
             loginButton.addEventListener('click', loginWithMetaMask)
             }, 200)
+        }
+
+        function updateModalState() {
+            if (hasMintedMax) {
+                displayModal.removeAttribute("hidden")
+            }
+            else if (hasVoucher) {
+                redeemModal.removeAttribute("hidden")
+            }
+            else if (whitelistType === 0) {
+                publicBundleModal.removeAttribute("hidden")
+            }
+            else if(whitelistType !== 0 && !hasRedeemedBundle) {
+                bundleModal.removeAttribute("hidden")
+            }
+            else if(hasRedeemedBundle) {
+                publicBundleModal.removeAttribute("hidden")
+            }
+            else {
+                // TODO: add isPublicSaleOpen
+                publicBundleModal.removeAttribute("hidden")
+            }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -805,36 +1321,7 @@
         //It also supports NodeList
         VanillaTilt.init(document.querySelectorAll(".vanilla-box"));
     </script>
-
-    <script>
-        // Timmer Countdown JS
-        var comingdate = new Date("May 25, 2022 11:00:00");
-        var d = document.getElementById('days');
-        var h = document.getElementById('hours');
-        var m = document.getElementById('minutes');
-        var s = document.getElementById('seconds');
-
-        var x = setInterval(function(){
-        var now = new Date();
-        var des = comingdate.getTime() - now.getTime();
-        var days = Math.floor(des/(1000 * 60 * 60 * 24));
-        var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
-        var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
-        var secs = Math.floor(des%(1000 * 60) / 1000);
-
-        d.innerHTML = getTrueNumber(days);
-        h.innerHTML = getTrueNumber(hours);
-        m.innerHTML = getTrueNumber(mins);
-        s.innerHTML = getTrueNumber(secs);
-
-        if(des <= 0) clearInterval(x);
-
-        },1000);
-
-        function getTrueNumber(x) {
-            if (x < 10) return '0' + x;
-            else return x;
-        }
-        // Timmer Countdown JS
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
