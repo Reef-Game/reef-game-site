@@ -212,8 +212,8 @@ const otterABI = [
     }
 ]
 // Send a Mint event 
-// On TX finish, display otters  
-const otterAddress = "0x21c768dBc58683236B402601985a2b457a794e38"
+// On TX finish, display otters  0x1739BE3620d14FB1E6dcADBbC419A9375fF30797
+const otterAddress = "0x1739BE3620d14FB1E6dcADBbC419A9375fF30797"
 let otterContract; 
 let hasVoucher = false;
 let isPublicMintOpen = false;
