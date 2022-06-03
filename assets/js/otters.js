@@ -213,7 +213,7 @@ const otterABI = [
 ]
 // Send a Mint event 
 // On TX finish, display otters  
-const otterAddress = "0x6557A9bf8e380f747Becaa0d397A46aF1316407B"
+const otterAddress = "0x21c768dBc58683236B402601985a2b457a794e38"
 let otterContract; 
 let hasVoucher = false;
 let isPublicMintOpen = false;
@@ -368,7 +368,7 @@ async function updateContractVarsAndUpdateModal() {
                     if (parseInt(num) === 1) {
                         // extraModalImage.setAttribute("hidden", "hidden")
                         console.log("updated bulk-info text")
-                        document.getElementById('bulk-info').innerText = `Whitelist Package Deal:\n Bulk Mint 2 Otters (0.03 ETH)`
+                        document.getElementById('bulk-info').innerText = `Whitelist Package Discount:\n Bulk Mint 2 Otters for 0.03 ETH Total`
                         headerCollection.forEach((_header) => {
                             _header.innerText = "Mint An Otter - Whitelisted"
                         })
@@ -376,7 +376,7 @@ async function updateContractVarsAndUpdateModal() {
                     else if (parseInt(num) === 2) {
                         // extraModalImage.removeAttribute("hidden")
                         console.log("updated bulk-info text")
-                        document.getElementById('bulk-info').innerText = `OG Whitelist Package Deal:\n Bulk Mint 3 Otters (0.03 ETH)`
+                        document.getElementById('bulk-info').innerText = `OG Whitelist Package Discount:\n Bulk Mint 3 Otters for 0.03 ETH Total`
                         headerCollection.forEach((_header) => {
                             _header.innerText = "Mint An Otter - OG Whitelisted"
                         })
