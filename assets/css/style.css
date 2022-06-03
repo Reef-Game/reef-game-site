@@ -7,6 +7,34 @@
   font-display: swap;
 }
 
+/* .mint-modal {
+  min-height: 500px;
+} */
+
+#redeem {
+  padding: 10px !important;
+}
+
+@media screen and (min-width: 650px) {
+  #redeem_modal {
+    height: 60vh;
+    width: 60vh;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #redeem {
+    padding: 7px !important;
+  }
+}
+.otter_modal .btn {
+  bottom: 10% !important;
+}
+
+.otter_frame img {
+  min-width: 70% !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
