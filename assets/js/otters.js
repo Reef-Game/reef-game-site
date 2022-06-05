@@ -401,7 +401,7 @@ async function updateContractVarsAndUpdateModal() {
                 let numsArr = nums.toString().split(',')
                 console.log(`numsArr ${numsArr}`)
                 let uris = []
-                if (numsArr.length >= 10) {
+                if (numsArr.length >= 5) {
                     console.log("MAX OTTERS MINTED")
                     hasMintedMax = true
                 }
