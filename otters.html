@@ -449,8 +449,8 @@
         var x = setInterval(function(){
         var now = new Date();
         var des = comingdate.getTime() - now.getTime();
-        var days = Math.floor(des/(1000 * 60 * 60 * 24));
-        var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
+        var days = Math.floor(0);
+        var hours = Math.floor(2);
         var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
         var secs = Math.floor(des%(1000 * 60) / 1000);
 
@@ -459,7 +459,7 @@
         m.innerHTML = getTrueNumber(mins);
         s.innerHTML = getTrueNumber(secs);
 
-        if(des <= 0) clearInterval(x);
+        if(des <= 0) clearInterval(x);  
 
         },1000);
 
