@@ -96,17 +96,17 @@ const otterABI = [
     "type": "function"
     },
     {
-    "inputs": [],
-    "name": "redeemFreeOtter",
-    "outputs": [
+      "inputs": [
         {
-        "internalType": "uint256",
-        "name": "_id",
-        "type": "uint256"
+          "internalType": "bytes32[]",
+          "name": "_merkleProof",
+          "type": "bytes32[]"
         }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+      ],
+      "name": "redeemFreeOtter",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
     "inputs": [],
@@ -212,17 +212,18 @@ const otterABI = [
     }
 ]
 // Send a Mint event 
-// On TX finish, display otters  0x1739BE3620d14FB1E6dcADBbC419A9375fF30797
-const otterAddress = "0x1739BE3620d14FB1E6dcADBbC419A9375fF30797"
+// On TX finish, display otters 
+const otterAddress = "0x18A0DA358A0c792fd47Dd4a620b7069801CDa24F"
 let otterContract; 
-let hasVoucher = false;
+let showFreeRedeem = false;
 let isPublicMintOpen = false;
 let hasRedeemedBundle = true;
 let whitelistType = 0;
 let hasMintedMax = false;
 let bulkNumber = 1;
-let numOttersAllowed = 10;
-let otterPrice = 3000000000000000;
+let numOttersAllowed = 5;
+let otterPrice = 30000000000000000;
+let proof = []
 
 window.userWalletAddress = null
 const loginButton = document.getElementById('loginButton')
@@ -335,7 +336,18 @@ async function loginWithMetaMask() {
     incrementUp.addEventListener('click', () => changeBulkIncrement(1))
     incrementDown.addEventListener('click', () => changeBulkIncrement(-1))
 
+    const merkleRestEndpoint = `https://play.reef.game/rest/otter-whitelist?address=${window.userWalletAddress}`
+    $.get(merkleRestEndpoint, (data, status) => {
+        whitelistType = parseInt(data.type)
+        proof = data.proof
 
+        console.log("WL TYPE: ", whitelistType)
+        console.log("PROOF: ", proof)
+
+        otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
+            if (parseInt(num) === 0) showFreeRedeem = true;
+        })
+    })
     await updateContractVarsAndUpdateModal()
 }
 
@@ -352,89 +364,89 @@ async function updateContractVarsAndUpdateModal() {
     otterContract.methods.isPublicMintOpen().call({from: window.userWalletAddress}).then((_state) => {
         isPublicMintOpen = _state;
     })
-    otterContract.methods.hasOtterVoucher(window.userWalletAddress).call({from: window.userWalletAddress}).then((voucher) => {
-        console.log("has voucher", voucher)
-        hasVoucher = voucher;
-        otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
-            console.log("has redeemed bundle", redeemed)
-            // redeemed ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden");
+    //otterContract.methods.hasOtterVoucher(window.userWalletAddress).call({from: window.userWalletAddress}).then((voucher) => {
+        // console.log("has voucher", voucher)
+        // showFreeRedeem = voucher;
+    otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
+        console.log("has redeemed bundle", redeemed)
+        // redeemed ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden");
 
-            otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
-                if (num !== 0) {
-                    console.log("whitelist type", num)
-                    hasRedeemedBundle = redeemed;
-                    whitelistType = parseInt(num)
-                    
-                    if (parseInt(num) === 1) {
-                        // extraModalImage.setAttribute("hidden", "hidden")
-                        console.log("updated bulk-info text")
-                        document.getElementById('bulk-info').innerText = `Whitelist Package Discount:\n Bulk Mint 2 Otters for 0.03 ETH Total`
-                        headerCollection.forEach((_header) => {
-                            _header.innerText = "Mint An Otter - Whitelisted"
-                        })
-                    }
-                    else if (parseInt(num) === 2) {
-                        // extraModalImage.removeAttribute("hidden")
-                        console.log("updated bulk-info text")
-                        document.getElementById('bulk-info').innerText = `OG Whitelist Package Discount:\n Bulk Mint 3 Otters for 0.03 ETH Total`
-                        headerCollection.forEach((_header) => {
-                            _header.innerText = "Mint An Otter - OG Whitelisted"
-                        })
-                    }
-                    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
-                }
-
-                otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
-                    console.log(`OWNED OTTERS ${nums}`)
-                    let numsArr = nums.toString().split(',')
-                    console.log(`numsArr ${numsArr}`)
-                    let uris = []
-                    if (numsArr.length >= 10) {
-                        console.log("MAX OTTERS MINTED")
-                        hasMintedMax = true
-                    }
-                    numsArr.forEach((_num) => {
-                        console.log(_num)
-                        console.log(parseInt(_num))
-                        if(_num) {
-                            otterContract.methods.uri(parseInt(_num)).call({from: window.userWalletAddress}).then((_uri) => {
-                                uris.push(_uri)
-                                console.log(`URI ${_uri}`)
-                                otterList.innerHTML = ""
-                                $.get(_uri, (data, status) => {
-                                    console.log("STATUS", status)
-                                    console.log("DATA", data)
-                                    console.log("Img URL", data.image)
-                                    
-                                    var li = document.createElement("li");
-                                    li.setAttribute('class','item');
-
-                                    var img = document.createElement('img');
-                                    img.src = data.image;
-                                    li.appendChild(img);
-
-                                    
-                                    var img = document.createElement('img');
-                                    var a = document.createElement('a')
-                                    a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${_num}`
-                                    a.target = "_blank"
-                                    a.style="max-width: 100%;height: auto;display: block;vertical-align: middle;"
-
-                                    img.src = data.image;
-                                    a.appendChild(img)
-
-                                    otterList.appendChild(img)
-                                })
-                                
-                            })
-                        }
+        otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
+            if (num !== 0) {
+                console.log("whitelist type", num)
+                hasRedeemedBundle = redeemed;
+                whitelistType = parseInt(num)
+                
+                if (parseInt(num) === 1) {
+                    // extraModalImage.setAttribute("hidden", "hidden")
+                    console.log("updated bulk-info text")
+                    document.getElementById('bulk-info').innerText = `Whitelist Package Discount:\n Bulk Mint 2 Otters for 0.03 ETH Total`
+                    headerCollection.forEach((_header) => {
+                        _header.innerText = "Mint An Otter - Whitelisted"
                     })
-                }).then(() => {
-                    updateModalState()
+                }
+                else if (parseInt(num) === 2) {
+                    // extraModalImage.removeAttribute("hidden")
+                    console.log("updated bulk-info text")
+                    document.getElementById('bulk-info').innerText = `OG Whitelist Package Discount:\n Bulk Mint 3 Otters for 0.03 ETH Total`
+                    headerCollection.forEach((_header) => {
+                        _header.innerText = "Mint An Otter - OG Whitelisted"
+                    })
+                }
+                bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
+            }
+
+            otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
+                console.log(`OWNED OTTERS ${nums}`)
+                let numsArr = nums.toString().split(',')
+                console.log(`numsArr ${numsArr}`)
+                let uris = []
+                if (numsArr.length >= 10) {
+                    console.log("MAX OTTERS MINTED")
+                    hasMintedMax = true
+                }
+                numsArr.forEach((_num) => {
+                    console.log(_num)
+                    console.log(parseInt(_num))
+                    if(_num) {
+                        otterContract.methods.uri(parseInt(_num)).call({from: window.userWalletAddress}).then((_uri) => {
+                            uris.push(_uri)
+                            console.log(`URI ${_uri}`)
+                            otterList.innerHTML = ""
+                            $.get(_uri, (data, status) => {
+                                console.log("STATUS", status)
+                                console.log("DATA", data)
+                                console.log("Img URL", data.image)
+                                
+                                var li = document.createElement("li");
+                                li.setAttribute('class','item');
+
+                                var img = document.createElement('img');
+                                img.src = data.image;
+                                li.appendChild(img);
+
+                                
+                                var img = document.createElement('img');
+                                var a = document.createElement('a')
+                                a.href=`https://opensea.io/assets/${otterAddress}/${_num}`
+                                a.target = "_blank"
+                                a.style="max-width: 100%;height: auto;display: block;vertical-align: middle;"
+
+                                img.src = data.image;
+                                a.appendChild(img)
+
+                                otterList.appendChild(img)
+                            })
+                            
+                        })
+                    }
                 })
+            }).then(() => {
+                updateModalState()
             })
         })
     })
+    //})
 }
 
 function mintMore() {
@@ -444,7 +456,7 @@ function mintMore() {
 }
 
 function redeemOtter() {
-    otterContract.methods.redeemFreeOtter().send({to: otterAddress, from: window.userWalletAddress}, () => { 
+    otterContract.methods.redeemFreeOtter(proof).send({to: otterAddress, from: window.userWalletAddress}, () => { 
         console.log("FREE REDEEM CLICKED")
     }).on('error', (error) =>{ 
         console.log("TX Rejected.")
@@ -454,7 +466,7 @@ function redeemOtter() {
         showLoadingModal()
         console.log(hash);
         txHash.innerText = `View TX on Etherscan`
-        txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+        txHash.href = `https://etherscan.io/tx/${hash}`
         txHash.removeAttribute('hidden')
         // mintButton.removeAttribute("hidden")
         // bulkButton.removeAttribute("hidden")
@@ -465,14 +477,14 @@ function redeemOtter() {
             if (whitelistType === 1) {
                 let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
                 console.log("otterId",otterId);
-                console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+                console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
 
                 otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
                     console.log(`URI ${_uri}`)
                     $.get(_uri, (data, status) => {
                         var img = document.createElement('img');
                         var a = document.createElement('a')
-                        a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                        a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
                         a.target = "_blank"
                         img.src = data.image;
                         a.appendChild(img)
@@ -501,7 +513,7 @@ function redeemOtter() {
                     let otterId = parseInt(dataParams[washedIndex], 16)
 
                     console.log("otterId",otterId);
-                    console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+                    console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
 
                     mintedOtterImg.innerHTML = '';
                     mintedOtterImg.style = "width:100%; margin:5% 0 0 -50%"
@@ -510,7 +522,7 @@ function redeemOtter() {
                         $.get(_uri, (data, status) => {
                             var img = document.createElement('img');
                             var a = document.createElement('a')
-                            a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                            a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
                             a.target = "_blank"
                             img.src = data.image;
                             img.style = numberOfOttersMinted === 2 ? "width:70%" : "width:90%"
@@ -540,7 +552,7 @@ function bulkMintOtterPublic() {
         showLoadingModal()
         console.log(hash);
         txHash.innerText = `View TX on Etherscan`
-        txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+        txHash.href = `https://etherscan.io/tx/${hash}`
         // bulkButton.setAttribute("hidden", "hidden")
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
@@ -566,7 +578,7 @@ function bulkMintOtterPublic() {
                 let otterId = parseInt(dataParams[washedIndex], 16)
 
                 console.log("otterId",otterId);
-                console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+                console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
 
                 mintedOtterImg.innerHTML = '';
                 mintedOtterImg.style = "width:100%; margin:5% 0 0 -50%"
@@ -575,10 +587,10 @@ function bulkMintOtterPublic() {
                     $.get(_uri, (data, status) => {
                         var img = document.createElement('img');
                         var a = document.createElement('a')
-                        a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                        a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
                         a.target = "_blank"
                         img.src = data.image;
-                        img.style= numberOfOttersMinted === 2 ? "width:70%" : "width:90%" 
+                        img.style= numberOfOttersMinted === 2 ? "width:70%" : numberOfOttersMinted > 3 ? "width:90%; height:50%" : "width:90%" 
                         a.appendChild(img)
                         a.style= "width:120%"
 
@@ -603,7 +615,7 @@ function bulkMintOtter() {
         showLoadingModal()
         console.log(hash);
         txHash.innerText = `View TX on Etherscan`
-        txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+        txHash.href = `https://etherscan.io/tx/${hash}`
         // bulkButton.setAttribute("hidden", "hidden")
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
@@ -629,7 +641,7 @@ function bulkMintOtter() {
                 let otterId = parseInt(dataParams[washedIndex], 16)
 
                 console.log("otterId",otterId);
-                console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+                console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
 
                 mintedOtterImg.innerHTML = '';
                 mintedOtterImg.style = "width:100%; margin:5% 0 0 -50%"
@@ -638,7 +650,7 @@ function bulkMintOtter() {
                     $.get(_uri, (data, status) => {
                         var img = document.createElement('img');
                         var a = document.createElement('a')
-                        a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                        a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
                         a.target = "_blank"
                         img.src = data.image;
                         img.style= numberOfOttersMinted === 2 ? "width:70%" : "width:90%" 
@@ -666,20 +678,20 @@ function mintOtter() {
         showLoadingModal()
         console.log(hash);
         txHash.innerText = `View TX on Etherscan`
-        txHash.href = `https://rinkeby.etherscan.io/tx/${hash}`
+        txHash.href = `https://etherscan.io/tx/${hash}`
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
         if (confirmationNumber === 2) {
             let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
             console.log("otterId",otterId);
-            console.log(`OpenSea Info: https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`)
+            console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
 
             otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
                 console.log(`URI ${_uri}`)
                 $.get(_uri, (data, status) => {
                     var img = document.createElement('img');
                     var a = document.createElement('a')
-                    a.href=`https://testnets.opensea.io/assets/rinkeby/${otterAddress}/${otterId}`
+                    a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
                     a.target = "_blank"
                     img.src = data.image;
                     a.appendChild(img)
@@ -714,7 +726,7 @@ function updateModalState() {
         document.getElementById('display_viewport').removeAttribute("hidden")
         document.getElementById('display_img').setAttribute("hidden", "hidden")
     }
-    else if (hasVoucher) {
+    else if (showFreeRedeem) {
         redeemModal.removeAttribute("hidden")
     }
     else if (whitelistType === 0 && isPublicMintOpen) {
@@ -737,6 +749,11 @@ function updateModalState() {
         // TODO: add isPublicSaleOpen
         publicBundleModal.removeAttribute("hidden")
     }
+    
+    otterContract.methods.getLastIdMinted().call({from: window.userWalletAddress}).then((_id) => {
+        lastOtterMinted.innerText = `${parseInt(_id)} / 2500\n`
+        lastOtterMinted.style = "color: white; font-weight: bold; font-size: 36px; font-family: 'Baloo'"
+    })
 }
 
 window.addEventListener('DOMContentLoaded', () => {
