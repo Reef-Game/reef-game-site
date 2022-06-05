@@ -470,6 +470,8 @@ function redeemOtter() {
         txHash.removeAttribute('hidden')
         // mintButton.removeAttribute("hidden")
         // bulkButton.removeAttribute("hidden")
+    }).on('block', ()=>{
+        console.log("keep alive")
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
         if (confirmationNumber === 2) {
@@ -552,6 +554,8 @@ function bulkMintOtterPublic() {
         txHash.innerText = `View TX on Etherscan`
         txHash.href = `https://etherscan.io/tx/${hash}`
         // bulkButton.setAttribute("hidden", "hidden")
+    }).on('block', ()=>{
+        console.log("keep alive")
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
         console.log(receipt); 
@@ -615,6 +619,8 @@ function bulkMintOtter() {
         txHash.innerText = `View TX on Etherscan`
         txHash.href = `https://etherscan.io/tx/${hash}`
         // bulkButton.setAttribute("hidden", "hidden")
+    }).on('block', ()=>{
+        console.log("keep alive")
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
         console.log(receipt); 
@@ -677,6 +683,8 @@ function mintOtter() {
         console.log(hash);
         txHash.innerText = `View TX on Etherscan`
         txHash.href = `https://etherscan.io/tx/${hash}`
+    }).on('block', ()=>{
+        console.log("keep alive")
     }).on('confirmation', (confirmationNumber, receipt) => { 
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
         if (confirmationNumber === 2) {
