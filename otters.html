@@ -440,7 +440,7 @@
 
     <script>
         // Timmer Countdown JS
-        var comingdate = new Date("June 5, 2022 13:00:00");
+        var comingdate = new Date("June 5, 2022 11:00:00 GMT-7:00");
         var d = document.getElementById('days');
         var h = document.getElementById('hours');
         var m = document.getElementById('minutes');
@@ -449,8 +449,8 @@
         var x = setInterval(function(){
         var now = new Date();
         var des = comingdate.getTime() - now.getTime();
-        var days = Math.floor(0);
-        var hours = Math.floor(2);
+        var days = Math.floor(des/(1000 * 60 * 60 * 24));
+        var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
         var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
         var secs = Math.floor(des%(1000 * 60) / 1000);
 
