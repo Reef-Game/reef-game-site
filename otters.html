@@ -3,13 +3,19 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX6Y7V67PL"></script>
+<script src="./assets/js/web3.min.js"></script> 
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-XX6Y7V67PL');
+    gtag('config', 'G-XX6Y7V67PL');
+
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,60 +27,205 @@
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body>
+    <input class="rf__modal__state" id="modal-1" type="checkbox" />
+    <div class="rf__modal otter_modal">
+        <label class="rf__modal__bg" for="modal-1"></label>
+        <div class="modal__inner text-center glassmorphism__card" id="bundle_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <div class="container" style="width:100%; height:90%">
+                <div class="row" style="height:100%">
+                    <div class="col mint-half" style="height: 100%">
+                        <div style="display:flex; flex-direction:column; height:100%">
+                            <div style="flex:1">
+                                <div class="otter_frame_half">
+                                    <img src="./assets/images/average__otter_image_7.png">
+                                </div>
+                            </div>
+                            <div style="flex:1; margin-top:20%">
+                                <p>Mint 1 Otter (0.03 ETH)</p>
+                            </div>
+                            <div style="flex:1">
+                                <button name="mint-btn-half" class="btn btn-half" >Mint Single</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mint-half" style="height: 100%">
+                        <div style="display:flex; flex-direction:column; height:100%">
+                            <div style="flex:1">
+                                <div class="otter_frame_half">
+                                    <div class="container">
+                                        <div class="row d-flex justify-content-center">
+                                            <img style="border-radius: 20px; padding:0; margin-top:10px; width:50%" src="./assets/images/average__otter_image_11.png">
+                                            <!-- <div class="col d-flex justify-content-center" style="width:46%">
+                                            </div> -->
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col justify-content-center" style="width:60%; border-radius: 2px; margin-top: 10px; margin-bottom: 10px">
+                                                <img style="border-radius: 20px; padding:0; height:100%" src="./assets/images/average__otter_image_9.png">
+                                            </div>
+                                            <div class="col justify-content-center" style="width:60%; border-radius: 2px; margin-top: 10px; margin-bottom: 10px">
+                                                <img style="border-radius: 20px; padding:0; height:100%" src="./assets/images/average__otter_image_10.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1; margin-top:20%">
+                                <p id="bulk-info">Bundle Info</p>
+                            </div>
+                            <div style="flex:1">
+                                <button id="bulk" class="btn btn-half" >Mint Package</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="public_bundle_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <div class="container" style="width:100%; height:90%">
+                <div class="row" style="height:100%">
+                    <div class="col mint-half" style="height: 100%">
+                        <div style="display:flex; flex-direction:column; height:100%">
+                            <div style="flex:1">
+                                <div class="otter_frame_half">
+                                    <img src="./assets/images/average__otter_image_7.png">
+                                </div>
+                            </div>
+                            <div style="flex:1; margin-top:20%">
+                                <p>Mint 1 Otter (0.03 ETH)</p>
+                            </div>
+                            <div style="flex:1">
+                                <button name="mint-btn-half" class="btn btn-half" >Mint Single</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mint-half" style="height: 100%">
+                        <div style="display:flex; flex-direction:column; height:100%">
+                            <div style="flex:1">
+                                <div class="otter_frame_half">
+                                    <div class="container">
+                                        <div class="row d-flex justify-content-center">
+                                            <img style="border-radius: 20px; padding:0; margin-top:10px; width:50%" src="./assets/images/average__otter_image_11.png">
+                                            <!-- <div class="col d-flex justify-content-center" style="width:46%">
+                                            </div> -->
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col justify-content-center" style="width:60%; border-radius: 2px; margin-top: 10px; margin-bottom: 10px">
+                                                <img style="border-radius: 20px; padding:0; height:100%" src="./assets/images/average__otter_image_9.png">
+                                            </div>
+                                            <div class="col justify-content-center" style="width:60%; border-radius: 2px; margin-top: 10px; margin-bottom: 10px">
+                                                <img style="border-radius: 20px; padding:0; height:100%" src="./assets/images/average__otter_image_10.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1; margin-top:20%">
+                                <p id="bulk-info-public">Mint multiple Otters at once.</p>
+                                <p id="bulk-info-public-price" style="font-weight: bold; font-size:large">1 of 10 (0.03 ETH)</p>
+                            </div>
+                            <div style="flex:1">
+                                <div class="">
+                                    <div class="container">
+                                        <div class="row d-flex justify-content-center" style="display: inline-block;">
+                                            <div class="" style="align-items: center;">
+                                                <button id="increment-down" class="btn btn-increment-down"></button>
+                                            </div>
+                                            <div class="" style="align-items: center;">
+                                                <button id="bulk-public" class="btn btn-half" >Mint</button>
+                                            </div>
+                                            <div class="" style="align-items: center;">
+                                                <button id="increment-up" class="btn btn-increment-up"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="display_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 id="display_h1" style="font-size: 30px; font-family: 'Baloo'">Max Mint Limit Reached</h1>
+            <!-- Image Frame -->
+            <div id="display_img" class="otter_frame" hidden>
+                <img src="./assets/images/average__otter_image_11.png">
+            </div>
+            <div id="display_viewport" class="viewport" style="padding-top:15px; height: 50%;">
+                <ul class="list" id="otterList" style="height:100%">
+                </ul>
+            </div>
+            <!-- <img id="loading" src="assets/images/loading.gif" hidden="hidden" style="width:50px; margin:auto" ></img> -->
+            <!-- <a id='txHash' class='text-lg text-white-600 my-2'></a> -->
+            <p id="display_p" style="font-size:20px; padding-top:20px">You have reached the max otter mint limit, thanks for supporting Reef Game!</p>
+            <br/>
+            <a target="_blank" href="https://opensea.io/account">View your Otters on OpenSea here!</a>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="mint_single_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame">
+                <img src="./assets/images/average__otter_image_11.png">
+            </div>
+            <!-- <img id="loading" src="assets/images/loading.gif" hidden="hidden" style="width:50px; margin:auto" ></img> -->
+            <!-- <a id='txHash' class='text-lg text-white-600 my-2'></a> -->
+            <p style="font-size:20px; padding-top:20px">Mint 1 Otter (0.03 ETH)</p>
+            <button id="mint" class="btn" >Mint Single</button>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="redeem_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame">
+                <img src="./assets/images/average__otter_image_11.png">
+            </div>
+            <!-- <img id="loading" src="assets/images/loading.gif" hidden="hidden" style="width:50px; margin:auto" ></img> -->
+            <!-- <a id='txHash' class='text-lg text-white-600 my-2'></a> -->
+            <p style="padding-top:20px; padding-top:20px">Thanks for your support, redeem free Otter(s)!</p>
+            <button id="redeem" class="btn" >Redeem Free Otter(s)</button>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="loading_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame">
+                <div id="loading" class="loading"></div>
+            </div>
+            <p style="padding-top:20px; font-size:larger"><b>Otter(s) being minted, please don't close this screen.</b></p>
+            <p style="padding-top:20px">Please note that minting takes 2 confirmations to be successful.</p>
+            <a id='txHash' class='text-lg text-white-200 my-2' style="padding-top:20px" target="_blank"></a>
+        </div>
+        <div class="modal__inner text-center glassmorphism__card" id="successful_mint_modal" hidden>
+            <label class="modal__close" for="modal-1"></label>
+            <h1 name="mintHeader" style="font-size: 30px; font-family: 'Baloo'">Mint An Otter</h1>
+            <!-- Image Frame -->
+            <div class="otter_frame" id="mintedOtter">
+            </div>
+            <p style="padding-top:20px">Otter(s) successfully minted!</p>
+            <button id="mint-more" class="btn" style="margin-bottom:5px">Mint More</button>
+        </div>
+    </div>
+    </html>
     <header class="header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="400">
         <div class="container-fluid">
+            
             <div class="row">
                 <div class="col--20">
                     <div class="header__logo">
-                        <a href="index"><img src="assets/images/The-Reef_logo_v2.png" alt="The Reef GAME"></a>
+                        <a href="index.html"><img src="assets/images/The-Reef_logo_v2.png" alt="The Reef GAME"></a>
                     </div>
                 </div>
                 <div class="col--80 d-flex align-items-center justify-content-end">
-                    <div class="header__menu d-flex align-items-center">
-                        <ul class="d-flex align-items-center mb-0">
-                            <li>
-                                <a href="./otters">Otter Mint</a>
-                            </li>
-                            <li>
-                                <a class="active" href="/index" data-splitting>Our Story</a>
-                            </li>
-                            <li>
-                                <a href="/index" data-splitting>Game</a>
-                            </li>
-                            <li>
-                                <a href="/index" data-splitting>Roadmap</a>
-                            </li>
-                          
-                
-                            <li>
-                                <a href="/index" data-splitting>People</a>
-                            </li>
-                        </ul>
-                        <ul class="social__sharing d-flex align-items-center justify-content-end mb-0">
-                            <li>
-                                <a  target="_blank" href="https://twitter.com/reef_game">
-                                    <img class="in-svg" src="./assets/images/twitter.svg" alt="Twitter">
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank"  href="https://discord.com/invite/reefgame">
-                                    <img class="in-svg" src="./assets/images/discord.svg" alt="Discord">
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank"  href="https://www.instagram.com/reefgame/">
-                                    <img class="in-svg" src="./assets/images/instagram.svg" alt="Instagram">
-                                </a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">
-                                    <img class="in-svg" src="./assets/images/logomark.svg" alt="Logomark">
-                                </a>
-                            </li> -->
-                        </ul>
-                    </div>
                     <div class="toggle__menu">
                         <img class="hamburger" src="./assets/images/hamburger.svg" alt="">
                         <img class="hamburger__close" src="./assets/images/hamburger_close.svg" alt="">
@@ -83,8 +234,9 @@
             </div>
         </div>
     </header>
-
+    
     <main class="main__wrapper">
+        
         <section class="rf__coming_soon--block">
             <div class="SeaSurface" data-aos="fade-down">
                 <img src="./assets/images/SeaSurface.png" alt="SeaSurface">
@@ -98,29 +250,46 @@
                 </div>
                 <div class="rf__coming_soon--wrapper">
                     <h1 class="text-center text-white" data-aos="fade-up">Reef Game Otters</h1>
+                    <div class="rf__coming_soon--details">
                     <div class="rf__coming_soon text-center glassmorphism__card">
-                        <div class="rf__coming_soon--icon" data-aos="fade-up">
+                        <div class="rf__coming_soon--icon " data-aos="fade-up">
                             <img src="./assets/images/coming_soon_icon.png" alt="Coming Soon">
-                        </div>
-                        <div class="rf__coming_soon--details">
-                            <h3 class="mb-0 text-white" data-aos="fade-up">Coming Soon</h3>
-                            <h6 class="text-white" data-aos="fade-up">Minting Here June 5, 2022</h6>
-                            <div class="rf__coming_soon--counter">
-                                <ul class="d-flex align-items-center justify-content-center">
-                                    <li data-aos="fade-up"><span id="days"></span>Days</li>
-                                    <li data-aos="fade-up"><span id="hours"></span>Hours</li>
-                                    <li data-aos="fade-up"><span id="minutes"></span>Minutes</li>
-                                    <li data-aos="fade-up"><span id="seconds"></span>Seconds</li>
-                                </ul>
-                            </div>
-                            <p class="mb-0" data-aos="fade-up">
-                                <a target="_blank" href="https://discord.com/invite/reefgame" class="btn">Join Whitelist</a>
+                            <div class="rf__coming_soon--counter" />
+                                
+                            <p class="mb-0 " data-aos="fade-up">
+                                <label for="modal-1" class="btn" id="mainMint" hidden>Open Minting DApp</label>
+                                <br/><br/>
+                                <button id='loginButton' onclick="" class="btn bg-purple-500">Login with MetaMask</button>
+                                <br/><br/>
+                                <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
+                                <br/><br/>
+                                <p id='lastOtterMinted' class='text-lg text-gray-600 my-2'></p>
+                                <p class='text-lg text-gray-600 my-2'>Otters Minted</p>
                             </p>
                         </div>
                     </div>
+                        
                 </div>
             </div>
         </section>
+        
+        
+        <!-- <div class="rf__coming_soon--details">
+            <h3 class="mb-0 text-white" data-aos="fade-up">Coming Soon</h3>
+            <h6 class="text-white" data-aos="fade-up">Minting Here May 25, 2022</h6>
+            <div class="rf__coming_soon--counter">
+                <ul class="d-flex align-items-center justify-content-center">
+                    <li data-aos="fade-up"><span id="days"></span>Days</li>
+                    <li data-aos="fade-up"><span id="hours"></span>Hours</li>
+                    <li data-aos="fade-up"><span id="minutes"></span>Minutes</li>
+                    <li data-aos="fade-up"><span id="seconds"></span>Seconds</li>
+                </ul>
+            </div>
+            <p class="mb-0" data-aos="fade-up">
+                <a target="_blank" href="https://discord.com/invite/reefgame" class="btn">Mint</a>
+            </p>
+        </div> -->
+    </div>
 
         <section class="rf__average__otter--block">
             <div class="container">
@@ -324,8 +493,8 @@
                         <h2 data-aos="fade-up">Join The Reef Club</h2>
                         <h6 data-aos="fade-up">Got questions? Reach out over social!</h6>
                     </h6>
-                    <ul class="social__sharing d-flex align-items-center justify-content-center mb-0">
-                        <li data-aos="fade-up">
+                    <ul class="social__sharing d-flex align-items-center justify-content-center mb-0" >
+                        <li data-aos="fade-up" >
                             <a target="_blank"  class="d-flex align-items-center justify-content-center" href="https://discord.com/invite/reefgame"><img src="./assets/images/discord.svg" alt="Discord"></a>
                         </li>
                         <li data-aos="fade-up">
@@ -369,13 +538,13 @@
                         <div class="footer__nav">                        
                             <ul class="mb-0">
                                 <li>
-                                    <a href="./index#our_story">Our Story</a>
+                                    <a href="./index.html#our_story">Our Story</a>
                                 </li>
                                 <li>
-                                    <a href="./index#about_game">Game</a>
+                                    <a href="./index.html#about_game">Game</a>
                                 </li>
                                 <li>
-                                    <a href="./index#roadmap">Roadmap</a>
+                                    <a href="./index.html#roadmap">Roadmap</a>
                                 </li>
                             </ul>
                         </div>
@@ -387,13 +556,13 @@
                         <div class="footer__nav d-flex">
                             <ul class="mb-0">
                                 <li>
-                                    <a href="./index#partners">Partners</a>
+                                    <a href="./index.html#partners">Partners</a>
                                 </li>
                                 <li>
-                                    <a href="./index#people">People</a>
+                                    <a href="./index.html#people">People</a>
                                 </li>
                                 <li>
-                                    <a href="./index#investors">Investors</a>
+                                    <a href="./index.html#investors">Investors</a>
                                 </li>                                
                             </ul>
                             <!-- <ul class="mb-0">
@@ -418,8 +587,8 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="./assets/js/otters.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
@@ -437,37 +606,6 @@
         //It also supports NodeList
         VanillaTilt.init(document.querySelectorAll(".vanilla-box"));
     </script>
-
-    <script>
-        // Timmer Countdown JS
-        var comingdate = new Date("June 5, 2022 11:00:00 GMT-7:00");
-        var d = document.getElementById('days');
-        var h = document.getElementById('hours');
-        var m = document.getElementById('minutes');
-        var s = document.getElementById('seconds');
-
-        var x = setInterval(function(){
-        var now = new Date();
-        var des = comingdate.getTime() - now.getTime();
-        var days = Math.floor(des/(1000 * 60 * 60 * 24));
-        var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
-        var mins = Math.floor(des%(1000 * 60 * 60) / (1000 * 60));
-        var secs = Math.floor(des%(1000 * 60) / 1000);
-
-        d.innerHTML = getTrueNumber(days);
-        h.innerHTML = getTrueNumber(hours);
-        m.innerHTML = getTrueNumber(mins);
-        s.innerHTML = getTrueNumber(secs);
-
-        if(des <= 0) clearInterval(x);  
-
-        },1000);
-
-        function getTrueNumber(x) {
-            if (x < 10) return '0' + x;
-            else return x;
-        }
-        // Timmer Countdown JS
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-</html>
