@@ -474,28 +474,28 @@ function redeemOtter() {
         // display Otter minted animation, display minted otters on screen, link to otters on opensea
         if (confirmationNumber === 2) {
             // if whitelistType = 2
-            if (whitelistType === 1) {
-                let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
-                console.log("otterId",otterId);
-                console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
+            // if (whitelistType === 1) {
+            //     let otterId = parseInt(receipt['events'][0]['raw']['data'].substring(2,66), 16)
+            //     console.log("otterId",otterId);
+            //     console.log(`OpenSea Info: https://opensea.io/assets/${otterAddress}/${otterId}`)
 
-                otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
-                    console.log(`URI ${_uri}`)
-                    $.get(_uri, (data, status) => {
-                        var img = document.createElement('img');
-                        var a = document.createElement('a')
-                        a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
-                        a.target = "_blank"
-                        img.src = data.image;
-                        a.appendChild(img)
+            //     otterContract.methods.uri(otterId).call({from: window.userWalletAddress}).then((_uri) => {
+            //         console.log(`URI ${_uri}`)
+            //         $.get(_uri, (data, status) => {
+            //             var img = document.createElement('img');
+            //             var a = document.createElement('a')
+            //             a.href=`https://opensea.io/assets/${otterAddress}/${otterId}`
+            //             a.target = "_blank"
+            //             img.src = data.image;
+            //             a.appendChild(img)
 
-                        mintedOtterImg.innerHTML = '';                        
-                        mintedOtterImg.style = ""
-                        mintedOtterImg.appendChild(a);
-                    })
-                }).then(() => showMintSuccessModal())
-            }
-            else if (whitelistType === 2) {
+            //             mintedOtterImg.innerHTML = '';                        
+            //             mintedOtterImg.style = ""
+            //             mintedOtterImg.appendChild(a);
+            //         })
+            //     }).then(() => showMintSuccessModal())
+            // }
+            //else if (whitelistType === 2) {
                 let txData = receipt['events'][0]['raw']['data'].slice(2)
                 let dataParams = []
 
@@ -535,9 +535,7 @@ function redeemOtter() {
                     })
                 })
                 showMintSuccessModal()
-            }
-            
-                    
+            //}       
         }
     })
 }
