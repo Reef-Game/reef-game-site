@@ -221,7 +221,7 @@ let hasRedeemedBundle = true;
 let whitelistType = 0;
 let hasMintedMax = false;
 let bulkNumber = 1;
-let numOttersAllowed = 5;
+let numOttersAllowed = 100;
 let otterPrice = 30000000000000000;
 let proof = []
 
@@ -401,7 +401,7 @@ async function updateContractVarsAndUpdateModal() {
                 let numsArr = nums.toString().split(',')
                 console.log(`numsArr ${numsArr}`)
                 let uris = []
-                if (numsArr.length >= 5) {
+                if (numsArr.length >= numOttersAllowed) {
                     console.log("MAX OTTERS MINTED")
                     hasMintedMax = true
                 }
