@@ -216,7 +216,7 @@ const otterABI = [
 const otterAddress = "0x18A0DA358A0c792fd47Dd4a620b7069801CDa24F"
 let otterContract; 
 let showFreeRedeem = false;
-let isPublicMintOpen = false;
+let isPublicMintOpen = true;
 let hasRedeemedBundle = true;
 let whitelistType = 0;
 let hasMintedMax = false;
@@ -361,9 +361,9 @@ async function updateContractVarsAndUpdateModal() {
         lastOtterMinted.innerText = `${parseInt(_id)} / 2500\n`
         lastOtterMinted.style = "color: white; font-weight: bold; font-size: 36px; font-family: 'Baloo'"
     })
-    otterContract.methods.isPublicMintOpen().call({from: window.userWalletAddress}).then((_state) => {
-        isPublicMintOpen = _state;
-    })
+    // otterContract.methods.isPublicMintOpen().call({from: window.userWalletAddress}).then((_state) => {
+    //     isPublicMintOpen = _state;
+    // })
     //otterContract.methods.hasOtterVoucher(window.userWalletAddress).call({from: window.userWalletAddress}).then((voucher) => {
         // console.log("has voucher", voucher)
         // showFreeRedeem = voucher;
