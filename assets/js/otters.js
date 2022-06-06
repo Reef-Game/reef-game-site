@@ -345,7 +345,7 @@ async function loginWithMetaMask() {
         console.log("PROOF: ", proof)
 
         otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
-            if (parseInt(num) === 0) showFreeRedeem = true;
+            // if (parseInt(num) !== 0) showFreeRedeem = true;
         })
     })
     await updateContractVarsAndUpdateModal()
