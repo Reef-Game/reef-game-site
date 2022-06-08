@@ -296,7 +296,7 @@ function changeBulkIncrement(increment) {
     console.log("INCREMENT", increment)
     if (bulkNumber + increment <= numOttersAllowed  && bulkNumber + increment >= 0) bulkNumber = bulkNumber + increment 
 
-    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
+    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${(bulkNumber * 0.03).toFixed(2)} ETH)`
 }
 
 function onClickTest() {
@@ -391,7 +391,7 @@ async function updateContractVarsAndUpdateModal() {
                                             _header.innerText = "Mint An Otter - OG Whitelisted"
                                         })
                                     }
-                                    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
+                                    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${(bulkNumber * 0.03).toFixed(2)} ETH)`
                                 }
                     
                                 otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
