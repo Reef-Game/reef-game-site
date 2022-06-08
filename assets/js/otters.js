@@ -296,7 +296,7 @@ function changeBulkIncrement(increment) {
     console.log("INCREMENT", increment)
     if (bulkNumber + increment <= numOttersAllowed  && bulkNumber + increment >= 0) bulkNumber = bulkNumber + increment 
 
-    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
+    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${(bulkNumber * 0.03).toFixed(2)} ETH)`
 }
 
 function onClickTest() {
@@ -335,6 +335,10 @@ async function loginWithMetaMask() {
     mintMoreButton.addEventListener('click', mintMore)
     incrementUp.addEventListener('click', () => changeBulkIncrement(1))
     incrementDown.addEventListener('click', () => changeBulkIncrement(-1))
+    await updateContractVarsAndUpdateModal()
+}
+
+async function updateContractVarsAndUpdateModal() {
 
     const merkleRestEndpoint = `https://play.reef.game/rest/otter-whitelist?address=${window.userWalletAddress}`
     $.get(merkleRestEndpoint, (data, status) => {
@@ -346,106 +350,112 @@ async function loginWithMetaMask() {
 
         otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
             // if (parseInt(num) !== 0) showFreeRedeem = true;
+            
+            // Figure out if user can redeem
+            otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
+                console.log(`OWNED OTTERS`, nums)
+                if (whitelistType !== 0 && nums.length === 0) {
+                    showFreeRedeem = true
+                    console.log("SHOW FREE REDEEM")
+                }
+                otterContract.methods.getAvailableOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((_numOtters) => {
+                    console.log("Num OTTERS", _numOtters)
+                    numOttersAllowed = parseInt(_numOtters);
+                    console.log("Num OTTERS", numOttersAllowed)
+                    otterContract.methods.getLastIdMinted().call({from: window.userWalletAddress}).then((_id) => {
+                        lastOtterMinted.innerText = `${parseInt(_id)} / 2500\n`
+                        lastOtterMinted.style = "color: white; font-weight: bold; font-size: 36px; font-family: 'Baloo'"
+                        otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
+                            console.log("has redeemed bundle", redeemed)
+                            // redeemed ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden");
+                    
+                            otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
+                                if (num !== 0) {
+                                    console.log("whitelist type", num)
+                                    hasRedeemedBundle = redeemed;
+                                    whitelistType = parseInt(num)
+                                    
+                                    if (parseInt(num) === 1) {
+                                        // extraModalImage.setAttribute("hidden", "hidden")
+                                        console.log("updated bulk-info text")
+                                        document.getElementById('bulk-info').innerText = `Whitelist Package Discount:\n Bulk Mint 2 Otters for 0.03 ETH Total`
+                                        headerCollection.forEach((_header) => {
+                                            _header.innerText = "Mint An Otter - Whitelisted"
+                                        })
+                                    }
+                                    else if (parseInt(num) === 2) {
+                                        // extraModalImage.removeAttribute("hidden")
+                                        console.log("updated bulk-info text")
+                                        document.getElementById('bulk-info').innerText = `OG Whitelist Package Discount:\n Bulk Mint 3 Otters for 0.03 ETH Total`
+                                        headerCollection.forEach((_header) => {
+                                            _header.innerText = "Mint An Otter - OG Whitelisted"
+                                        })
+                                    }
+                                    bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${(bulkNumber * 0.03).toFixed(2)} ETH)`
+                                }
+                    
+                                otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
+                                    console.log(`OWNED OTTERS ${nums}`)
+                                    let numsArr = nums.toString().split(',')
+                                    console.log(`numsArr ${numsArr}`)
+                                    let uris = []
+                                    if (numsArr.length >= numOttersAllowed) {
+                                        console.log("MAX OTTERS MINTED")
+                                        hasMintedMax = true
+                                    }
+                                    numsArr.forEach((_num) => {
+                                        console.log(_num)
+                                        console.log(parseInt(_num))
+                                        if(_num) {
+                                            otterContract.methods.uri(parseInt(_num)).call({from: window.userWalletAddress}).then((_uri) => {
+                                                uris.push(_uri)
+                                                console.log(`URI ${_uri}`)
+                                                otterList.innerHTML = ""
+                                                $.get(_uri, (data, status) => {
+                                                    console.log("STATUS", status)
+                                                    console.log("DATA", data)
+                                                    console.log("Img URL", data.image)
+                                                    
+                                                    var li = document.createElement("li");
+                                                    li.setAttribute('class','item');
+                    
+                                                    var img = document.createElement('img');
+                                                    img.src = data.image;
+                                                    li.appendChild(img);
+                    
+                                                    
+                                                    var img = document.createElement('img');
+                                                    var a = document.createElement('a')
+                                                    a.href=`https://opensea.io/assets/${otterAddress}/${_num}`
+                                                    a.target = "_blank"
+                                                    a.style="max-width: 100%;height: auto;display: block;vertical-align: middle;"
+                    
+                                                    img.src = data.image;
+                                                    a.appendChild(img)
+                    
+                                                    otterList.appendChild(img)
+                                                })
+                                                
+                                            })
+                                        }
+                                    })
+                                }).then(() => {
+                                    updateModalState()
+                                })
+                            })
+                        })
+                    })
+                })
+            })
         })
     })
-    await updateContractVarsAndUpdateModal()
-}
-
-async function updateContractVarsAndUpdateModal() {
-    otterContract.methods.getAvailableOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((_numOtters) => {
-        console.log("Num OTTERS", _numOtters)
-        numOttersAllowed = parseInt(_numOtters);
-        console.log("Num OTTERS", numOttersAllowed)
-    })
-    otterContract.methods.getLastIdMinted().call({from: window.userWalletAddress}).then((_id) => {
-        lastOtterMinted.innerText = `${parseInt(_id)} / 2500\n`
-        lastOtterMinted.style = "color: white; font-weight: bold; font-size: 36px; font-family: 'Baloo'"
-    })
+    
     // otterContract.methods.isPublicMintOpen().call({from: window.userWalletAddress}).then((_state) => {
     //     isPublicMintOpen = _state;
     // })
     //otterContract.methods.hasOtterVoucher(window.userWalletAddress).call({from: window.userWalletAddress}).then((voucher) => {
         // console.log("has voucher", voucher)
         // showFreeRedeem = voucher;
-    otterContract.methods.hasRedeemedBundle(window.userWalletAddress).call({from: window.userWalletAddress}).then((redeemed) => {
-        console.log("has redeemed bundle", redeemed)
-        // redeemed ? bulkButton.setAttribute("hidden", "hidden") : bulkButton.removeAttribute("hidden");
-
-        otterContract.methods.whitelistTypeOfAddress(window.userWalletAddress).call({from: window.userWalletAddress}).then((num) => {
-            if (num !== 0) {
-                console.log("whitelist type", num)
-                hasRedeemedBundle = redeemed;
-                whitelistType = parseInt(num)
-                
-                if (parseInt(num) === 1) {
-                    // extraModalImage.setAttribute("hidden", "hidden")
-                    console.log("updated bulk-info text")
-                    document.getElementById('bulk-info').innerText = `Whitelist Package Discount:\n Bulk Mint 2 Otters for 0.03 ETH Total`
-                    headerCollection.forEach((_header) => {
-                        _header.innerText = "Mint An Otter - Whitelisted"
-                    })
-                }
-                else if (parseInt(num) === 2) {
-                    // extraModalImage.removeAttribute("hidden")
-                    console.log("updated bulk-info text")
-                    document.getElementById('bulk-info').innerText = `OG Whitelist Package Discount:\n Bulk Mint 3 Otters for 0.03 ETH Total`
-                    headerCollection.forEach((_header) => {
-                        _header.innerText = "Mint An Otter - OG Whitelisted"
-                    })
-                }
-                bulkInfoPublicPrice.innerText = `${bulkNumber} of ${numOttersAllowed} (${bulkNumber * 0.03} ETH)`
-            }
-
-            otterContract.methods.getOtters(window.userWalletAddress).call({from: window.userWalletAddress}).then((nums) => {
-                console.log(`OWNED OTTERS ${nums}`)
-                let numsArr = nums.toString().split(',')
-                console.log(`numsArr ${numsArr}`)
-                let uris = []
-                if (numsArr.length >= numOttersAllowed) {
-                    console.log("MAX OTTERS MINTED")
-                    hasMintedMax = true
-                }
-                numsArr.forEach((_num) => {
-                    console.log(_num)
-                    console.log(parseInt(_num))
-                    if(_num) {
-                        otterContract.methods.uri(parseInt(_num)).call({from: window.userWalletAddress}).then((_uri) => {
-                            uris.push(_uri)
-                            console.log(`URI ${_uri}`)
-                            otterList.innerHTML = ""
-                            $.get(_uri, (data, status) => {
-                                console.log("STATUS", status)
-                                console.log("DATA", data)
-                                console.log("Img URL", data.image)
-                                
-                                var li = document.createElement("li");
-                                li.setAttribute('class','item');
-
-                                var img = document.createElement('img');
-                                img.src = data.image;
-                                li.appendChild(img);
-
-                                
-                                var img = document.createElement('img');
-                                var a = document.createElement('a')
-                                a.href=`https://opensea.io/assets/${otterAddress}/${_num}`
-                                a.target = "_blank"
-                                a.style="max-width: 100%;height: auto;display: block;vertical-align: middle;"
-
-                                img.src = data.image;
-                                a.appendChild(img)
-
-                                otterList.appendChild(img)
-                            })
-                            
-                        })
-                    }
-                })
-            }).then(() => {
-                updateModalState()
-            })
-        })
-    })
     //})
 }
 
