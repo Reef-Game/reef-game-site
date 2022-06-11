@@ -254,6 +254,7 @@ let proof = []
 
 window.userWalletAddress = null
 const loginButton = document.getElementById('loginButton')
+const switchNetworkButton = document.getElementById('switchNetworkButton')
 const mintButton = document.getElementById('mint')
 const redeemButton = document.getElementById('redeem')
 const bulkPublicButton = document.getElementById('bulk-public')
@@ -285,6 +286,8 @@ const publicBundleModal = document.getElementById('public_bundle_modal')
 const mintSingleModal = document.getElementById('mint_single_modal')
 const displayModal = document.getElementById('display_modal')  
 
+let web3Injector = window.ethereum ? window.ethereum : window.gamestop ? window.gamestop : null
+
 const modalList = [redeemModal, loadingModal, successfulMintModal, bundleModal, mintSingleModal, displayModal, publicBundleModal, redeemOfferModal]
 
 // const extraModalImage = document.getElementById('extra-img')
@@ -313,13 +316,61 @@ function showMintSuccessModal() {
 }
 
 function toggleButton() {
-    if (!window.ethereum) {
+    if (!web3Injector) {
         loginButton.innerText = 'MetaMask is not installed'
         loginButton.classList.remove('bg-purple-500', 'text-white')
         loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
         return false
     }
+    else if (web3Injector.isMetaMask) {
+        loginButton.innerText = 'Login with MetaMask'
+        loginButton.classList.add('bg-purple-500')
+        loginButton.classList.remove('bg-black')
+    }
+    else if(web3Injector.isGamestop) {
+        // web3Injector.chainId = '0x5'
+        loginButton.innerText = 'Login with GameStop'
+        loginButton.classList.remove('bg-purple-500')
+        loginButton.classList.add('bg-black')
+    }
+
     loginButton.addEventListener('click', loginWithMetaMask)
+
+    if(window.ethereum && window.gamestop) {
+        switchNetworkButton.innerText = "Switch to GameStop"
+        switchNetworkButton.classList.remove('bg-purple-500')
+        switchNetworkButton.classList.add('bg-black')
+        switchNetworkButton.addEventListener('click', switchNetworks)
+    } 
+    else switchNetworkButton.setAttribute('hidden','hidden')
+}
+
+function switchNetworks() {
+    if (web3Injector.isMetaMask) {
+        signOutOfMetaMask()
+        console.log("switch to gamestop")
+        web3Injector = window.gamestop 
+        console.log(web3Injector)
+        loginButton.innerText = 'Login with GameStop'
+        loginButton.classList.remove('bg-purple-500')
+        loginButton.classList.add('bg-black')
+
+        switchNetworkButton.innerText = "Switch to Metamask"
+        switchNetworkButton.classList.add('bg-purple-500')
+        switchNetworkButton.classList.remove('bg-black')
+    }
+    else if (web3Injector.isGamestop) {
+        signOutOfMetaMask()
+        console.log("switch to metamask")
+        web3Injector = window.ethereum 
+        loginButton.innerText = 'Login with MetaMask'
+        loginButton.classList.add('bg-purple-500')
+        loginButton.classList.remove('bg-black')
+        
+        switchNetworkButton.innerText = "Switch to GameStop"
+        switchNetworkButton.classList.remove('bg-purple-500')
+        switchNetworkButton.classList.add('bg-black')
+    } 
 }
 
 function changeBulkIncrement(increment) {
@@ -334,7 +385,7 @@ function onClickTest() {
 }
 
 async function loginWithMetaMask() {
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+    const accounts = await web3Injector.request({ method: 'eth_requestAccounts' })
     .catch((e) => {
         console.error(e.message)
         return
@@ -344,9 +395,9 @@ async function loginWithMetaMask() {
 
     window.userWalletAddress = accounts[0]
     userWallet.innerText = `Logged in as ${window.userWalletAddress.substr(0, 5)}...${window.userWalletAddress.substr(userWalletAddress.length - 4, userWalletAddress.length)}`
-    loginButton.innerText = 'Sign out of MetaMask'
+    loginButton.innerText = `Sign out of ${web3Injector.isMetaMask ?  'MetaMask' : 'GameStop'}`
     
-    const web3 = new Web3(window.ethereum)
+    const web3 = new Web3(web3Injector)
     otterContract = new web3.eth.Contract(otterABI, otterAddress)
     console.log("CONTRACT", otterContract)
 
@@ -505,6 +556,7 @@ function mintMore() {
 }
 
 function reedemOtterOffer() {
+    console.log("otterContract", otterContract)
     otterContract.methods.redeemFreeOtter().send({to: otterAddress, from: window.userWalletAddress}, () => { 
         console.log("FREE REDEEM CLICKED")
     }).on('error', (error) =>{ 
@@ -829,11 +881,14 @@ function signOutOfMetaMask() {
     hasMintedMax = false
     window.userWalletAddress = null
     userWallet.innerText = ''
-    loginButton.innerText = 'Sign in with MetaMask'
+    loginButton.innerText = web3Injector.isMetamask ? 'Sign in with MetaMask' : 'Sign in with GameStop'
+
+    
+    mainMintButton.setAttribute("hidden","hidden")
 
     loginButton.removeEventListener('click', signOutOfMetaMask)
     setTimeout(() => {
-    loginButton.addEventListener('click', loginWithMetaMask)
+        loginButton.addEventListener('click', loginWithMetaMask)
     }, 200)
 }
 
